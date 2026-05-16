@@ -3,7 +3,7 @@
     --header-bg: #e2e8f0; 
     --text-color: #1a1a1a;
     --text-muted: #4a5568;
-    --accent-color: #0066cc; /* Το γαλάζιο/μπλε του σλόγκαν */
+    --accent-color: #0066cc; 
     --accent-hover: #004499;
     --card-bg: #ffffff;
     --border-color: #cbd5e1;
@@ -35,13 +35,18 @@ body { font-family: var(--font-stack); color: var(--text-color); background-colo
 header { background-color: var(--header-bg); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; padding-top: env(safe-area-inset-top); }
 header .container { display: flex; justify-content: space-between; align-items: center; padding: 20px; }
 
-/* ΔΙΟΡΘΩΣΗ: Καλλιτεχνικό Logo 100% μαύρο με κενό και σωστό στυλ */
-.logo { font-size: 1.35rem; font-weight: 400; letter-spacing: -0.2px; color: #000000; }
-.logo-serif { 
+/* ΦΙΞΑΡΙΣΜΑ: Εφαρμογή της Playfair Display σε ΟΛΟ το λογότυπο για απόλυτη ομοιομορφία */
+.logo { 
     font-family: var(--font-serif); 
-    font-style: italic; 
+    font-size: 1.35rem; 
+    font-weight: 400; 
+    letter-spacing: -0.2px; 
+    color: #000000; /* Όλο Μαύρο */
+}
+.logo-serif { 
     font-weight: 800; 
-    color: #000000; 
+    font-style: italic; 
+    color: #000000; /* Όλο Μαύρο */
 }
 
 nav a { text-decoration: none; color: var(--text-color); font-weight: 500; margin-left: 20px; transition: color 0.2s ease; }
@@ -56,12 +61,12 @@ nav a:hover { color: var(--accent-color); }
 .hero-container { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .hero-text { flex: 1; text-align: left; }
 
-/* ΔΙΟΡΘΩΣΗ: Το Σλόγκαν είναι γαλάζιο, all-caps, χωρίς τόνους, "ένα τικ" πιο μεγάλο (1.45rem) */
+/* Σλόγκαν γαλάζιο, χωρίς τόνους */
 .hero-section h1 { 
     font-size: 1.45rem; 
     font-weight: 800; 
     text-transform: uppercase; 
-    color: var(--accent-color); /* Γαλάζιο/Μπλε */
+    color: var(--accent-color); 
     letter-spacing: 0.8px;
     line-height: 1.4; 
     margin-bottom: 20px; 
@@ -195,7 +200,6 @@ footer {
     .hero-image-side { justify-content: center; }
     .hero-image-side img { height: 250px; width: auto; max-width: 100%; }
     
-    /* Responsive μέγεθος σλόγκαν στα κινητά */
     .hero-section h1 { font-size: 1.15rem; margin-bottom: 20px; }
     
     section h2::after { margin: 10px auto 0 auto; }
