@@ -1,12 +1,12 @@
 :root {
     --bg-color: #f4f8fa;
-    --header-bg: #f1f3f5; /* Αυτό είναι το γκρίζο που θέλουμε */
+    --header-bg: #e2e8f0; /* Το νέο, σωστό cool γκρίζο που φαίνεται καθαρά */
     --text-color: #1a1a1a;
     --text-muted: #4a5568;
     --accent-color: #0066cc;
     --accent-hover: #004499;
     --card-bg: #ffffff;
-    --border-color: #d1d5db;
+    --border-color: #cbd5e1;
     --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -27,10 +27,10 @@ header .container { display: flex; justify-content: space-between; align-items: 
 nav a { text-decoration: none; color: var(--text-color); font-weight: 500; margin-left: 20px; transition: color 0.2s ease; }
 nav a:hover { color: var(--accent-color); }
 
-/* ΔΙΟΡΘΩΣΗ: Γκρίζο φόντο (ίδιο με Header) για τέλειοBlending */
+/* Hero Section με το σωστό γκρίζο φόντο */
 .hero-section { 
-    padding: 60px 0; /* Μειώσαμε λίγο το padding */
-    background-color: var(--header-bg); /* Χρήση του --header-bg */
+    padding: 60px 0; 
+    background-color: var(--header-bg); 
     border-bottom: 1px solid var(--border-color);
 }
 .hero-container { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
@@ -39,14 +39,14 @@ nav a:hover { color: var(--accent-color); }
 .subtitle { font-size: 1.2rem; font-weight: 600; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
 .hero-lead { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* ΔΙΟΡΘΩΣΗ: Πιο μικρή και κομψή φωτογραφία */
+/* Η φωτογραφία διατηρεί το ιδανικό μέγεθος */
 .hero-image-side { flex: 1; display: flex; justify-content: flex-end; }
 .hero-image-side img { 
     max-width: 100%; 
-    height: 350px; /* Από 420px έγινε 350px */
+    height: 350px; 
     object-fit: cover; 
     border-radius: 12px; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06); /* Πιο απαλή σκιά */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06); 
     border: 1px solid var(--border-color); 
 }
 
@@ -57,7 +57,7 @@ nav a:hover { color: var(--accent-color); }
 .cv-block h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-color); margin-bottom: 8px; }
 .cv-block p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; }
 
-/* FIX ΓΙΑ IPHONE: Αφαιρεί την εργοστασιακή εμφάνιση της Apple στα κουμπιά */
+/* FIX ΓΙΑ IPHONE */
 input, button, select, textarea {
     -webkit-appearance: none;
 }
@@ -111,7 +111,6 @@ footer { padding: 40px 0; border-top: 1px solid var(--border-color); background-
     .hero-container { flex-direction: column-reverse; text-align: center; gap: 30px; }
     .hero-text { text-align: center; }
     .hero-image-side { justify-content: center; }
-    /* ΔΙΟΡΘΩΣΗ: Πιο μικρή και στα κινητά */
     .hero-image-side img { height: 250px; width: auto; max-width: 100%; }
     .hero-section h1 { font-size: 2.5rem; }
     header .container { flex-direction: column; gap: 15px; }
