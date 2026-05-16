@@ -1,6 +1,6 @@
 :root {
     --bg-color: #f4f8fa;
-    --header-bg: #f1f3f5;
+    --header-bg: #f1f3f5; /* Αυτό είναι το γκρίζο που θέλουμε */
     --text-color: #1a1a1a;
     --text-muted: #4a5568;
     --accent-color: #0066cc;
@@ -27,10 +27,10 @@ header .container { display: flex; justify-content: space-between; align-items: 
 nav a { text-decoration: none; color: var(--text-color); font-weight: 500; margin-left: 20px; transition: color 0.2s ease; }
 nav a:hover { color: var(--accent-color); }
 
-/* ΔΙΟΡΘΩΣΗ: Καθαρό λευκό φόντο στο Hero για να δένει απόλυτα η φωτογραφία */
+/* ΔΙΟΡΘΩΣΗ: Γκρίζο φόντο (ίδιο με Header) για τέλειοBlending */
 .hero-section { 
-    padding: 80px 0; 
-    background-color: #ffffff; 
+    padding: 60px 0; /* Μειώσαμε λίγο το padding */
+    background-color: var(--header-bg); /* Χρήση του --header-bg */
     border-bottom: 1px solid var(--border-color);
 }
 .hero-container { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
@@ -39,8 +39,16 @@ nav a:hover { color: var(--accent-color); }
 .subtitle { font-size: 1.2rem; font-weight: 600; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
 .hero-lead { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
+/* ΔΙΟΡΘΩΣΗ: Πιο μικρή και κομψή φωτογραφία */
 .hero-image-side { flex: 1; display: flex; justify-content: flex-end; }
-.hero-image-side img { max-width: 100%; height: 420px; object-fit: cover; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); border: 1px solid var(--border-color); }
+.hero-image-side img { 
+    max-width: 100%; 
+    height: 350px; /* Από 420px έγινε 350px */
+    object-fit: cover; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06); /* Πιο απαλή σκιά */
+    border: 1px solid var(--border-color); 
+}
 
 /* Expandable CV UI Stylings */
 .cv-summary { font-size: 1.2rem; color: var(--text-color); font-weight: 400; line-height: 1.7; margin-bottom: 20px; max-width: 900px; }
@@ -103,7 +111,8 @@ footer { padding: 40px 0; border-top: 1px solid var(--border-color); background-
     .hero-container { flex-direction: column-reverse; text-align: center; gap: 30px; }
     .hero-text { text-align: center; }
     .hero-image-side { justify-content: center; }
-    .hero-image-side img { height: 320px; width: 100%; max-width: 340px; }
+    /* ΔΙΟΡΘΩΣΗ: Πιο μικρή και στα κινητά */
+    .hero-image-side img { height: 250px; width: auto; max-width: 100%; }
     .hero-section h1 { font-size: 2.5rem; }
     header .container { flex-direction: column; gap: 15px; }
     nav a { margin: 0 10px; }
