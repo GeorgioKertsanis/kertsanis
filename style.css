@@ -1,6 +1,6 @@
 :root {
     --bg-color: #f4f8fa;
-    --header-bg: #e2e8f0; /* Το νέο, σωστό cool γκρίζο που φαίνεται καθαρά */
+    --header-bg: #e2e8f0; /* Το σωστό cool γκρίζο που δένει με τη φωτό */
     --text-color: #1a1a1a;
     --text-muted: #4a5568;
     --accent-color: #0066cc;
@@ -27,7 +27,7 @@ header .container { display: flex; justify-content: space-between; align-items: 
 nav a { text-decoration: none; color: var(--text-color); font-weight: 500; margin-left: 20px; transition: color 0.2s ease; }
 nav a:hover { color: var(--accent-color); }
 
-/* Hero Section με το σωστό γκρίζο φόντο */
+/* Hero Section */
 .hero-section { 
     padding: 60px 0; 
     background-color: var(--header-bg); 
@@ -39,7 +39,7 @@ nav a:hover { color: var(--accent-color); }
 .subtitle { font-size: 1.2rem; font-weight: 600; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
 .hero-lead { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* Η φωτογραφία διατηρεί το ιδανικό μέγεθος */
+/* Φωτογραφία */
 .hero-image-side { flex: 1; display: flex; justify-content: flex-end; }
 .hero-image-side img { 
     max-width: 100%; 
@@ -106,14 +106,29 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .contact-section p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px auto; color: var(--text-muted); }
 footer { padding: 40px 0; border-top: 1px solid var(--border-color); background-color: var(--header-bg); text-align: center; font-size: 0.9rem; color: var(--text-muted); }
 
-/* Responsive Grid & Mobile Optimization */
+/* ΟΛΟΚΛΗΡΩΤΙΚΟ ΦΙΞΑΡΙΣΜΑ ΓΙΑ ΚΙΝΗΤΑ / IPHONE */
 @media (max-width: 768px) {
+    header .container { 
+        flex-direction: column; 
+        gap: 12px; 
+        text-align: center; 
+        padding: 15px 10px;
+    }
+    /* Απόλυτο κεντράρισμα του μενού στο κινητό */
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 12px; /* Σωστά περιθώρια μεταξύ των λέξεων */
+    }
+    nav a { 
+        margin: 0 !important; /* Καθαρίζει τα παλιά margins */
+        font-size: 0.95rem;
+    }
     .hero-container { flex-direction: column-reverse; text-align: center; gap: 30px; }
     .hero-text { text-align: center; }
     .hero-image-side { justify-content: center; }
     .hero-image-side img { height: 250px; width: auto; max-width: 100%; }
     .hero-section h1 { font-size: 2.5rem; }
-    header .container { flex-direction: column; gap: 15px; }
-    nav a { margin: 0 10px; }
     section h2::after { margin: 10px auto 0 auto; }
 }
