@@ -111,14 +111,13 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* 🛠️ PREMIUM ULTRA FOOTER (ΚΛΕΙΔΩΜΕΝΟ ΑΛΦΑΔΙ) */
+/* PREMIUM ULTRA FOOTER Base Grid */
 .site-footer { 
     padding: 35px 0; 
     background-color: #1e293b; 
     color: #cbd5e1; 
     border-top: 1px solid #334155; 
 }
-/* Απενεργοποίηση όλων των κρυφών browser margins για 100% καθαρό flex calculation */
 .site-footer p {
     margin: 0 !important;
     padding: 0 !important;
@@ -126,7 +125,7 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .footer-grid { 
     display: flex; 
     justify-content: space-between; 
-    align-items: center; /* Απόλυτο οριζόντιο άξονα κεντράρισμα */
+    align-items: center; 
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -139,12 +138,14 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
     text-align: left; 
     font-weight: 500;
 }
+
+/* ΦΙΞΑΡΙΣΜΑ: Αυξήσαμε το vertical gap σε 18px για να πάει το κείμενο αισθητά πιο πάνω */
 .footer-center { 
     text-align: center; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    gap: 8px; 
+    gap: 18px; 
 }
 .follow-text { 
     font-size: 0.95rem; 
@@ -180,7 +181,7 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
     font-size: 0.85rem; 
     display: flex;
     flex-direction: column;
-    gap: 4px; /* Ελεγχόμενη απόσταση ανάμεσα στις δύο γραμμές χωρίς margins */
+    gap: 4px; 
 }
 
 /* Brand Hovers */
