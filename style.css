@@ -20,7 +20,7 @@ html {
 body { font-family: var(--font-stack); color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; padding-bottom: env(safe-area-inset-bottom); }
 .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* ΜΠΑΡΑ ΑΣΦΑΛΕΙΑΣ ΣΤΗΝ ΚΟΡΥΦΗ */
+/* ΜΠΑΡΑ ΑΣΦΑΛΕΙΑΣ ΣΤΗΝ KΟΡΥΦΗ */
 .privacy-notice-bar { background-color: #1e293b; color: #f8fafc; font-size: 0.88rem; padding: 10px 0; text-align: center; border-bottom: 1px solid #334155; }
 .privacy-notice-bar p { margin: 0; font-weight: 400; letter-spacing: 0.2px; }
 .privacy-notice-bar strong { color: #38bdf8; }
@@ -44,11 +44,11 @@ nav a:hover { color: var(--accent-color); }
 .hero-section h1 { font-size: 1.45rem; font-weight: 800; text-transform: uppercase; color: var(--accent-color); letter-spacing: 0.8px; line-height: 1.4; margin-bottom: 20px; }
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* ΦΩΤΟΓΡΑΦΙΑ HERO: Πιο μικρή, χωρίς κανένα περίγραμμα/κόλπο */
+/* ΦΩΤΟΓΡΑΦΙΑ HERO */
 .hero-image-side { flex: 1; display: flex; justify-content: flex-end; }
 .hero-image-side img { 
     width: 100%;
-    max-width: 230px; /* Έγινε πιο μικρή για απόλυτη ομοιομορφία */
+    max-width: 230px; 
     height: auto; 
     object-fit: contain; 
     border: none !important; 
@@ -70,20 +70,22 @@ input, button, select, textarea { -webkit-appearance: none; }
 .btn { display: inline-block; background-color: var(--accent-color); color: #fff; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.2s ease; }
 .btn:hover { background-color: var(--accent-hover); }
 
-/* Layout Grid & ΚΕΝΤΡΑΡΙΣΜΕΝΑ HEADERS & ΜΠΛΕ ΓΡΑΜΜΕΣ */
+/* Layout Grid & Κεντραρισμένα Στοιχεία */
 section { padding: 100px 0; }
-section h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 40px; position: relative; text-align: center; } /* Κεντραρισμένο h2 */
-section h2::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--accent-color); margin: 10px auto 0 auto; } /* Μπλε γραμμή στη μέση */
-.section-lead { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 50px auto; text-align: center; } /* Κεντραρισμένο lead κείμενο */
+section h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 40px; position: relative; text-align: center; }
+section h2::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--accent-color); margin: 10px auto 0 auto; }
+.section-lead { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 50px auto; text-align: center; }
 .about-section { background-color: var(--header-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: left; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; justify-content: center; }
 .card { background: var(--card-bg); padding: 40px 30px; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: left; display: flex; flex-direction: column; justify-content: space-between; }
 .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-color: var(--accent-color); }
-.card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; }
+
+/* 🌟 ΧΡΩΜΑ ΚΑΡΤΕΛΩΝ: Ανοιχτό Navy Blue για ομοιομορφία */
+.card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; color: #1e3a8a; }
 .card p { color: var(--text-muted); font-size: 1rem; flex-grow: 1; margin-bottom: 20px; }
 
-/* ΘΕΣΕΙΣ ΦΩΤΟΓΡΑΦΙΩΝ ΣΤΙΣ ΠΑΡΕΜΒΑΣΕΙΣ (assets/...) */
+/* Θέσεις Φωτογραφιών στις Παρεμβάσεις */
 .news-image-wrapper {
     width: 100%;
     height: 195px;
@@ -116,12 +118,14 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
 .footer-left p { font-size: 0.95rem; font-weight: 600; color: #ffffff; margin: 0; }
 
 .footer-center { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
-.footer-label { font-size: 0.9rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.5px; }
+/* 🌟 ΠΙΟ ΜΙΚΡΟ FOLLOW US ON */
+.footer-label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.5px; }
 .footer-icons { display: flex !important; flex-direction: row !important; gap: 12px; }
 .footer-icons a { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background-color: #172a45; color: #ffffff; transition: all 0.2s ease; text-decoration: none; }
 .footer-icons a:hover { background-color: var(--accent-color); color: #ffffff; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4); }
 
-.footer-right { flex: 1; text-align: right; font-size: 0.88rem; display: flex; flex-direction: column; gap: 4px; color: #cbd5e1; }
+/* 🌟 ΕΥΘΥΓΡΑΜΜΙΣΗ ΔΕΞΙΑ ΣΤΟ FOOTER */
+.footer-right { flex: 1; text-align: right; font-size: 0.88rem; display: flex; flex-direction: column; gap: 4px; color: #cbd5e1; padding-left: 25px; }
 .footer-privacy { color: #94a3b8; font-weight: 500; }
 
 /* MOBILE RESPONSIVE */
@@ -140,6 +144,6 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
     .hero-section h1 { font-size: 1.15rem; margin-bottom: 20px; }
     
     .footer-container { flex-direction: column; text-align: center; gap: 25px; }
-    .footer-left, .footer-center, .footer-right { text-align: center; align-items: center; }
+    .footer-left, .footer-center, .footer-right { text-align: center; align-items: center; padding-left: 0; }
     .footer-icons { display: flex !important; flex-direction: row !important; justify-content: center; gap: 15px; }
 }
