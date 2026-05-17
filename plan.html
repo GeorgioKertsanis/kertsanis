@@ -23,6 +23,44 @@
         .action-checklist li i { color: #11caa0; font-size: 1.3rem; margin-top: 3px; }
         .action-text h4 { font-weight: 700; margin-bottom: 5px; color: var(--text-color); }
         .action-text p { font-size: 1rem; color: var(--text-muted); margin: 0; }
+
+        /* 🔥 Στυλ για τα Clickable Χρηματοδοτικά Καρτελάκια */
+        .funding-link {
+            text-decoration: none;
+            background: rgba(255,255,255,0.08);
+            padding: 35px 20px;
+            border-radius: 8px;
+            display: block;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.25s ease;
+        }
+        .funding-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-4px);
+            border-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .funding-link i {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .funding-link h4 {
+            color: #ffffff !important;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .funding-link span {
+            display: block;
+            font-size: 0.8rem;
+            color: #38bdf8;
+            margin-top: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +112,7 @@
             </div>
             <p class="plan-text-block">Μετατρέπουμε τη Φλώρινα σε μια «Έξυπνη Πόλη». Εφαρμόζουμε τεχνολογίες που βελτιώνουν την καθημερινότητα, μειώνουν το λειτουργικό κόστος του Δήμου και προστατεύουν το περιβάλλον.</p>
             <ul class="action-checklist">
-                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Πράσινη Αστική Κινητικότητα</h4><p>Εγκατάσταση συστήματος 35 ηλεκτρικών ποδηλάτων (E-Bicycles) με σταθμούς φόρτισης.</p></div></li>
+                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Πράσινη Αστική Κινητικότητα</h4><p>Εγκατάσταση συστήματος 35 ηλεκτρικών ποποδηλάτων (E-Bicycles) με σταθμούς φόρτισης.</p></div></li>
                 <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Έξυπνος Φωτισμός (Smart Lighting)</h4><p>Μείωση κατανάλωσης ενέργειας έως 60% μέσω αισθητήρων και κεντρικής διαχείρισης.</p></div></li>
             </ul>
         </div>
@@ -83,10 +121,24 @@
     <section class="plan-section" style="background-color: var(--accent-color); color: #fff;">
         <div class="container" style="text-align: center;">
             <h2 style="color: #fff;">Χρηματοδοτικά Εργαλεία</h2>
-            <div class="grid" style="margin-top: 50px; gap: 30px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;"><h4 style="color: #fff;">ΕΣΠΑ</h4></div>
-                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;"><h4 style="color: #fff;">Ταμείο Δίκαιης Μετάβασης</h4></div>
-                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;"><h4 style="color: #fff;">Πράσινο Ταμείο</h4></div>
+            <p style="margin: -20px auto 40px auto; color: rgba(255,255,255,0.9); max-width: 600px;">Κάντε κλικ παρακάτω για να μεταβείτε στους επίσημους ιστοτόπους των προγραμμάτων:</p>
+            
+            <div class="grid" style="gap: 30px;">
+                <a href="https://www.espa.gr" target="_blank" rel="noopener noreferrer" class="funding-link">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h4>ΕΣΠΑ</h4>
+                    <span>Επίσημη Πύλη &rarr;</span>
+                </a>
+                <a href="https://www.justtransition.gr" target="_blank" rel="noopener noreferrer" class="funding-link">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h4>Ταμείο Δίκαιης Μετάβασης</h4>
+                    <span>Επίσημη Πύλη &rarr;</span>
+                </a>
+                <a href="https://www.prasinotameio.gr" target="_blank" rel="noopener noreferrer" class="funding-link">
+                    <i class="fa-solid fa-euro-sign"></i>
+                    <h4>Πράσινο Ταμείο</h4>
+                    <span>Επίσημη Πύλη &rarr;</span>
+                </a>
             </div>
         </div>
     </section>
@@ -110,8 +162,6 @@
         const menuToggle = document.getElementById('menu-toggle-plan');
         const navMenu = document.getElementById('nav-menu-plan');
         if(menuToggle) { menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); }); }
-        
-        // Τροφοδοσία αυτόματου έτους
         document.getElementById("year-plan").textContent = new Date().getFullYear();
     </script>
 </body>
