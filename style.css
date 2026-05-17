@@ -44,17 +44,17 @@ nav a:hover { color: var(--accent-color); }
 .hero-section h1 { font-size: 1.45rem; font-weight: 800; text-transform: uppercase; color: var(--accent-color); letter-spacing: 0.8px; line-height: 1.4; margin-bottom: 20px; }
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* 🌟 ΦΙΞΑΡΙΣΜΑ ΕΙΚΟΝΑΣ: Διαφανές PNG χωρίς κανένα πλαίσιο 🌟 */
+/* 🖼️ ΦΙΞΑΡΙΣΜΑ ΕΙΚΟΝΑΣ: profile.png απόλυτα διάφανη, χωρίς σκιές και γραμμές */
 .hero-image-side { flex: 1; display: flex; justify-content: flex-end; }
 .hero-image-side img { 
     width: 100%;
     max-width: 350px; 
     height: auto; 
     object-fit: contain; 
-    border: none; 
-    box-shadow: none; 
-    background: transparent; 
-    border-radius: 0;
+    border: none !important; 
+    box-shadow: none !important; 
+    background: transparent !important; 
+    border-radius: 0 !important;
     display: block;
 }
 
@@ -90,17 +90,16 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* 🌟 ΦΙΞΑΡΙΣΜΑ FOOTER 🌟 */
+/* 📱 ΦΙΞΑΡΙΣΜΑ FOOTER: Κλειδωμένο οριζόντια, δεν σπάει ποτέ σε στήλη 📱 */
 footer { padding: 50px 0; background-color: #1e293b; color: #cbd5e1; border-top: 1px solid #334155; }
 .footer-container { display: flex; justify-content: space-between; align-items: center; }
 .footer-left p { font-size: 0.9rem; margin-bottom: 4px; color: #cbd5e1; }
 .footer-privacy { color: #94a3b8; font-size: 0.85rem; font-weight: 500; }
-
 .footer-right { display: flex; align-items: center; gap: 15px; }
 .footer-label { font-size: 0.95rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.3px; }
 
-/* Τα εικονίδια κλειδωμένα ΟΡΙΖΟΝΤΙΑ */
-.footer-icons { display: flex; flex-direction: row; gap: 12px; }
+/* 🌟 Τα εικονίδια είναι αυστηρά σε σειρά (Row) παντού 🌟 */
+.footer-icons { display: flex !important; flex-direction: row !important; gap: 12px; }
 .footer-icons a { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background-color: #334155; color: #f8fafc; transition: all 0.2s ease; }
 .footer-icons a:hover { background-color: var(--accent-color); color: #ffffff; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4); }
 .footer-icons svg { width: 18px; height: 18px; fill: currentColor; }
@@ -109,7 +108,7 @@ footer { padding: 50px 0; background-color: #1e293b; color: #cbd5e1; border-top:
 @media (max-width: 768px) {
     header .header-container-box { flex-direction: column; gap: 15px; padding: 15px 10px; width: 100%; }
     
-    /* Μενού Κινητού (Swipe) */
+    /* Μενού Κινητού (Μόνιμα Φάτσα Κάρτα με Swipe, ΧΩΡΙΣ κουμπιά) */
     nav { display: flex !important; flex-direction: row; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; justify-content: flex-start; padding: 5px 10px; scrollbar-width: none; }
     nav::-webkit-scrollbar { display: none; }
     nav a { margin: 0 10px 0 0 !important; padding: 8px 16px; background-color: rgba(0,0,0,0.04); border-radius: 20px; font-size: 0.9rem; border: 1px solid var(--border-color); }
@@ -123,8 +122,8 @@ footer { padding: 50px 0; background-color: #1e293b; color: #cbd5e1; border-top:
     .hero-section h1 { font-size: 1.15rem; margin-bottom: 20px; }
     section h2::after { margin: 10px auto 0 auto; }
     
-    /* Footer Κινητού: Όλα κέντρο, αλλά εικονίδια δίπλα-δίπλα! */
+    /* Διάταξη Footer στα κινητά */
     .footer-container { flex-direction: column; text-align: center; gap: 25px; }
     .footer-right { flex-direction: column; gap: 12px; align-items: center; }
-    .footer-icons { display: flex; flex-direction: row; justify-content: center; gap: 15px; }
+    .footer-icons { display: flex !important; flex-direction: row !important; justify-content: center; gap: 15px; }
 }
