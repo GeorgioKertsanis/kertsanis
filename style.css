@@ -111,9 +111,9 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* Premium Footer */
-footer { 
-    padding: 50px 0; 
+/* PREMIUM FOOTER LAYOUT (Στυλ Δένδια - Τέλεια Ευθυγράμμιση) */
+.site-footer { 
+    padding: 40px 0; 
     background-color: #1e293b; 
     color: #cbd5e1; 
     border-top: 1px solid #334155; 
@@ -122,50 +122,68 @@ footer {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.footer-left p { font-size: 0.9rem; margin-bottom: 4px; }
-.footer-privacy { color: #94a3b8; font-size: 0.85rem; font-weight: 500; }
-
-.footer-right { 
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    min-width: 280px;
+}
+.footer-left p { 
+    font-size: 0.95rem; 
+    margin: 0; 
+    text-align: left; 
+    font-weight: 500;
+}
+.footer-center { 
+    text-align: center; 
     display: flex; 
+    flex-direction: column; 
     align-items: center; 
-    gap: 20px; 
+    gap: 10px; 
 }
-.footer-label { 
+.follow-text { 
     font-size: 0.95rem; 
     font-weight: 700; 
     color: #f8fafc; 
     letter-spacing: 0.3px; 
 }
-
-/* ΦΙΞΑΡΙΣΜΑ: Διάταξη εικονιδίων με Flexbox για απόλυτο, σφαιρικό κεντράρισμα */
-.footer-icons { 
+.footer-socials { 
     display: flex; 
     gap: 12px; 
+    justify-content: center;
 }
-.footer-icons a.icon-btn { 
+.footer-socials a.social-icon { 
     display: inline-flex; 
     align-items: center; 
     justify-content: center; 
-    width: 44px; /* Αυξήθηκε ελάχιστα για τέλεια αναλογία */
+    width: 44px; 
     height: 44px; 
     border-radius: 50%; 
     background-color: #334155; 
     color: #f8fafc; 
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
 }
-.footer-icons svg { 
+.footer-socials svg { 
     width: 22px; 
     height: 22px; 
     fill: currentColor; 
     display: block;
 }
+.footer-right { 
+    text-align: right; 
+    font-size: 0.85rem; 
+    line-height: 1.6; 
+}
+.footer-right p { 
+    margin: 0; 
+    color: #cbd5e1; 
+}
 
-/* Premium Dynamic Branding Hovers */
-.footer-icons a.fb:hover { background-color: #1877f2; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(24, 119, 242, 0.45); }
-.footer-icons a.ig:hover { background-color: #e1306c; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(225, 48, 108, 0.45); }
-.footer-icons a.wa:hover { background-color: #25d366; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.45); }
-.footer-icons a.vb:hover { background-color: #7360f2; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(115, 96, 242, 0.45); }
+/* Premium Dynamic Hovers */
+.footer-socials a.fb:hover { background-color: #1877f2; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(24, 119, 242, 0.45); }
+.footer-socials a.ig:hover { background-color: #e1306c; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(225, 48, 108, 0.45); }
+.footer-socials a.wa:hover { background-color: #25d366; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.45); }
 
 /* Responsive Grid & Mobile Optimization */
 @media (max-width: 768px) {
@@ -196,8 +214,7 @@ footer {
         text-align: center;
         gap: 25px;
     }
-    .footer-right {
-        flex-direction: column;
-        gap: 12px;
+    .footer-left, .footer-right {
+        text-align: center;
     }
 }
