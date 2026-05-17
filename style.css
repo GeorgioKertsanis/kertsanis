@@ -44,8 +44,18 @@ nav a:hover { color: var(--accent-color); }
 .hero-section h1 { font-size: 1.45rem; font-weight: 800; text-transform: uppercase; color: var(--accent-color); letter-spacing: 0.8px; line-height: 1.4; margin-bottom: 20px; }
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
+/* 📸 ΟΡΙΣΤΙΚΟ ΦΙΞΑΡΙΣΜΑ: 100% Seamless Φωτογραφία, Χωρίς περιγράμματα, Χωρίς σκιές 📸 */
 .hero-image-side { flex: 1; display: flex !important; justify-content: flex-end; min-width: 320px; }
-.hero-image-side img { width: 100%; max-width: 350px; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); border: 1px solid var(--border-color); display: block !important; }
+.hero-image-side img { 
+    width: 100%;
+    max-width: 350px; 
+    height: auto; 
+    object-fit: contain; 
+    display: block !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
 
 section { padding: 100px 0; }
 section h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 40px; position: relative; text-align: center; }
@@ -84,10 +94,10 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* 💎 ΦΙΞΑΡΙΣΜΑ FOOTER: Απόλυτο Γεωμετρικό Ζύγισμα & Καθαρά Κυκλικά Icons 💎 */
+/* 💎 ΦΙΞΑΡΙΣΜΑ FOOTER: Απόλυτο Γεωμετρικό Ζύγισμα 💎 */
 footer { 
     padding: 50px 0; 
-    background-color: #0f172a !important; /* Premium Σκούρο Μπλε */
+    background-color: #0f172a !important; 
     border-top: 1px solid #1e293b; 
     color: #f8fafc !important;
 }
@@ -98,7 +108,7 @@ footer {
     width: 100%;
 }
 
-/* Flex 1 σε όλα εξασφαλίζει ότι το κέντρο είναι 100% κεντραρισμένο και τα άκρα τερματίζουν στις οθόνες */
+/* Τοποθέτηση των 3 στηλών με ίσο βάρος (flex: 1) για τέλεια συμμετρία */
 .footer-left { 
     flex: 1; 
     text-align: left; 
@@ -125,7 +135,7 @@ footer {
 .footer-label { font-size: 1rem; font-weight: 700; color: #ffffff !important; }
 .footer-icons { display: flex; gap: 15px; justify-content: center; }
 
-/* Καθαροί Κύκλοι Υψηλής Αντίθεσης για ΟΛΑ τα Social */
+/* Κυκλικά εικονίδια */
 .footer-icons a { 
     display: flex; 
     align-items: center; 
@@ -157,11 +167,10 @@ footer {
     .hero-container { flex-direction: column-reverse; text-align: center; gap: 30px; }
     .hero-text { text-align: center; }
     .hero-image-side { display: flex !important; justify-content: center !important; width: 100% !important; min-width: unset; }
-    .hero-image-side img { width: 100%; max-width: 280px; height: auto; margin: 0 auto; display: block !important; }
+    .hero-image-side img { width: 100%; max-width: 280px; height: auto; margin: 0 auto; display: block !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; }
     
     .hero-section h1 { font-size: 1.15rem; margin-bottom: 20px; }
     
-    /* Κάθετη στοίχιση στο Mobile Footer */
     .footer-container { flex-direction: column; text-align: center; gap: 25px; }
     .footer-left, .footer-center, .footer-right { text-align: center; width: 100%; flex: unset; margin: 0 !important; }
 }
