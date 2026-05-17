@@ -20,95 +20,39 @@ html {
 body { font-family: var(--font-stack); color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; padding-bottom: env(safe-area-inset-bottom); }
 .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* ΜΠΑΡΑ ΑΣΦΑΛΕΙΑΣ ΣΤΗΝ ΚΟΡΥΦΗ */
-.privacy-notice-bar {
-    background-color: #1e293b; 
-    color: #f8fafc;
-    font-size: 0.88rem;
-    padding: 10px 0;
-    text-align: center;
-    border-bottom: 1px solid #334155;
-}
+.privacy-notice-bar { background-color: #1e293b; color: #f8fafc; font-size: 0.88rem; padding: 10px 0; text-align: center; border-bottom: 1px solid #334155; }
 .privacy-notice-bar p { margin: 0; font-weight: 400; letter-spacing: 0.2px; }
 .privacy-notice-bar strong { color: #38bdf8; }
 
-/* Header Layout */
 header { background-color: var(--header-bg); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; padding-top: env(safe-area-inset-top); }
 header .container { display: flex; justify-content: space-between; align-items: center; padding: 20px; position: relative; }
 
 .logo-link { text-decoration: none; display: inline-block; }
 .logo { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.2px; color: #000000; }
 
-/* Menu Navigation */
 nav { display: flex; align-items: center; }
 nav a { text-decoration: none; color: var(--text-color); font-weight: 500; margin-left: 20px; transition: color 0.2s ease; }
 nav a:hover { color: var(--accent-color); }
 
-.menu-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    width: 28px;
-    height: 28px;
-    padding: 0;
-    color: #111111;
-}
+.menu-toggle { display: none; background: transparent; border: none; cursor: pointer; width: 28px; height: 28px; padding: 0; color: #111111; }
 .menu-toggle svg { width: 100%; height: 100%; fill: currentColor; }
 
-/* Hero Section */
 .hero-section { padding: 60px 0; background-color: var(--header-bg); border-bottom: 1px solid var(--border-color); }
 .hero-container { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .hero-text { flex: 1; text-align: left; }
 
-.hero-section h1 { 
-    font-size: 1.45rem; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    color: var(--accent-color); 
-    letter-spacing: 0.8px;
-    line-height: 1.4; 
-    margin-bottom: 20px; 
-}
-
+.hero-section h1 { font-size: 1.45rem; font-weight: 800; text-transform: uppercase; color: var(--accent-color); letter-spacing: 0.8px; line-height: 1.4; margin-bottom: 20px; }
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* ΦΙΞΑΡΙΣΜΑ ΦΩΤΟΓΡΑΦΙΑΣ: Removal of all borders/shadows for seamless PNG float */
 .hero-image-side { flex: 1; display: flex !important; justify-content: flex-end; min-width: 320px; }
-.hero-image-side img { 
-    width: 100%;
-    max-width: 350px; 
-    height: auto;
-    aspect-ratio: 1 / 1; 
-    object-fit: cover; 
-    /* ALL Borders/Shadows removed */
-    display: block !important;
-}
+.hero-image-side img { width: 100%; max-width: 350px; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); border: 1px solid var(--border-color); display: block !important; }
 
-/* CV & Sections (Centering title lines) */
 section { padding: 100px 0; }
+section h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 40px; position: relative; text-align: center; }
+section h2::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--accent-color); margin: 10px auto 0 auto; }
 
-/* ΦΙΞΑΡΙΣΜΑ: Κεντράρισμα Title και Μπλε Γραμμής σε ΟΛΕΣ τις ενότητες (default) */
-section h2 { 
-    font-size: 2.2rem; 
-    font-weight: 800; 
-    letter-spacing: -0.5px; 
-    margin-bottom: 40px; 
-    position: relative; 
-    text-align: center; /* Centers Title */
-}
-section h2::after { 
-    content: ''; 
-    display: block; 
-    width: 50px; 
-    height: 4px; 
-    background-color: var(--accent-color); 
-    margin: 10px auto 0 auto; /* Centers Line */
-}
-
-/* Local overrides for sections with specific layouts */
 .about-section { background-color: var(--header-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: left; }
-.about-content { text-align: left; } /* CV content floats left */
+.about-content { text-align: left; } 
 .cv-summary { font-size: 1.2rem; color: var(--text-color); font-weight: 400; line-height: 1.7; margin-bottom: 20px; max-width: 900px; }
 .cv-details { display: none; margin-top: 30px; border-top: 1px dashed var(--border-color); padding-top: 20px; text-align: left; }
 .cv-block { margin-bottom: 25px; }
@@ -120,7 +64,6 @@ section h2::after {
 .btn { display: inline-block; background-color: var(--accent-color); color: #fff; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.2s ease; }
 .btn:hover { background-color: var(--accent-hover); }
 
-/* Proposals section requires centered lead text and grid balance */
 .proposals-section { background-color: var(--bg-color); text-align: center; }
 .proposals-section .section-lead { margin-left: auto; margin-right: auto; }
 
@@ -130,45 +73,39 @@ section h2::after {
 .card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; }
 .card p { color: var(--text-muted); font-size: 1rem; }
 
-/* News Section centered lead */
 .news-section { background-color: var(--bg-color); text-align: center; }
 .news-section .section-lead { margin-left: auto; margin-right: auto; }
 .news-date { font-size: 0.85rem; font-weight: 700; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 10px; }
 .btn-news-link { text-decoration: none; color: var(--accent-color); font-weight: 600; font-size: 0.95rem; display: inline-block; margin-top: 15px; transition: color 0.2s ease; }
 .btn-news-link:hover { color: var(--accent-hover); }
 
-/* Contact section centered lead */
 .contact-section { text-align: center; background-color: var(--header-bg); border-top: 1px solid var(--border-color); }
 .contact-section p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px auto; color: var(--text-muted); }
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* ΦΙΞΑΡΙΣΜΑ FOOTER: Premium Σκούρο Μπλε (#0f172a) και Τριπλή Διάταξη Δένδια Matrix with geometric lock */
+/* 💎 ΦΙΞΑΡΙΣΜΑ FOOTER: Απόλυτο Γεωμετρικό Ζύγισμα & Καθαρά Κυκλικά Icons 💎 */
 footer { 
     padding: 50px 0; 
-    background-color: #0f172a !important; /* Σκούρο Μπλε */
+    background-color: #0f172a !important; /* Premium Σκούρο Μπλε */
     border-top: 1px solid #1e293b; 
     color: #f8fafc !important;
 }
 .footer-container { 
     display: flex; 
-    justify-content: space-between; /* Far Left/Right locking */
-    align-items: flex-start; 
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
 }
 
-/* ΦΙΞΑΡΙΣΜΑ: Copyright τέρμα αριστερά */
+/* Flex 1 σε όλα εξασφαλίζει ότι το κέντρο είναι 100% κεντραρισμένο και τα άκρα τερματίζουν στις οθόνες */
 .footer-left { 
     flex: 1; 
     text-align: left; 
     font-size: 0.95rem; 
     font-weight: 500; 
-    color: #cbd5e1 !important;
-    margin-left: -5px; /* Pushes content one tick left */
+    color: #cbd5e1 !important; 
 }
-
-/* Μεσαία Στήλη: Perfectly Balanced in Center */
 .footer-center { 
     flex: 1; 
     text-align: center; 
@@ -177,10 +114,18 @@ footer {
     align-items: center; 
     gap: 10px; 
 }
+.footer-right { 
+    flex: 1; 
+    text-align: right; 
+    font-size: 0.9rem; 
+    color: #cbd5e1 !important; 
+    line-height: 1.5; 
+}
+
 .footer-label { font-size: 1rem; font-weight: 700; color: #ffffff !important; }
 .footer-icons { display: flex; gap: 15px; justify-content: center; }
 
-/* Υψηλή αντίθεση στα εικονίδια */
+/* Καθαροί Κύκλοι Υψηλής Αντίθεσης για ΟΛΑ τα Social */
 .footer-icons a { 
     display: flex; 
     align-items: center; 
@@ -188,8 +133,8 @@ footer {
     width: 42px; 
     height: 42px; 
     border-radius: 50%; 
-    background-color: #1e293b; /* Premium slate κύκλος */
-    color: #f8fafc; /* Λευκά σύμβολα */
+    background-color: #1e293b; 
+    color: #f8fafc; 
     border: 1px solid #334155;
     transition: all 0.2s ease; 
 }
@@ -199,49 +144,24 @@ footer {
     transform: translateY(-3px); 
 }
 .footer-icons svg { width: 20px; height: 20px; fill: currentColor; display: block; }
-
-/* ΦΙΞΑΡΙΣΜΑ: Δεξί μπλοκ τέρμα δεξιά */
-.footer-right { 
-    flex: 1; 
-    text-align: right; 
-    font-size: 0.9rem; 
-    color: #cbd5e1 !important; 
-    line-height: 1.5;
-    margin-right: -5px; /* Pushes content one tick right */
-}
 .footer-privacy { font-size: 0.85rem; font-weight: 600; color: #38bdf8 !important; margin-top: 4px; }
 
-/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     header .container { flex-direction: row; justify-content: space-between; align-items: center; padding: 15px 20px; }
     .menu-toggle { display: block; }
-    nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--header-bg);
-        border-bottom: 1px solid var(--border-color);
-        padding: 10px 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        z-index: 999;
-    }
+    nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--header-bg); border-bottom: 1px solid var(--border-color); padding: 10px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.08); z-index: 999; }
     nav.active { display: flex; }
     nav a { margin: 0 !important; padding: 14px 20px; width: 100%; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 1.05rem; }
     nav a:last-child { border-bottom: none; }
 
-    /* ΦΩΤΟΓΡΑΦΙΑ (MOBILE) seamless */
     .hero-container { flex-direction: column-reverse; text-align: center; gap: 30px; }
     .hero-text { text-align: center; }
     .hero-image-side { display: flex !important; justify-content: center !important; width: 100% !important; min-width: unset; }
-    .hero-image-side img { width: 100%; max-width: 280px; height: 280px; margin: 0 auto; display: block !important; }
+    .hero-image-side img { width: 100%; max-width: 280px; height: auto; margin: 0 auto; display: block !important; }
     
     .hero-section h1 { font-size: 1.15rem; margin-bottom: 20px; }
-    section h2::after { margin: 10px auto 0 auto; }
     
-    /* Κάθετη στοίχιση στο Mobile Footer with balance fix */
+    /* Κάθετη στοίχιση στο Mobile Footer */
     .footer-container { flex-direction: column; text-align: center; gap: 25px; }
     .footer-left, .footer-center, .footer-right { text-align: center; width: 100%; flex: unset; margin: 0 !important; }
 }
