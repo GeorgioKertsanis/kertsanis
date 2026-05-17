@@ -73,13 +73,13 @@ nav a:hover { color: var(--accent-color); }
 
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* ΦΙΞΑΡΙΣΜΑ ΦΩΤΟΓΡΑΦΙΑΣ (DESKTOP) */
+/* ΦΙΞΑΡΙΣΜΑ ΦΩΤΟΓΡΑΦΙΑΣ: aspect-ratio και block display για να μην κλείνει ποτέ */
 .hero-image-side { flex: 1; display: flex !important; justify-content: flex-end; min-width: 320px; }
 .hero-image-side img { 
     width: 100%;
     max-width: 350px; 
     height: auto;
-    aspect-ratio: 1 / 1; /* Απόλυτο τετράγωνο */
+    aspect-ratio: 1 / 1; 
     object-fit: cover; 
     border-radius: 12px; 
     box-shadow: 0 10px 25px rgba(0,0,0,0.06); 
@@ -124,22 +124,22 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* ΦΙΞΑΡΙΣΜΑ FOOTER: Ανοιχτόχρωμο, μινιμαλιστικό στυλ Δένδια (3 Στήλες) */
+/* ΦΙΞΑΡΙΣΜΑ FOOTER: Επαναφορά στο Premium Σκούρο Μπλε και Τριπλή Διάταξη Δένδια */
 footer { 
-    padding: 40px 0; 
-    background-color: var(--header-bg); /* Ίδιο με το Header, όχι σκούρο κουτί */
-    border-top: 1px solid var(--border-color); 
-    color: var(--text-color);
+    padding: 50px 0; 
+    background-color: #0f172a !important; /* Καθαρό Σκούρο Μπλε */
+    border-top: 1px solid #1e293b; 
+    color: #f8fafc !important;
 }
 .footer-container { 
     display: flex; 
     justify-content: space-between; 
-    align-items: flex-start; 
+    align-items: center; 
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.footer-left { flex: 1; text-align: left; font-size: 0.95rem; font-weight: 500; }
+.footer-left { flex: 1; text-align: left; font-size: 0.95rem; font-weight: 500; color: #cbd5e1 !important; }
 
 .footer-center { 
     flex: 1; 
@@ -149,10 +149,10 @@ footer {
     align-items: center; 
     gap: 10px; 
 }
-.footer-label { font-size: 1rem; font-weight: 700; color: var(--text-color); }
+.footer-label { font-size: 1rem; font-weight: 700; color: #ffffff !important; }
 .footer-icons { display: flex; gap: 15px; justify-content: center; }
 
-/* Υψηλή αντίθεση στα εικονίδια για να φαίνονται 100% καθαρά */
+/* Υψηλή αντίθεση στα εικονίδια πάνω στο σκούρο φόντο */
 .footer-icons a { 
     display: flex; 
     align-items: center; 
@@ -160,9 +160,9 @@ footer {
     width: 42px; 
     height: 42px; 
     border-radius: 50%; 
-    background-color: #ffffff; /* Λευκό κυκλάκι για να κάνει αντίθεση */
-    color: var(--accent-color); /* Μπλε σήμα */
-    border: 1px solid var(--border-color);
+    background-color: #1e293b; /* Premium slate κύκλος */
+    color: #f8fafc; /* Λευκά σύμβολα */
+    border: 1px solid #334155;
     transition: all 0.2s ease; 
 }
 .footer-icons a:hover { 
@@ -170,10 +170,10 @@ footer {
     color: #ffffff; 
     transform: translateY(-3px); 
 }
-.footer-icons svg { width: 22px; height: 22px; fill: currentColor; display: block; }
+.footer-icons svg { width: 20px; height: 20px; fill: currentColor; display: block; }
 
-.footer-right { flex: 1; text-align: right; font-size: 0.9rem; color: var(--text-muted); }
-.footer-privacy { font-size: 0.85rem; font-weight: 600; color: var(--text-color); margin-top: 4px; }
+.footer-right { flex: 1; text-align: right; font-size: 0.9rem; color: #cbd5e1 !important; line-height: 1.5; }
+.footer-privacy { font-size: 0.85rem; font-weight: 600; color: #38bdf8 !important; margin-top: 4px; }
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
@@ -207,6 +207,6 @@ footer {
     section h2::after { margin: 10px auto 0 auto; }
     
     /* Κάθετη στοίχιση στο Mobile Footer */
-    .footer-container { flex-direction: column; text-align: center; gap: 30px; }
+    .footer-container { flex-direction: column; text-align: center; gap: 25px; }
     .footer-left, .footer-center, .footer-right { text-align: center; width: 100%; flex: unset; }
 }
