@@ -77,18 +77,12 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .contact-section h2::after, .news-section h2::after { margin: 10px auto 0 auto; }
 .section-lead { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin-bottom: 50px; }
 .about-section { background-color: var(--header-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: left; }
-.proposals-section { background-color: var(--bg-color); }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .card { background: var(--card-bg); padding: 40px 30px; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: left; display: flex; flex-direction: column; justify-content: space-between; }
 .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-color: var(--accent-color); }
 .card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; }
 .card p { color: var(--text-muted); font-size: 1rem; flex-grow: 1; margin-bottom: 20px; }
-
-/* Κουμπιά εσωτερικά στις κάρτες */
-.card-action-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
-.btn-card-link { display: inline-block; background-color: #f1f5f9; border: 1px solid var(--border-color); color: var(--accent-color); padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s ease; }
-.btn-card-link:hover { background-color: var(--accent-color); color: #ffffff; border-color: var(--accent-color); }
 
 /* ΘΕΣΕΙΣ ΦΩΤΟΓΡΑΦΙΩΝ ΣΤΙΣ ΠΑΡΕΜΒΑΣΕΙΣ (html1-3) */
 .news-image-wrapper {
