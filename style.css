@@ -111,14 +111,14 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* PREMIUM FOOTER LAYOUT (Στυλ Δένδια - Τέλεια Ευθυγράμμιση) */
+/* ΔΙΟΡΘΩΣΗ: Premium Footer Layout κλειδωμένο στο πλάτος του site (Στυλ Δένδια) */
 .site-footer { 
     padding: 40px 0; 
     background-color: #1e293b; 
     color: #cbd5e1; 
     border-top: 1px solid #334155; 
 }
-.footer-container { 
+.footer-grid { 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
@@ -127,7 +127,7 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 }
 .footer-left, .footer-center, .footer-right {
     flex: 1;
-    min-width: 280px;
+    min-width: 250px;
 }
 .footer-left p { 
     font-size: 0.95rem; 
@@ -180,10 +180,11 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
     color: #cbd5e1; 
 }
 
-/* Premium Dynamic Hovers */
+/* Dynamic Brand Hovers */
 .footer-socials a.fb:hover { background-color: #1877f2; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(24, 119, 242, 0.45); }
 .footer-socials a.ig:hover { background-color: #e1306c; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(225, 48, 108, 0.45); }
 .footer-socials a.wa:hover { background-color: #25d366; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.45); }
+.footer-socials a.vb:hover { background-color: #7360f2; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(115, 96, 242, 0.45); }
 
 /* Responsive Grid & Mobile Optimization */
 @media (max-width: 768px) {
@@ -214,7 +215,12 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
         text-align: center;
         gap: 25px;
     }
-    .footer-left, .footer-right {
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    .footer-left p, .footer-right {
         text-align: center;
     }
 }
