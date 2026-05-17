@@ -22,7 +22,10 @@
             <a href="index.html" class="logo-link">
                 <div class="logo">Γεώργιος Κερτσάνης</div>
             </a>
-            <nav>
+            <button class="menu-toggle" id="menu-toggle-news" aria-label="Μενού">
+                <svg viewBox="0 0 24 24" style="width:28px; height:28px; fill:currentColor;"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+            <nav id="nav-menu-news">
                 <a href="index.html">Αρχική</a>
                 <a href="plan.html">Το Σχέδιο</a>
                 <a href="index.html#news" style="color: var(--accent-color); font-weight:700;">Παρεμβάσεις</a>
@@ -41,17 +44,12 @@
     <div class="container">
         <article class="article-body">
             <div class="article-banner">
-                <img src="assets/news1.jpg" alt="Κυβερνοασφάλεια" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 450\'><rect width=\'100%\' height=\'100%\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'white\' text-anchor=\'middle\', font-size=\'24\' font-family=\'sans-serif\'>📸 Κεντρική Εικόνα Άρθρου</text></svg>'">
+                <img src="assets/news1.jpg" alt="Κυβερνοασφάλεια" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 450\'><rect width=\'100%\' height=\'100%\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'white\' text-anchor=\'middle\' font-size=\'24\' font-family=\'sans-serif\'>📸 Κεντρική Εικόνα Άρθρου</text></svg>'">
             </div>
-            
             <p><strong>Γράφει ο Γεώργιος Κερτσάνης</strong><br><em>Υπεύθυνος Τομέα Κυβερνοασφάλειας, Ψηφιακής Προστασίας, Καινοτομίας & Εμπορίου ΔΕΕΠ Φλώρινας</em></p>
-            
-            <p>Η ψηφιακή μετάβαση των τοπικών επιχειρήσεων στη Φλώρινα προσφέρει τεράστιες ευκαιρίες, αλλά ταυτόχρονα κρύβει και σοβαρούς κινδύνους. Οι κυβερνοεπιθέσεις και οι ψηφιακές απάτες (phishing, ransomware) δεν στοχεύουν πλέον μόνο τους μεγάλους οργανισμούς, αλλά και τις μικρομεσαίες επιχειρήσεις της περιοχής μας.</p>
-            
+            <p>Η ψηφιακή μετάβαση των τοπικών επιχειρήσεων στη Φλώρινα προσφέρει τεράστιες ευκαιρίες, αλλά ταυτόχροκα κρύβει και σοβαρούς κινδύνους. Οι κυβερνοεπιθέσεις και οι ψηφιακές απάτες (phishing, ransomware) δεν στοχεύουν πλέον μόνο τους μεγάλους οργανισμούς, αλλά και τις μικρομεσαίες επιχειρήσεις της περιοχής μας.</p>
             <p>Ως Υπεύθυνος Κυβερνοασφάλειας της ΔΕΕΠ, ανοίγω επίσημα τη συζήτηση για τη δημιουργία μιας «Ψηφιακής Ασπίδας» προστασίας. Δεν αρκεί μόνο να έχουμε ένα e-shop ή μια σελίδα στα social media. Πρέπει να γνωρίζουμε πώς να προστατεύουμε τα τραπεζικά δεδομένα της επιχείρησής μας και τα προσωπικά δεδομένα των πελατών μας.</p>
-            
             <p>Η πρότασή μου περιλαμβάνει τη διοργάνωση δωρεάν ενημερωτικών σεμιναρίων για τους εμπόρους και τους επαγγελματίες της Φλώρινας, σε συνεργασία με το Επιμελητήριο, ώστε να εκπαιδευτούν σε βασικές πρακτικές ασφαλείας. Η ασφάλεια των δεδομένων είναι ο θεμέλιος λίθος για ένα υγιές, σύγχρονο και ανταγωνιστικό εμπόριο στον τόπο μας.</p>
-
             <a href="index.html#news" class="btn-back">&larr; Επιστροφή στις Παρεμβάσεις</a>
         </article>
     </div>
@@ -71,5 +69,10 @@
         </div>
     </footer>
 
+    <script>
+        const menuToggle = document.getElementById('menu-toggle-news');
+        const navMenu = document.getElementById('nav-menu-news');
+        if(menuToggle) { menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); }); }
+    </script>
 </body>
 </html>
