@@ -35,7 +35,6 @@ body { font-family: var(--font-stack); color: var(--text-color); background-colo
 header { background-color: var(--header-bg); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; padding-top: env(safe-area-inset-top); }
 header .container { display: flex; justify-content: space-between; align-items: center; padding: 20px; }
 
-/* Ενιαίο κόσμημα Logo */
 .logo { 
     font-family: var(--font-serif); 
     font-size: 1.4rem; 
@@ -56,7 +55,6 @@ nav a:hover { color: var(--accent-color); }
 .hero-container { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .hero-text { flex: 1; text-align: left; }
 
-/* Σλόγκαν γαλάζιο */
 .hero-section h1 { 
     font-size: 1.45rem; 
     font-weight: 800; 
@@ -69,12 +67,11 @@ nav a:hover { color: var(--accent-color); }
 
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* ΦΙΞΑΡΙΣΜΑ: Αφαιρέθηκαν border, box-shadow και border-radius για 100% seamless blending */
 .hero-image-side { flex: 1; display: flex; justify-content: flex-end; }
 .hero-image-side img { 
     max-width: 100%; 
     height: 380px; 
-    object-fit: contain; /* contain για να μην κόβεται η σιλουέτα */
+    object-fit: contain; 
     background: transparent;
 }
 
@@ -132,7 +129,7 @@ footer {
 .footer-right { 
     display: flex; 
     align-items: center; 
-    gap: 15px; 
+    gap: 20px; 
 }
 .footer-label { 
     font-size: 0.95rem; 
@@ -140,32 +137,35 @@ footer {
     color: #f8fafc; 
     letter-spacing: 0.3px; 
 }
+
+/* ΦΙΞΑΡΙΣΜΑ: Διάταξη εικονιδίων με Flexbox για απόλυτο, σφαιρικό κεντράρισμα */
 .footer-icons { 
     display: flex; 
     gap: 12px; 
 }
-.footer-icons a { 
-    display: flex; 
+.footer-icons a.icon-btn { 
+    display: inline-flex; 
     align-items: center; 
     justify-content: center; 
-    width: 38px; 
-    height: 38px; 
+    width: 44px; /* Αυξήθηκε ελάχιστα για τέλεια αναλογία */
+    height: 44px; 
     border-radius: 50%; 
     background-color: #334155; 
     color: #f8fafc; 
-    transition: all 0.2s ease; 
-}
-.footer-icons a:hover { 
-    background-color: var(--accent-color); 
-    color: #ffffff; 
-    transform: translateY(-3px); 
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4); 
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .footer-icons svg { 
-    width: 18px; 
-    height: 18px; 
+    width: 22px; 
+    height: 22px; 
     fill: currentColor; 
+    display: block;
 }
+
+/* Premium Dynamic Branding Hovers */
+.footer-icons a.fb:hover { background-color: #1877f2; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(24, 119, 242, 0.45); }
+.footer-icons a.ig:hover { background-color: #e1306c; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(225, 48, 108, 0.45); }
+.footer-icons a.wa:hover { background-color: #25d366; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.45); }
+.footer-icons a.vb:hover { background-color: #7360f2; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(115, 96, 242, 0.45); }
 
 /* Responsive Grid & Mobile Optimization */
 @media (max-width: 768px) {
