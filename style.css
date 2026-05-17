@@ -73,17 +73,15 @@ nav a:hover { color: var(--accent-color); }
 
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* ΦΙΞΑΡΙΣΜΑ ΦΩΤΟΓΡΑΦΙΑΣ: aspect-ratio και block display για να μην κλείνει ποτέ */
+/* ΦΙΞΑΡΙΣΜΑ ΦΩΤΟΓΡΑΦΙΑΣ (profile.png seamless): Removed border and shadow */
 .hero-image-side { flex: 1; display: flex !important; justify-content: flex-end; min-width: 320px; }
 .hero-image-side img { 
     width: 100%;
     max-width: 350px; 
     height: auto;
     aspect-ratio: 1 / 1; 
-    object-fit: cover; 
-    border-radius: 12px; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06); 
-    border: 1px solid var(--border-color); 
+    object-fit: contain; /* ensures full transparent PNG shows without clipping */
+    /* REMOVED: border, border-radius, box-shadow for seamless look */
     display: block !important;
 }
 
@@ -93,6 +91,8 @@ nav a:hover { color: var(--accent-color); }
 .cv-block { margin-bottom: 25px; }
 .cv-block h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-color); margin-bottom: 8px; }
 .cv-block p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; }
+
+input, button, select, textarea { -webkit-appearance: none; }
 
 .btn-cv { background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color); padding: 10px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-size: 1rem; margin-top: 15px; }
 .btn-cv:hover { background: var(--accent-color); color: #fff; }
@@ -124,17 +124,17 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* ΦΙΞΑΡΙΣΜΑ FOOTER: Επαναφορά στο Premium Σκούρο Μπλε και Τριπλή Διάταξη Δένδια */
+/* ΦΙΞΑΡΙΣΜΑ FOOTER: Επαναφορά στο Premium Σκούρο Μπλε (#0f172a) και Τριπλή Διάταξη Δένδια */
 footer { 
     padding: 50px 0; 
-    background-color: #0f172a !important; /* Καθαρό Σκούρο Μπλε */
+    background-color: #0f172a !important; /* Σκούρο Μπλε */
     border-top: 1px solid #1e293b; 
     color: #f8fafc !important;
 }
 .footer-container { 
     display: flex; 
     justify-content: space-between; 
-    align-items: center; 
+    align-items: flex-start; 
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -152,7 +152,7 @@ footer {
 .footer-label { font-size: 1rem; font-weight: 700; color: #ffffff !important; }
 .footer-icons { display: flex; gap: 15px; justify-content: center; }
 
-/* Υψηλή αντίθεση στα εικονίδια πάνω στο σκούρο φόντο */
+/* Υψηλή αντίθεση στα εικονίδια */
 .footer-icons a { 
     display: flex; 
     align-items: center; 
@@ -196,10 +196,9 @@ footer {
     nav a { margin: 0 !important; padding: 14px 20px; width: 100%; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 1.05rem; }
     nav a:last-child { border-bottom: none; }
 
+    /* ΦΩΤΟΓΡΑΦΙΑ (MOBILE) seamless */
     .hero-container { flex-direction: column-reverse; text-align: center; gap: 30px; }
     .hero-text { text-align: center; }
-    
-    /* ΦΩΤΟΓΡΑΦΙΑ (MOBILE) */
     .hero-image-side { display: flex !important; justify-content: center !important; width: 100% !important; min-width: unset; }
     .hero-image-side img { width: 100%; max-width: 280px; height: 280px; margin: 0 auto; display: block !important; }
     
