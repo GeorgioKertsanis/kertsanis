@@ -111,17 +111,22 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-/* ΔΙΟΡΘΩΣΗ: Premium Footer Layout κλειδωμένο στο πλάτος του site (Στυλ Δένδια) */
+/* 🛠️ PREMIUM ULTRA FOOTER (ΚΛΕΙΔΩΜΕΝΟ ΑΛΦΑΔΙ) */
 .site-footer { 
-    padding: 40px 0; 
+    padding: 35px 0; 
     background-color: #1e293b; 
     color: #cbd5e1; 
     border-top: 1px solid #334155; 
 }
+/* Απενεργοποίηση όλων των κρυφών browser margins για 100% καθαρό flex calculation */
+.site-footer p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 .footer-grid { 
     display: flex; 
     justify-content: space-between; 
-    align-items: center; 
+    align-items: center; /* Απόλυτο οριζόντιο άξονα κεντράρισμα */
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -131,7 +136,6 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 }
 .footer-left p { 
     font-size: 0.95rem; 
-    margin: 0; 
     text-align: left; 
     font-weight: 500;
 }
@@ -140,13 +144,14 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    gap: 10px; 
+    gap: 8px; 
 }
 .follow-text { 
     font-size: 0.95rem; 
     font-weight: 700; 
     color: #f8fafc; 
     letter-spacing: 0.3px; 
+    line-height: 1;
 }
 .footer-socials { 
     display: flex; 
@@ -157,30 +162,28 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
     display: inline-flex; 
     align-items: center; 
     justify-content: center; 
-    width: 44px; 
-    height: 44px; 
+    width: 42px; 
+    height: 42px; 
     border-radius: 50%; 
     background-color: #334155; 
     color: #f8fafc; 
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .footer-socials svg { 
-    width: 22px; 
-    height: 22px; 
+    width: 20px; 
+    height: 20px; 
     fill: currentColor; 
     display: block;
 }
 .footer-right { 
     text-align: right; 
     font-size: 0.85rem; 
-    line-height: 1.6; 
-}
-.footer-right p { 
-    margin: 0; 
-    color: #cbd5e1; 
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Ελεγχόμενη απόσταση ανάμεσα στις δύο γραμμές χωρίς margins */
 }
 
-/* Dynamic Brand Hovers */
+/* Brand Hovers */
 .footer-socials a.fb:hover { background-color: #1877f2; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(24, 119, 242, 0.45); }
 .footer-socials a.ig:hover { background-color: #e1306c; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(225, 48, 108, 0.45); }
 .footer-socials a.wa:hover { background-color: #25d366; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.45); }
@@ -218,7 +221,7 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
     .footer-grid {
         flex-direction: column;
         text-align: center;
-        gap: 25px;
+        gap: 20px;
     }
     .footer-left p, .footer-right {
         text-align: center;
