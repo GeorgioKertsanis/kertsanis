@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .plan-hero { background-color: var(--header-bg); padding: 100px 0; text-align: center; border-bottom: 1px solid var(--border-color); }
-        .plan-main-title { font-family: var(--font-serif); font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .plan-main-title { font-family: var(--font-serif); font-size: 2.5rem; color: var(--accent-color); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
         .plan-section { padding: 90px 0; border-bottom: 1px solid var(--border-color); }
         .plan-section:nth-child(even) { background-color: var(--card-bg); }
         .plan-section:nth-child(odd) { background-color: var(--header-bg); }
@@ -46,7 +46,7 @@
 
     <section class="plan-hero">
         <div class="container">
-            <h1 class="plan-main-title">ΨΗΦΙΑΚΗ ΦΛΩΡΙΝΑ 2026</h1>
+            <h1 class="plan-main-title">ΨΗΦΙΑΚΗ ΦΛΩΡΙΝΑ | ΟΡΑΜΑ & ΠΡΟΤΑΣΕΙΣ</h1>
             <p class="hero-lead" style="margin: 20px auto; max-width: 700px;">Ένα ολοκληρωμένο, τεχνοκρατικό σχέδιο για την οικονομική, κοινωνική και ψηφιακή αναγέννηση του τόπου μας, με μηδενική επιβάρυνση του δημότη.</p>
         </div>
     </section>
@@ -59,7 +59,7 @@
             </div>
             <p class="plan-text-block">Αξιοποιούμε το άδειο κτιριακό απόθεμα του Δήμου και τις υποδομές της ΒΙΠΕ. Δημιουργούμε σύγχρονους Κόμβους (Hubs) ψηφιακής εργασίας, προσφέροντας σε νέους επιστήμονες και επαγγελματίες τη δυνατότητα να εργάζονται για παγκόσμιες εταιρείες από τη Φλώρινα.</p>
             <ul class="action-checklist">
-                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Αξιοποίηση ΕΣΠΑ 2021-2027</h4><p>Χρηματοδότηση για την ανακαίνιση και τον εξοπλισμό των κτιρίων.</p></div></li>
+                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Αξιοποίηση ΕΣΠΑ</h4><p>Χρηματοδότηση για την ανακαίνιση και τον εξοπλισμό των κτιρίων.</p></div></li>
                 <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>High-Speed Fiber Networking</h4><p>Εγκατάσταση δικτύων οπτικών ινών υπερ-υψηλών ταχυτήτων στους κόμβους.</p></div></li>
                 <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Πλατφόρμα Προσέλκυσης Digital Nomads</h4><p>Στρατηγική προβολή της Φλώρινας ως ιδανικού προορισμού για απομακρυσμένη εργασία.</p></div></li>
             </ul>
@@ -84,7 +84,7 @@
         <div class="container" style="text-align: center;">
             <h2 style="color: #fff;">Χρηματοδοτικά Εργαλεία</h2>
             <div class="grid" style="margin-top: 50px; gap: 30px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;"><h4 style="color: #fff;">ΕΣΠΑ 2021-2027</h4></div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;"><h4 style="color: #fff;">ΕΣΠΑ</h4></div>
                 <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;"><h4 style="color: #fff;">Ταμείο Δίκαιης Μετάβασης</h4></div>
                 <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;"><h4 style="color: #fff;">Πράσινο Ταμείο</h4></div>
             </div>
@@ -93,7 +93,7 @@
 
     <footer>
         <div class="container footer-container">
-            <div class="footer-left"><p>&copy; 2026 kertsanis.gr</p></div>
+            <div class="footer-left"><p>&copy; <span id="year-plan"></span> kertsanis.gr</p></div>
             <div class="footer-center">
                 <div class="footer-icons">
                     <a href="https://www.facebook.com/share/18hzpAoS5K/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
@@ -110,6 +110,9 @@
         const menuToggle = document.getElementById('menu-toggle-plan');
         const navMenu = document.getElementById('nav-menu-plan');
         if(menuToggle) { menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); }); }
+        
+        // Τροφοδοσία αυτόματου έτους
+        document.getElementById("year-plan").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

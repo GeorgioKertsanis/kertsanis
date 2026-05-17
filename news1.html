@@ -47,7 +47,7 @@
                 <img src="assets/news1.jpg" alt="Κυβερνοασφάλεια" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 800 450\'><rect width=\'100%\' height=\'100%\' fill=\'%231e293b\'/><text x=\'50%\' y=\'50%\' fill=\'white\' text-anchor=\'middle\' font-size=\'24\' font-family=\'sans-serif\'>📸 Κεντρική Εικόνα Άρθρου</text></svg>'">
             </div>
             <p><strong>Γράφει ο Γεώργιος Κερτσάνης</strong><br><em>Υπεύθυνος Τομέα Κυβερνοασφάλειας, Ψηφιακής Προστασίας, Καινοτομίας & Εμπορίου ΔΕΕΠ Φλώρινας</em></p>
-            <p>Η ψηφιακή μετάβαση των τοπικών επιχειρήσεων στη Φλώρινα προσφέρει τεράστιες ευκαιρίες, αλλά ταυτόχροκα κρύβει και σοβαρούς κινδύνους. Οι κυβερνοεπιθέσεις και οι ψηφιακές απάτες (phishing, ransomware) δεν στοχεύουν πλέον μόνο τους μεγάλους οργανισμούς, αλλά και τις μικρομεσαίες επιχειρήσεις της περιοχής μας.</p>
+            <p>Η ψηφιακή μετάβαση των τοπικών επιχειρήσεων στη Φλώρινα προσφέρει τεράστιες ευ机会ρίες, αλλά ταυτόχρονα κρύβει και σοβαρούς κινδύνους. Οι κυβερνοεπιθέσεις και οι ψηφιακές απάτες (phishing, ransomware) δεν στοχεύουν πλέον μόνο τους μεγάλους οργανισμούς, αλλά και τις μικρομεσαίες επιχειρήσεις της περιοχής μας.</p>
             <p>Ως Υπεύθυνος Κυβερνοασφάλειας της ΔΕΕΠ, ανοίγω επίσημα τη συζήτηση για τη δημιουργία μιας «Ψηφιακής Ασπίδας» προστασίας. Δεν αρκεί μόνο να έχουμε ένα e-shop ή μια σελίδα στα social media. Πρέπει να γνωρίζουμε πώς να προστατεύουμε τα τραπεζικά δεδομένα της επιχείρησής μας και τα προσωπικά δεδομένα των πελατών μας.</p>
             <p>Η πρότασή μου περιλαμβάνει τη διοργάνωση δωρεάν ενημερωτικών σεμιναρίων για τους εμπόρους και τους επαγγελματίες της Φλώρινας, σε συνεργασία με το Επιμελητήριο, ώστε να εκπαιδευτούν σε βασικές πρακτικές ασφαλείας. Η ασφάλεια των δεδομένων είναι ο θεμέλιος λίθος για ένα υγιές, σύγχρονο και ανταγωνιστικό εμπόριο στον τόπο μας.</p>
             <a href="index.html#news" class="btn-back">&larr; Επιστροφή στις Παρεμβάσεις</a>
@@ -56,7 +56,7 @@
 
     <footer>
         <div class="container footer-container">
-            <div class="footer-left"><p>&copy; 2026 kertsanis.gr</p></div>
+            <div class="footer-left"><p>&copy; <span id="year-news"></span> kertsanis.gr</p></div>
             <div class="footer-center">
                 <div class="footer-icons">
                     <a href="https://www.facebook.com/share/18hzpAoS5K/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
@@ -73,6 +73,9 @@
         const menuToggle = document.getElementById('menu-toggle-news');
         const navMenu = document.getElementById('nav-menu-news');
         if(menuToggle) { menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); }); }
+        
+        // Τροφοδοσία αυτόματου έτους
+        document.getElementById("year-news").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
