@@ -44,13 +44,13 @@ nav a:hover { color: var(--accent-color); }
 .hero-section h1 { font-size: 1.45rem; font-weight: 800; text-transform: uppercase; color: var(--accent-color); letter-spacing: 0.8px; line-height: 1.4; margin-bottom: 20px; }
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-/* 📸 ΦΙΞΑΡΙΣΜΑ ΦΩΤΟΓΡΑΦΙΑΣ: Reduces size of the image side to prevent enlargement 📸 */
-.hero-image-side { flex: 1; display: flex !important; justify-content: flex-end; min-width: 280px; } /* Slightly reduced from 320px to prevent enlargement */
+/* 📸 ΦΙΞΑΡΙΣΜΑ ΦΩΤΟΓΡΑΦΙΑΣ: Μειωμένο μέγεθος, contain, χωρίς ίχνος πλαισίου/σκιάς/zoom 📸 */
+.hero-image-side { flex: 1; display: flex !important; justify-content: flex-end; min-width: 260px; }
 .hero-image-side img { 
     width: 100%;
-    max-width: 320px; /* Reduces the image size itself from 350px */
+    max-width: 290px; /* Μειώθηκε από 350px για να μην είναι τεράστια */
     height: auto; 
-    object-fit: contain; 
+    object-fit: contain; /* Δεν κόβει/ζουμάρει ποτέ το κεφάλι */
     display: block !important;
     border: none !important;
     box-shadow: none !important;
@@ -94,19 +94,48 @@ section h2::after { content: ''; display: block; width: 50px; height: 4px; backg
 .communication-zone { margin-top: 20px; }
 .btn-main-contact { padding: 14px 40px; font-size: 1.1rem; }
 
-footer { padding: 50px 0; background-color: #0f172a !important; border-top: 1px solid #1e293b; color: #f8fafc !important; }
-.footer-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
+/* 💎 ΦΙΞΑΡΙΣΜΑ FOOTER: Απόλυτη Γεωμετρία Δένδια & FontAwesome 💎 */
+footer { 
+    padding: 50px 0; 
+    background-color: #0f172a !important; 
+    border-top: 1px solid #1e293b; 
+    color: #f8fafc !important;
+}
+.footer-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+}
 
 .footer-left { flex: 1; text-align: left; font-size: 0.95rem; font-weight: 500; color: #cbd5e1 !important; margin-left: -5px; }
 .footer-center { flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.footer-right { flex: 1; text-align: right; font-size: 0.9rem; color: #cbd5e1 !important; line-height: 1.5; margin-right: -5px; }
+
 .footer-label { font-size: 1rem; font-weight: 700; color: #ffffff !important; }
 .footer-icons { display: flex; gap: 15px; justify-content: center; }
 
-.footer-icons a { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background-color: #1e293b; color: #f8fafc; border: 1px solid #334155; transition: all 0.2s ease; }
-.footer-icons a:hover { background-color: var(--accent-color); color: #ffffff; transform: translateY(-3px); }
-.footer-icons svg { width: 20px; height: 20px; fill: currentColor; display: block; }
+/* Premium Στρογγυλοί Κύκλοι για τα FontAwesome εικονίδια */
+.footer-icons a { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 42px; 
+    height: 42px; 
+    border-radius: 50%; 
+    background-color: #1e293b; 
+    color: #f8fafc !important; 
+    border: 1px solid #334155;
+    transition: all 0.2s ease; 
+    font-size: 19px; /* Ιδανικό μέγεθος για FontAwesome γραμματοσειρά */
+    text-decoration: none;
+}
+.footer-icons a:hover { 
+    background-color: var(--accent-color); 
+    color: #ffffff !important; 
+    transform: translateY(-3px); 
+}
 
-.footer-right { flex: 1; text-align: right; font-size: 0.9rem; color: #cbd5e1 !important; line-height: 1.5; margin-right: -5px; }
 .footer-privacy { font-size: 0.85rem; font-weight: 600; color: #38bdf8 !important; margin-top: 4px; }
 
 @media (max-width: 768px) {
@@ -120,7 +149,16 @@ footer { padding: 50px 0; background-color: #0f172a !important; border-top: 1px 
     .hero-container { flex-direction: column-reverse; text-align: center; gap: 30px; }
     .hero-text { text-align: center; }
     .hero-image-side { display: flex !important; justify-content: center !important; width: 100% !important; min-width: unset; }
-    .hero-image-side img { width: 100%; max-width: 250px; height: auto; margin: 0 auto; display: block !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; }
+    .hero-image-side img { 
+        width: 100%; 
+        max-width: 230px; /* Πιο μαζεμένη στο κινητό */
+        height: auto; 
+        margin: 0 auto; 
+        display: block !important; 
+        border: none !important; 
+        box-shadow: none !important; 
+        border-radius: 0 !important; 
+    }
     
     .hero-section h1 { font-size: 1.15rem; margin-bottom: 20px; }
     
