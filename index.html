@@ -8,10 +8,6 @@
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230066cc'/><text x='50%' y='68%' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='sans-serif'>Κ</text></svg>">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,800;1,400;1,800&display=swap" rel="stylesheet">
-
     <meta property="og:url" content="https://kertsanis.gr">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Γεώργιος Κερτσάνης | Σχέδιο για τη Φλώρινα">
@@ -51,7 +47,7 @@
     <header>
         <div class="container">
             <a href="#hero" class="logo-link">
-                <div class="logo">Γεώργιος <span class="logo-serif">Κερτσάνης</span></div>
+                <div class="logo">Γεώργιος Κερτσάνης</div>
             </a>
             
             <button class="menu-toggle" id="menu-toggle" aria-label="Άνοιγμα μενού">
@@ -207,7 +203,6 @@
             }
         }
 
-        // ΦΙΞΑΡΙΣΜΑ: Mobile Hamburger Menu Toggle Λειτουργικότητα
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
 
@@ -215,7 +210,6 @@
             navMenu.classList.toggle('active');
         });
 
-        // Αυτόματο κλείσιμο του μενού όταν ο χρήστης πατάει έναν σύνδεσμο
         document.querySelectorAll('#nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
