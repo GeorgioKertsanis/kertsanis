@@ -626,3 +626,27 @@ img[src*="profile.png"] {
         max-height: 300px !important;
     }
 }
+
+/* Responsive ρυθμίσεις για τη φωτογραφία προφίλ στο Hero Section */
+.hero-profile-img {
+    max-height: 350px !important;
+    width: auto;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        display: flex;
+        flex-direction: column-reverse; /* Φέρνει τη φωτογραφία ΠΑΝΩ από το κείμενο στα κινητά για σωστή ροή */
+        align-items: center;
+        text-align: center;
+    }
+    .hero-profile-img {
+        max-height: 220px !important; /* Πιο μαζεμένη στο κινητό για να μην καβαλάει τα γράμματα */
+        margin-bottom: 20px;
+    }
+    .hero-text h1 {
+        font-size: 1.6rem !important; /* Ελαφρώς πιο μαζεμένος τίτλος για να μην σπάει άσχημα */
+    }
+}
