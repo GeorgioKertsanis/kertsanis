@@ -196,3 +196,27 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
     .footer-left, .footer-center, .footer-right { text-align: center; align-items: center; padding-left: 0; }
     .footer-icons { display: flex !important; flex-direction: row !important; justify-content: center; gap: 15px; }
 }
+
+/* Premium Split Hero Background - 24/7 Style */
+.hero-section {
+    background: linear-gradient(115deg, #1e40af 55%, #f8fafc 55%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Γυρίζουμε τα γράμματα του Hero σε λευκά για τέλεια αντίθεση στο μπλε */
+.hero-text .hero-slogan {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-text .hero-lead {
+    color: #f1f5f9 !important;
+}
+
+/* Responsive προσαρμογή για κινητά τηλέφωνα */
+@media (max-width: 768px) {
+    .hero-section {
+        background: linear-gradient(180deg, #1e40af 60%, #f8fafc 60%) !important;
+    }
+}
