@@ -199,5 +199,19 @@
         // Απενεργοποίηση δεξιού κλικ
         document.addEventListener("contextmenu", event => event.preventDefault());
     </script>
+
+    <script>
+        document.addEventListener("contextmenu", event => event.preventDefault());
+        document.addEventListener("keydown", function(e) {
+            // Κλειδώνει το Ctrl+C, Ctrl+A και F12 (developer tools)
+            if (e.ctrlKey && (e.key === "c" || e.key === "a" || e.key === "u")) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.key === "F12") {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
 </body>
-</html>
