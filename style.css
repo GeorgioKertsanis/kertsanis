@@ -290,3 +290,44 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
     color: #0f172a !important; /* Midnight μαύρο */
     border-bottom: 2px solid #1e40af !important; /* Εμφανίζεται μια κομψή γραμμή από κάτω */
 }
+
+/* Μάζεμα και στυλ για το Section Επικοινωνίας */
+.contact-section {
+    background-color: var(--bg-secondary) !important;
+    padding: 60px 0 !important;
+    text-align: center;
+}
+
+.contact-section .container {
+    max-width: 600px !important; /* Μαζεύει το πλάτος για να δείχνει συμπαγές */
+    margin: 0 auto !important;
+}
+
+.contact-section p {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    color: var(--text-muted) !important;
+    margin-bottom: 30px !important;
+}
+
+/* Μετατροπή του κουμπιού επικοινωνίας σε Premium Θεσμικό Ghost Button */
+.btn-main-contact {
+    display: inline-block !important;
+    background: transparent !important;
+    color: #1e40af !important; /* Το σοβαρό μπλε */
+    border: 2px solid #1e40af !important; /* Λεπτό περίγραμμα */
+    padding: 12px 30px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    transition: all 0.25s ease-in-out !important;
+    box-shadow: none !important;
+}
+
+/* Εφέ Hover που βγάζει κύρος */
+.btn-main-contact:hover {
+    background: #1e40af !important; /* Γεμίζει με το θεσμικό μπλε */
+    color: #ffffff !important; /* Τα γράμματα γίνονται λευκά */
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2) !important;
+}
