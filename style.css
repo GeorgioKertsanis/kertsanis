@@ -600,3 +600,29 @@ img[src*="profile.png"] {
     margin-bottom: -60px !important;  /* Από -50px το πάμε -60px για το τέλειο κούμπωμα */
     transform-origin: bottom center !important;
 }
+
+/* Responsive Θωράκιση για Κινητά (iPhone, Android) */
+@media (max-width: 768px) {
+    .hero-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-bottom: 0 !important;
+    }
+
+    img[src*="profile.png"] {
+        max-height: 380px !important;    
+        width: auto !important;
+        transform: scale(1) !important;   
+        margin: 20px auto 0 auto !important; 
+        bottom: 0 !important;
+        -webkit-transform: scale(1) !important; /* Συμβατότητα με Safari/iPhone */
+    }
+}
+
+@media (max-width: 480px) {
+    img[src*="profile.png"] {
+        max-height: 300px !important;
+    }
+}
