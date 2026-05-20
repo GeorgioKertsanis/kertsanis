@@ -393,3 +393,25 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
     color: #ffffff !important;
     box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15) !important;
 }
+
+/* Έξτρα μάζεμα για την Πορεία μου */
+.about-section {
+    padding: 35px 0 !important; /* Ακόμα πιο σφιχτά κενά πάνω-κάτω */
+}
+
+.about-section h2 {
+    margin-bottom: 15px !important;
+}
+
+.cv-summary {
+    max-width: 680px !important; /* Πιο μαζεμένο πλάτος για να σπάει όμορφα */
+    font-size: 1rem !important; /* Λίγο πιο μικρά και θεσμικά γράμματα */
+    line-height: 1.6 !important;
+    margin-bottom: 15px !important;
+}
+
+/* Μάζεμα στο κουμπί για να ταιριάζει με το νέο μέγεθος */
+.btn-cv {
+    padding: 8px 20px !important;
+    font-size: 0.9rem !important;
+}
