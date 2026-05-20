@@ -517,3 +517,28 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
 .contact-section {
     padding-top: 25px !important;    /* Σπρώχνουμε την επικοινωνία πιο πάνω */
 }
+
+/* Ευθυγράμμιση και μεγέθυνση της φωτογραφίας προφίλ στο Hero */
+.hero-section {
+    display: flex;
+    align-items: flex-end !important; /* Αναγκάζει το περιεχόμενο να πατάει στη βάση */
+}
+
+.hero-image-container, .hero-section img {
+    margin-bottom: 0 !important;      /* Εξαφανίζει το κενό κάτω από το τραπέζι */
+    padding-bottom: 0 !important;
+    display: block !important;
+    max-height: 480px !important;     /* Μεγαλώνουμε ένα κλικ την εικόνα */
+    width: auto !important;
+    transform: scale(1.05);           /* Μικρό zoom για να γεμίσει σωστά ο χώρος */
+    transform-origin: bottom center;  /* Το zoom γίνεται με βάση το κάτω μέρος για να μην χάσει τη στοίχιση */
+    vertical-align: bottom !important;
+}
+
+/* Responsive έλεγχος για να μην χαλάει στα κινητά */
+@media (max-width: 768px) {
+    .hero-image-container, .hero-section img {
+        max-height: 350px !important;
+        transform: scale(1) !important;
+    }
+}
