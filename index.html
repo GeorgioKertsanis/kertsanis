@@ -26,7 +26,14 @@
         "@type": "Person",
         "name": "Γεώργιος Κερτσάνης",
         "jobTitle": "Πιστοποιημένος Μηχανικός Δικτύων Cisco & Σύμβουλος Ψηφιακής Καινοτομίας",
-        "url": "https://kertsanis.gr"
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Φλώρινα",
+          "addressRegion": "Δυτική Μακεδονία",
+          "addressCountry": "GR"
+        },
+        "url": "https://kertsanis.gr",
+        "knowsAbout": ["Κυβερνοασφάλεια", "Τηλεατρική", "Cisco Networks", "Smart Cities", "Τοπική Αυτοδιοίκηση"]
       }
     }
     </script>
@@ -34,7 +41,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* PC: Μεγαλώνουμε τη φωτογραφία */
+        /* Ρύθμιση για Λάπτοπ / PC: Μεγαλύτερη φωτό προφίλ */
         @media (min-width: 769px) {
             #hero .hero-image-side img {
                 max-height: 350px !important;
@@ -42,12 +49,13 @@
             }
         }
         
-        /* ΚΙΝΗΤΟ: Ανοιχτόχρωμο φόντο, σκούρα γράμματα, κεντραρισμένα όλα! */
+        /* Ρύθμιση για Κινητά: Καθαρό φόντο, σκούρα γράμματα, κεντραρισμένο κουμπί χωρίς κενά */
         @media (max-width: 768px) {
-            #hero {
+            section#hero.hero-section {
+                background: #f8fafc !important; 
+                background-color: #f8fafc !important;
                 height: auto !important;
                 padding: 40px 15px !important;
-                background-color: transparent !important; /* Τέρμα το λάθος μπλε φόντο */
             }
             #hero .hero-container {
                 display: flex !important;
@@ -56,29 +64,28 @@
                 text-align: center !important;
             }
             #hero .hero-image-side img {
-                max-height: 260px !important;
+                max-height: 250px !important;
                 width: auto !important;
                 margin: 0 auto 20px auto !important;
                 display: block !important;
             }
             #hero .hero-text {
                 width: 100% !important;
-                padding: 0 !important;
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
             }
             #hero .hero-slogan {
+                color: #0066cc !important; /* Καθαρό μπλε */
                 font-size: 1.5rem !important;
-                color: #0056b3 !important; /* Μπλε γράμματα όπως στο PC */
-                margin: 0 0 15px 0 !important;
+                margin-bottom: 15px !important;
                 line-height: 1.3 !important;
             }
             #hero .hero-lead {
-                font-size: 1.1rem !important;
-                color: #333333 !important; /* Σκούρο γκρι για να διαβάζεται τέλεια */
+                color: #334155 !important; /* Σκούρο Slate γκρι */
                 margin-bottom: 25px !important;
-                line-height: 1.5 !important;
+                line-height: 1.6 !important;
+                font-size: 1.1rem !important;
             }
             #hero .btn {
                 margin: 0 auto !important;
@@ -97,7 +104,10 @@
 
     <header>
         <div class="container header-container-box">
-            <a href="#hero" class="logo-link"><div class="logo">Γεώργιος Κερτσάνης</div></a>
+            <a href="#hero" class="logo-link">
+                <div class="logo">Γεώργιος Κερτσάνης</div>
+            </a>
+            
             <nav id="nav-menu">
                 <a href="#hero">Αρχική</a>
                 <a href="#about">Πορεία</a>
@@ -126,7 +136,30 @@
             <h2>Η Πορεία μου</h2>
             <div class="about-content">
                 <p class="cv-summary">Γέννημα θρέμμα της Φλώρινας, ξεκίνησα από τον σκληρό μόχθο της οικοδομής για να εξελιχθώ σε πιστοποιημένο μηχανικό δικτύων της Cisco, με 25ετή εμπειρία σε σύνθετα έργα τηλεατρικής, κυβερνοασφάλειας και ασφαλών εφαρμογών. Με την ίδια φιλοσοφία της πράξης και του αποτελέσματος υπηρέτησα ως Σύμβουλος της Κοινότητας Φλώρινας (2019-2023) και σήμερα παλεύω για έναν σύγχρονο και ψηφιακό τόπο, που δημιουργεί νέες θέσεις εργασίας και κρατάει τους νέους μας εδώ, δίνοντάς τους τις ευκαιρίες να δημιουργήσουν στον τόπο τους.</p>
-                <button id="cv-toggle-btn" class="btn-cv" onclick="window.location.href='plan.html'">Διαβάστε την πλήρη πορεία μου</button>
+                
+                <div id="full-cv" class="cv-details">
+                    <div class="cv-block">
+                        <h3>🧱 Ρίζες, Μόχθος & Τεχνολογική Εξέλιξη (2001 - Σήμερα)</h3>
+                        <p>Έμαθα από πολύ μικρός την αξία του καθημερινού μόχθου, δουλεύοντας στην οικοδομή και σε σκληρές εργασίες της βιοπάλης. Αυτό το ξεκίνημα σφυρηλάτησε τη φιλοσοφία μου: να μην φοβάμαι τη δουλειά και να κοιτάζω τον συνάνθρωπό μου στα μάτια. Με το ίδιο πείσμα, στράφηκα στην τεχνολογία και την ψηφιακή καινοτομία. Από το 2001 δραστηριοποιούμαι στον τομέα των πληροφοριακών συστημάτων, ενώ από το 2016 είμαι επίσημα πιστοποιημένος μηχανικός δικτύων της Cisco (Cisco Certified). Έχω σχεδιάσει και υλοποιήσει μεγάλης κλίμακας έργα στους τομείς των προηγμένων δικτύων, του προγραμματισμού και της κυβερνοασφάλειας, με εξειδίκευση στην ανάπτυξη πρωτοποριακών συστημάτων Τηλεατρικής, καθώς και στην τεχνολογία ασφαλών εφαρμογών για κινητά τηλέφωνα. Οι υποδομές που στήνω εγγυώνται κορυφαίες ταχύτητες, άμεση απόκριση, απόλυτη ασφάλεια δεδομένων και μετρήσιμο αποτέλεσμα στην πράξη.</p>
+                    </div>
+
+                    <div class="cv-block">
+                        <h3>🪖 Στρατιωτική Θητεία: Ειδικές Δυνάμεις</h3>
+                        <p>Υπηρέτησα την πατρίδα στις Ειδικές Δυνάμεις ως Έφεδρος Υπαξιωματικός στην Κύπρο. Η θητεία αυτή, σε ένα από τα πιο απαιτητικά και πειθαρχημένα σώματα, αποτέλεσε το θεμέλιο για την ανάπτυξη ηγετικών ικανοτήτων, ψυχικού σθένους, ομαδικού πνεύματος και απόλυτης προσήλωσης στο καθήκον κάτω από οποιεσδήποτε συνθήκες.</p>
+                    </div>
+
+                    <div class="cv-block">
+                        <h3>🏛️ Αυτοδιοικητική & Επιμελητηριακή Δράση (2019 - 2023)</h3>
+                        <p>Με την ίδια φιλοσοφία της πρακτικής επίλυσης προβλημάτων υπηρέτησα τον τόπο μου κατά την περίοδο 2019 - 2023 από τη θέση του Συμβούλου της Κοινότητας Φλώρινας. Παράλληλα, συμμετείχα ενεργά ως Μέλος της Επιτροπής Διαβούλευσης και είχα έντονη δράση στο Επιμελητήριο. Η θητεία αυτή μου έδωσε τη δυνατότητα να γνωρίσω σε βάθος τις ανάγκες της τοπικής αγοράς, τα προβλήματα των επαγγελματιών και τις αγκυλώσεις της αυτοδιοίκησης που κρατούν την περιοχή μας πίσω.</p>
+                    </div>
+
+                    <div class="cv-block">
+                        <h3>🛡️ Ψηφιακή Στρατηγική & Όραμα Καινοτομίας</h3>
+                        <p>Μέσα από την πολυετή τεχνική μου εμπειρία, στόχος μου παραμένει η αξιοποίηση έξυπνων τεχνολογιών (Smart Cities) και ευρωπαϊκών κονδυλίων (ΕΣΠΑ, Ταμείο Δίκαιης Μετάβασης) για τη δημιουργία νέων θέσεων εργασίας και την πραγματική, ψηφιακή και οικονομική αναβάθμιση ολόκληρης της Φλώρινας.</p>
+                    </div>
+                </div>
+
+                <button id="cv-toggle-btn" class="btn-cv" onclick="toggleCV()">Διαβάστε την πλήρη πορεία μου</button>
             </div>
         </div>
     </section>
@@ -135,10 +168,20 @@
         <div class="container">
             <h2>Σχέδιο για τον Τόπο μας</h2>
             <p class="section-lead">Ευρωπαϊκά κονδύλια, έτοιμα αναπτυξιακά εργαλεία και νόμοι που περιμένουν εφαρμογή. Χωρίς να πληρώσει ο πολίτης ούτε ένα ευρώ.</p>
+            
             <div class="grid">
-                <div class="card"><h3>Κέντρα Ψηφιακής Εργασίας</h3><p>Αξιοποίηση των άδειων δημόσιων κτιρίων...</p></div>
-                <div class="card"><h3>Smart City Φλώρινα</h3><p>Εφαρμογή έξυπνων τεχνολογιών...</p></div>
-                <div class="card"><h3>Ψηφιακή Αυτοδιοίκηση</h3><p>Άμεση επικοινωνία του πολίτη με τον Δήμο...</p></div>
+                <div class="card">
+                    <h3>Κέντρα Ψηφιακής Εργασίας</h3>
+                    <p>Αξιοποίηση των άδειων δημόσιων κτιρίων και της ΒΙΠΕ μέσω ΕΣΠΑ και του Ταμείου Δίκαιης Μετάβασης. Δημιουργία σύγχρονων ψηφιακών υποδομών για να μείνουν οι νέοι μας στη Φλώρινα, δουλεύοντας για παγκόσμιες εταιρείες από τον τόπο τους.</p>
+                </div>
+                <div class="card">
+                    <h3>Smart City Φλώρινα</h3>
+                    <p>Εφαρμογή έξυπνων τεχνολογιών για τη διαχείριση της ενέργειας, του φωτισμού, της στάθμευσης και των πόρων της πόλης. Μετατρέπουμε τη Φλώρινα σε ένα μοντέλο βιώσιμης και πράσινης ανάπτυξης.</p>
+                </div>
+                <div class="card">
+                    <h3>Ψηφιακή Αυτοδιοίκηση</h3>
+                    <p>Άμεση επικοινωνία του πολίτη με τον Δήμο. Ψηφιοποίηση των υπηρεσιών για απόλυτη διαφάνεια, μηδενική γραφειοκρατία και γρήγορη επίλυση των καθημερινών προβλημάτων της γειτονιάς.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -146,10 +189,62 @@
     <section id="news" class="news-section">
         <div class="container">
             <h2>Νέα & Παρεμβάσεις</h2>
+            <p class="section-lead">Οι επίσημες τοποθετήσεις και οι προτάσεις μου για την ανάπτυξη και την ασφάλεια της περιοχής μας.</p>
+            
             <div class="grid">
-                <div class="card news-card"><img src="assets/news4.jpg" alt="Για τον τόπο μας" style="width:100%"><h3>Για τον τόπο μας και το ψωμί των παιδιών μας</h3><p>Η λύση για τη Φλώρινα δεν θα έρθει από μεγάλα λόγια...</p><a href="news4.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a></div>
-                <div class="card news-card"><img src="assets/news5.jpg" alt="Απορρόφηση Κονδυλίων ΕΣΠΑ" style="width:100%"><h3>Απορρόφηση Κονδυλίων ΕΣΠΑ & Δίκαιης Μετάβασης</h3><p>Η ΒΙΠΕ Φλώρινας μπορεί να γίνει «πνεύμονας» ανάπτυξης...</p><a href="news5.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a></div>
-                <div class="card news-card"><img src="assets/news6.jpg" alt="Η πραγματικότητα δεν κρύβεται" style="width:100%"><h3>Η πραγματικότητα δεν κρύβεται πίσω από «θα»</h3><p>Ο τόπος μας δεν έχει ανάγκη από άλλα χτυπήματα στην πλάτη...</p><a href="news6.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a></div>
+                <div class="card news-card">
+                    <div class="news-image-wrapper">
+                        <img src="assets/news1.jpg" alt="Θωράκιση της Τοπικής Αγοράς απέναντι στις Κυβερνοαπειλές">
+                    </div>
+                    <h3>Θωράκιση της Τοπικής Αγοράς απέναντι στις Κυβερνοαπειλές</h3>
+                    <p>Ανοίγουμε τη συζήτηση για την προστασία των τοπικών επιχειρήσεων από τις ψηφιακές απάτες. Η ασφάλεια των δεδομένων είναι η βάση για ένα υγιές εμπόριο.</p>
+                    <a href="news1.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-image-wrapper">
+                        <img src="assets/news2.jpg" alt="Η Τηλεατρική ως Ασπίδα Υγείας για τις Ακριτικές Περιοχές">
+                    </div>
+                    <h3>Η Τηλεατρική ως Ασπίδα Υγείας για τις Ακριτικές Περιοχές</h3>
+                    <p>Η τεχνολογία έχει τη δύναμη να εκμηδενίζει τις αποστάσεις και να σώζει ζωές. Καταθέτω συγκεκριμένες προτάσεις για την αναβάθμιση των υποδομών υγείας στη Φλώρινα μέσω προηγμένων συστημάτων τηλεατρικής για την άμεση προστασία των πολιτών.</p>
+                    <a href="news2.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-image-wrapper">
+                        <img src="assets/news3.jpg" alt="Έξυπνη Πόλη (Smart City): Από τη Θεωρία στην Πράξη">
+                    </div>
+                    <h3>Έξυπνη Πόλη (Smart City): Από τη Θεωρία στην Πράξη</h3>
+                    <p>Αναλύουμε τους τρόπους με τους οποίους ο Δήμος μας μπορεί να αξιοποιήσει τους πόρους του ΕΣΠΑ και του Ταμείου Δίκαιης Μετάβασης για έξυπνα συστήματα φωτισμού, στάθμευσης και ενεργειακής διαχείρισης, χωρίς καμία απολύτως επιβάρυνση του δημότη.</p>
+                    <a href="news3.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-image-wrapper">
+                        <img src="assets/news4.jpg" alt="Για τον τόπο μας">
+                    </div>
+                    <h3>Για τον τόπο μας και το ψωμί των παιδιών μας</h3>
+                    <p>Η λύση για τη Φλώρινα δεν θα έρθει από μεγάλα λόγια, αλλά από πράξεις. Με τα Κέντρα Ψηφιακής Εργασίας δημιουργούμε άμεσα νέες θέσεις για να κρατήσουμε τα παιδιά μας στον τόπο τους...</p>
+                    <a href="news4.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-image-wrapper">
+                        <img src="assets/news5.jpg" alt="Απορρόφηση Κονδυλίων ΕΣΠΑ">
+                    </div>
+                    <h3>Απορρόφηση Κονδυλίων ΕΣΠΑ & Δίκαιης Μετάβασης</h3>
+                    <p>Η ΒΙΠΕ Φλώρινας μπορεί να γίνει «πνεύμονας» ανάπτυξης. Με ενισχύσεις έως 70% από τη Δίκαιη Μετάβαση και αξιοποιώντας το κλίμα μας για τεχνολογίες αιχμής όπως τα Data Centers, δημιουργούμε μόνιμες δουλειές για να κρατήσουμε τους νέους μας εδώ...</p>
+                    <a href="news5.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-image-wrapper">
+                        <img src="assets/news6.jpg" alt="Η πραγματικότητα δεν κρύβεται">
+                    </div>
+                    <h3>Η πραγματικότητα δεν κρύβεται πίσω από «θα»</h3>
+                    <p>Ο τόπος μας δεν έχει ανάγκη από άλλα χτυπήματα στην πλάτη. Όταν η ΒΙΠΕ ρημάζει και τα δημόσια κτίρια σαπίζουν, το Ταμείο Δίκαιης Μετάβασης και το ΕΣΠΑ προσφέρουν λύσεις χωρίς να πληρώσει ο πολίτης ούτε ένα ευρώ. Ποιος φρενάρει την ανάπτυξη;</p>
+                    <a href="news6.html" class="btn-news-link">Διαβάστε το άρθρο &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
@@ -157,6 +252,7 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Επικοινωνία</h2>
+            <p>Η συζήτηση για το μέλλον της Φλώρινας μόλις άνοιξε. Αν έχετε ιδέες, προτάσεις ή θέλετε να γίνετε μέρος αυτής της προσπάθειας, επικοινωνήστε μαζί μου.</p>
             <div class="communication-zone">
                 <a href="#" onclick="window.location.href='mai' + 'lto:' + 'extremepc' + '@' + 'otenet.gr'; return false;" class="btn btn-main-contact">Στείλτε μου Email</a>
             </div>
@@ -165,9 +261,40 @@
 
     <footer>
         <div class="container footer-container">
-            <p>&copy; <span id="year-index"></span> kertsanis.gr</p>
+            <div class="footer-left">
+                <p>&copy; <span id="year-index"></span> kertsanis.gr</p>
+            </div>
+            
+            <div class="footer-center">
+                <span class="footer-label">Follow us on:</span>
+                <div class="footer-icons">
+                    <a href="https://www.facebook.com/share/18hzpAoS5K/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/george_kertsanis" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/306947985322" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="viber://chat?number=%2B306947985322" title="Viber"><i class="fa-brands fa-viber"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <p>Σχεδιασμός χαμηλής απόκρισης (Low Latency).</p>
+                <p class="footer-privacy">🔒 100% Privacy-First | Μηδέν Cookies & Καταγραφή</p>
+            </div>
         </div>
     </footer>
-    <script>document.getElementById("year-index").textContent = new Date().getFullYear();</script>
+
+    <script>
+        document.getElementById("year-index").textContent = new Date().getFullYear();
+        function toggleCV() {
+            var cvDetails = document.getElementById("full-cv");
+            var btn = document.getElementById("cv-toggle-btn");
+            if (cvDetails.style.display === "block") {
+                cvDetails.style.display = "none";
+                btn.innerText = "Διαβάστε την πλήρη πορεία μου";
+            } else {
+                cvDetails.style.display = "block";
+                btn.innerText = "Σύμπτυξη βιογραφικού";
+            }
+        }
+    </script>
 </body>
 </html>
