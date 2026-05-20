@@ -650,3 +650,49 @@ img[src*="profile.png"] {
         font-size: 1.6rem !important; /* Ελαφρώς πιο μαζεμένος τίτλος για να μην σπάει άσχημα */
     }
 }
+
+/* Τελικό Responsive Patch για τέλεια εμφάνιση και κεντράρισμα σε κινητά */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0 !important;
+        height: auto !important; /* Ξεκλειδώνει το ύψος της ενότητας */
+        background-color: var(--header-bg) !important; /* Σωστό υπόβαθρο */
+    }
+    .hero-container {
+        display: flex !important;
+        flex-direction: column-reverse !important; /* Φωτογραφία πάνω, κείμενο κάτω */
+        align-items: center !important;
+        gap: 25px !important;
+    }
+    .hero-profile-img {
+        max-height: 240px !important;
+        width: auto !important;
+        margin-bottom: 10px !important;
+    }
+    .hero-text {
+        width: 100% !important;
+        text-align: center !important; /* Κεντράρει το κείμενο στο κινητό */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Κεντράρει απόλυτα το κουμπί */
+    }
+    .hero-slogan {
+        font-size: 1.4rem !important;
+        line-height: 1.4 !important;
+        color: #1e293b !important; /* Σκούρο navy για τέλεια αντίθεση */
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
+    }
+    .hero-lead {
+        font-size: 1.05rem !important;
+        color: #334155 !important; /* Σκούρο γκρίζο για να διαβάζεται πεντακάθαρα */
+        margin-bottom: 25px !important;
+        line-height: 1.6 !important;
+    }
+    .hero-text .btn {
+        display: inline-block !important;
+        width: fit-content !important;
+        margin: 0 auto !important; /* Σβήνει τα κενά και κάθεται τέλεια στο κέντρο */
+        padding: 12px 30px !important;
+    }
+}
