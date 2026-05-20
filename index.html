@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Για μεγάλες οθόνες (PC) - Μεγαλώνουμε τη φωτογραφία όπως ζήτησες */
+        /* PC: Μεγαλώνουμε τη φωτογραφία */
         @media (min-width: 769px) {
             #hero .hero-image-side img {
                 max-height: 350px !important;
@@ -42,26 +42,23 @@
             }
         }
         
-        /* Για ΚΙΝΗΤΑ (Asus 6 κλπ) - Διορθώνει το ξεχείλισμα του μπλε φόντου και κεντράρει τα πάντα */
+        /* ΚΙΝΗΤΟ: Ανοιχτόχρωμο φόντο, σκούρα γράμματα, κεντραρισμένα όλα! */
         @media (max-width: 768px) {
             #hero {
                 height: auto !important;
-                min-height: unset !important;
-                padding: 50px 15px 60px 15px !important;
-                background-color: var(--header-bg, #0f172a) !important; /* Εξαναγκάζει το μπλε φόντο να πάει μέχρι κάτω */
-                overflow: hidden !important;
+                padding: 40px 15px !important;
+                background-color: transparent !important; /* Τέρμα το λάθος μπλε φόντο */
             }
             #hero .hero-container {
                 display: flex !important;
                 flex-direction: column-reverse !important;
                 align-items: center !important;
                 text-align: center !important;
-                gap: 20px !important;
             }
             #hero .hero-image-side img {
-                max-height: 250px !important;
+                max-height: 260px !important;
                 width: auto !important;
-                margin: 0 auto !important;
+                margin: 0 auto 20px auto !important;
                 display: block !important;
             }
             #hero .hero-text {
@@ -73,13 +70,13 @@
             }
             #hero .hero-slogan {
                 font-size: 1.5rem !important;
-                color: #ffffff !important; /* Λευκά γράμματα πάνω στο μπλε */
-                margin: 15px 0 !important;
+                color: #0056b3 !important; /* Μπλε γράμματα όπως στο PC */
+                margin: 0 0 15px 0 !important;
                 line-height: 1.3 !important;
             }
             #hero .hero-lead {
                 font-size: 1.1rem !important;
-                color: #e2e8f0 !important; /* Ανοιχτό γκρι για να διαβάζεται τέλεια */
+                color: #333333 !important; /* Σκούρο γκρι για να διαβάζεται τέλεια */
                 margin-bottom: 25px !important;
                 line-height: 1.5 !important;
             }
@@ -128,7 +125,7 @@
         <div class="container">
             <h2>Η Πορεία μου</h2>
             <div class="about-content">
-                <p class="cv-summary">Γέννημα θρέμμα της Φλώρινας, ξεκίνησα από τον σκληρό μόχθο της οικοδομής για να εξελιχθώ σε πιστοποιημένο μηχανικό δικτύων της Cisco...</p>
+                <p class="cv-summary">Γέννημα θρέμμα της Φλώρινας, ξεκίνησα από τον σκληρό μόχθο της οικοδομής για να εξελιχθώ σε πιστοποιημένο μηχανικό δικτύων της Cisco, με 25ετή εμπειρία σε σύνθετα έργα τηλεατρικής, κυβερνοασφάλειας και ασφαλών εφαρμογών. Με την ίδια φιλοσοφία της πράξης και του αποτελέσματος υπηρέτησα ως Σύμβουλος της Κοινότητας Φλώρινας (2019-2023) και σήμερα παλεύω για έναν σύγχρονο και ψηφιακό τόπο, που δημιουργεί νέες θέσεις εργασίας και κρατάει τους νέους μας εδώ, δίνοντάς τους τις ευκαιρίες να δημιουργήσουν στον τόπο τους.</p>
                 <button id="cv-toggle-btn" class="btn-cv" onclick="window.location.href='plan.html'">Διαβάστε την πλήρη πορεία μου</button>
             </div>
         </div>
@@ -137,10 +134,11 @@
     <section id="proposals" class="proposals-section">
         <div class="container">
             <h2>Σχέδιο για τον Τόπο μας</h2>
+            <p class="section-lead">Ευρωπαϊκά κονδύλια, έτοιμα αναπτυξιακά εργαλεία και νόμοι που περιμένουν εφαρμογή. Χωρίς να πληρώσει ο πολίτης ούτε ένα ευρώ.</p>
             <div class="grid">
-                <div class="card"><h3>Κέντρα Ψηφιακής Εργασίας</h3><p>Αξιοποίηση άδειων κτιρίων...</p></div>
-                <div class="card"><h3>Smart City Φλώρινα</h3><p>Έξυπνες τεχνολογίες...</p></div>
-                <div class="card"><h3>Ψηφιακή Αυτοδιοίκηση</h3><p>Άμεση επικοινωνία...</p></div>
+                <div class="card"><h3>Κέντρα Ψηφιακής Εργασίας</h3><p>Αξιοποίηση των άδειων δημόσιων κτιρίων...</p></div>
+                <div class="card"><h3>Smart City Φλώρινα</h3><p>Εφαρμογή έξυπνων τεχνολογιών...</p></div>
+                <div class="card"><h3>Ψηφιακή Αυτοδιοίκηση</h3><p>Άμεση επικοινωνία του πολίτη με τον Δήμο...</p></div>
             </div>
         </div>
     </section>
