@@ -592,3 +592,11 @@ img[src*="profile.png"] {
     margin-bottom: -50px !important;  /* Μειώνουμε το αρνητικό margin για να σηκωθεί */
     transform-origin: bottom center !important;
 }
+
+/* Τελικό pixel-perfect κατέβασμα για την profile.png */
+img[src*="profile.png"] {
+    max-height: 720px !important;     
+    transform: scale(1.28) !important; 
+    margin-bottom: -60px !important;  /* Από -50px το πάμε -60px για το τέλειο κούμπωμα */
+    transform-origin: bottom center !important;
+}
