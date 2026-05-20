@@ -495,3 +495,16 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
     box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08) !important;
     border-bottom: 3px solid #1e40af !important; /* Μια λεπτή σοβαρή γραμμή στη βάση */
 }
+
+/* Χειρουργικό μάζεμα κενού ανάμεσα σε Σχέδιο και Παρεμβάσεις */
+.proposals-section {
+    padding-bottom: 20px !important; /* Μειώνουμε το κενό στο τέλος του Σχεδίου */
+}
+
+.news-section {
+    padding-top: 25px !important;    /* Μειώνουμε το κενό στην αρχή των Παρεμβάσεων */
+}
+
+.news-section h2 {
+    margin-top: 0 !important;        /* Εκμηδενίζουμε τυχόν έξτρα margin του τίτλου */
+}
