@@ -748,3 +748,17 @@ img[src*="profile.png"] {
         padding: 12px 30px !important;
     }
 }
+
+/* ΑΛΦΑΔΙ: Κάνει όλες τις εικόνες στα άρθρα να έχουν ακριβώς το ίδιο ύψος */
+.news-image-wrapper {
+    width: 100% !important;
+    height: 220px !important; /* Σταθερό ύψος για όλες! */
+    overflow: hidden !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+.news-image-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Ζουμάρει όσο χρειάζεται για να γεμίσει το κουτί χωρίς να παραμορφώνεται */
+    display: block !important;
+}
