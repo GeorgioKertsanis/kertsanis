@@ -1,3 +1,55 @@
+/* Responsive διορθώσεις στην κορυφή για να διαβάζονται ΠΡΩΤΕΣ από τα κινητά */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0 !important;
+        height: auto !important;
+        background-color: #f8fafc !important; /* Ανοιχτό καθαρό background στο κινητό */
+    }
+    .hero-container {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+    .hero-profile-img {
+        max-height: 240px !important;
+        width: auto !important;
+        margin-bottom: 10px !important;
+    }
+    .hero-text {
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .hero-slogan {
+        font-size: 1.4rem !important;
+        line-height: 1.4 !important;
+        color: #1e293b !important; /* Σκούρο navy για να διαβάζεται */
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+    }
+    .hero-lead {
+        font-size: 1.05rem !important;
+        color: #334155 !important; /* Σκούρο γκρι */
+        margin-bottom: 25px !important;
+        line-height: 1.6 !important;
+    }
+    .hero-text .btn {
+        display: inline-block !important;
+        width: fit-content !important;
+        margin: 0 auto !important;
+        padding: 12px 30px !important;
+    }
+}
+
+.hero-profile-img {
+    max-height: 350px !important;
+    width: auto;
+    display: block;
+    object-fit: cover;
+}
 /* Προσθήκη νέας παλέτας χρωμάτων στην κορυφή του αρχείου */
 :root {
     --bg-primary: #ffffff;
