@@ -440,3 +440,58 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
     text-align: center !important;
     margin-bottom: 20px !important;
 }
+
+/* Στυλ για το Γέμισμα και την Ομοιομορφία στις Κάρτες του Σχεδίου */
+.proposals-section {
+    background-color: var(--bg-primary) !important;
+    padding: 50px 0 !important;
+}
+
+.proposal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 25px !important;
+}
+
+.proposal-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    padding: 25px !important;
+    background: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+    box-shadow: var(--card-shadow) !important;
+    text-align: left !important;
+    transition: all 0.25s ease-in-out !important;
+}
+
+/* Κομψό θεσμικό εικονίδιο */
+.proposal-icon-wrapper {
+    font-size: 2rem !important;
+    color: #1e40af !important; /* Το σοβαρό μπλε */
+    margin-bottom: 15px !important;
+    display: inline-block;
+}
+
+.proposal-card h3 {
+    font-size: 1.3rem !important;
+    font-family: var(--font-serif) !important;
+    color: var(--text-main) !important;
+    margin-bottom: 12px !important;
+}
+
+.proposal-card p {
+    font-size: 0.98rem !important;
+    line-height: 1.6 !important;
+    color: var(--text-muted) !important;
+    margin: 0 !important;
+    flex-grow: 1; /* Αναγκάζει το κείμενο να γεμίζει ομοιόμορφα την κάρτα */
+}
+
+/* Hover εφέ που βγάζει κύρος και σταθερότητα */
+.proposal-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08) !important;
+    border-bottom: 3px solid #1e40af !important; /* Μια λεπτή σοβαρή γραμμή στη βάση */
+}
