@@ -415,3 +415,17 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
     padding: 8px 20px !important;
     font-size: 0.9rem !important;
 }
+
+/* Επαναφορά σωστού και ευανάγνωστου μεγέθους γραμματοσειράς */
+.cv-summary {
+    font-size: 1.15rem !important; /* Η σωστή διάσταση που ζητήθηκε */
+    line-height: 1.7 !important;
+    max-width: 720px !important;   /* Ιδανικό πλάτος για να κάθεται τέλεια στο μάτι */
+    margin: 0 auto 20px auto !important;
+}
+
+/* Ελαφρύ μάζεμα στο κουμπί για να δένει με τα μεγαλύτερα γράμματα */
+.btn-cv {
+    padding: 10px 24px !important;
+    font-size: 0.95rem !important;
+}
