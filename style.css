@@ -560,3 +560,11 @@ img[src*="profile.png"] {
 .hero-section .grid {
     align-items: flex-end !important; /* Αναγκάζει τα στοιχεία να ευθυγραμμιστούν χαμηλά */
 }
+
+/* Γενναίο κατέβασμα και αύξηση μεγέθους για να κάτσει σύρριζα η φωτογραφία */
+img[src*="profile.png"] {
+    max-height: 580px !important;     /* Ακόμα πιο μεγάλη και καθαρή */
+    margin-bottom: -45px !important;  /* Δυνατό αρνητικό margin για να πατήσει στη γραμμή */
+    transform: scale(1.08) !important; /* Έξτρα ελαφρύ zoom για σωστό γέμισμα */
+    transform-origin: bottom center !important;
+}
