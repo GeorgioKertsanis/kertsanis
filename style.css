@@ -266,3 +266,27 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
 .btn-news-link:hover, .btn-more:hover {
     color: #0f172a !important; /* Σκούρο midnight στο hover */
 }
+
+/* Θεσμικό στυλ συνδέσμων για τις κάρτες - Όχι e-shop */
+.btn-news-link, .btn-more {
+    margin-top: auto !important;
+    padding: 6px 0 !important;
+    color: #1e40af !important; /* Το σοβαρό μπλε */
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+    border: none !important;
+    background: none !important;
+    border-bottom: 2px solid transparent !important; /* Κρυφό περίγραμμα */
+    transition: all 0.2s ease-in-out;
+    width: fit-content;
+}
+
+/* Απαλό εφέ στο Hover που δείχνει σοβαρότητα */
+.btn-news-link:hover, .btn-more:hover {
+    color: #0f172a !important; /* Midnight μαύρο */
+    border-bottom: 2px solid #1e40af !important; /* Εμφανίζεται μια κομψή γραμμή από κάτω */
+}
