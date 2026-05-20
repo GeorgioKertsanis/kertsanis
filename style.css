@@ -584,3 +584,11 @@ img[src*="profile.png"] {
     margin-bottom: -105px !important; /* Κρατάει το τραπέζι σύρριζα στη γαλάζια γραμμή */
     transform-origin: bottom center !important;
 }
+
+/* Σηκώνουμε την εικόνα για να ξαναφανεί το τραπέζι και να πατάει στη γραμμή */
+img[src*="profile.png"] {
+    max-height: 720px !important;     /* Κρατάμε το μεγάλο ύψος */
+    transform: scale(1.28) !important; /* Κρατάμε το μεγάλο zoom */
+    margin-bottom: -50px !important;  /* Μειώνουμε το αρνητικό margin για να σηκωθεί */
+    transform-origin: bottom center !important;
+}
