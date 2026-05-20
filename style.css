@@ -542,3 +542,21 @@ footer { padding: 40px 0; background-color: #0a192f !important; color: #cbd5e1; 
         transform: scale(1) !important;
     }
 }
+
+/* Χειρουργική ρύθμιση για την εικόνα profile.png */
+img[src*="profile.png"] {
+    display: block !important;
+    max-height: 550px !important;     /* Αυξάνουμε το μέγεθος για να δείχνει επιβλητική */
+    width: auto !important;
+    margin-bottom: -15px !important;  /* Αρνητικό margin για να "σπάσει" το κενό και να κάτσει σύρριζα */
+    padding-bottom: 0 !important;
+    position: relative !important;
+    bottom: 0 !important;
+    z-index: 10;
+}
+
+/* Ευθυγράμμιση της hero περιοχής */
+.hero-section .container, 
+.hero-section .grid {
+    align-items: flex-end !important; /* Αναγκάζει τα στοιχεία να ευθυγραμμιστούν χαμηλά */
+}
