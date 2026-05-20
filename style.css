@@ -780,3 +780,11 @@ img[src*="profile.png"] {
     object-fit: cover !important; /* Αυτό σταματάει το zoom και το τέντωμα */
     object-position: center !important;
 }
+
+/* ΑΣΠΙΔΑ: Απαγόρευση επιλογής κειμένου */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
