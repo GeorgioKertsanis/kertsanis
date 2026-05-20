@@ -1,3 +1,52 @@
+/* Προσθήκη νέας παλέτας χρωμάτων στην κορυφή του αρχείου */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;       /* Απαλό γκρι για section background */
+    --text-main: #0f172a;          /* Βαθύ Midnight Blue για κύρια κείμενα και τίτλους */
+    --text-muted: #475569;         /* Slate γκρι για δευτερεύοντα κείμενα */
+    --accent-color: #1e40af;       /* Το σοβαρό Μπλε του Κύρους (Royal/Navy) */
+    --border-color: #e2e8f0;       /* Πολύ λεπτό, διακριτικό γκρι για διαχωριστικά */
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05); /* Premium απαλή σκιά */
+}
+
+/* Εφαρμογή των νέων χρωμάτων στα βασικά στοιχεία */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+}
+
+header {
+    background-color: var(--bg-primary) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-section {
+    background-color: var(--bg-secondary) !important;
+}
+
+.card, .news-card {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--card-shadow) !important;
+    border-radius: 6px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover, .news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08) !important;
+}
+
+.privacy-notice-bar {
+    background-color: #0f172a !important; /* Σκούρα μπάρα ασφαλείας για αντίθεση */
+    color: #ffffff !important;
+}
+
+footer {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+    border-top: 1px solid #1e293b;
+}
 :root {
     --bg-color: #f4f8fa;
     --header-bg: #e2e8f0; 
