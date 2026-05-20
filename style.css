@@ -568,3 +568,11 @@ img[src*="profile.png"] {
     transform: scale(1.08) !important; /* Έξτρα ελαφρύ zoom για σωστό γέμισμα */
     transform-origin: bottom center !important;
 }
+
+/* Τελικό fine-tuning για να γεμίσει το πάνω μέρος και να πατήσει κάτω */
+img[src*="profile.png"] {
+    max-height: 650px !important;     /* Ανεβάζουμε το ύψος για να γεμίσει το πάνω κενό */
+    transform: scale(1.18) !important; /* Μεγαλώνουμε το zoom για να δείξει επιβλητική */
+    margin-bottom: -75px !important;  /* Δυνατό αρνητικό margin για να κατέβει τέρμα στη γαλάζια γραμμή */
+    transform-origin: bottom center !important;
+}
