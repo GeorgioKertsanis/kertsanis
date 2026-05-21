@@ -825,3 +825,18 @@ html, body {
         word-wrap: break-word !important;
     }
 }
+
+/* ========================================================
+   Η PREMIUM ΠΙΝΕΛΙΑ ΤΟΥ ΓΙΩΡΓΟΥ ΓΙΑ ΤΟΥΣ ΤΙΤΛΟΥΣ ΤΟΥ ΒΙΟΓΡΑΦΙΚΟΥ 
+   ======================================================== */
+h3 {
+    color: #0f172a !important; /* Αυστηρό σκούρο μαύρο/ανθρακί */
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    padding-left: 12px !important;
+    border-left: 4px solid #1e3a8a !important; /* Η σοβαρή κάθετη μπλε γραμμή */
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+    line-height: 1.3 !important;
+    display: block !important;
+}
