@@ -6,132 +6,96 @@
     <title>Το Στρατηγικό Σχέδιο για τη Φλώρινα | Γεώργιος Κερτσάνης</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .plan-hero { background-color: var(--header-bg); padding: 100px 0; text-align: center; border-bottom: 1px solid var(--border-color); }
-        .plan-main-title { font-family: var(--font-serif); font-size: 2.5rem; color: var(--accent-color); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        .plan-section { padding: 90px 0; border-bottom: 1px solid var(--border-color); }
-        .plan-section:nth-child(even) { background-color: var(--card-bg); }
-        .plan-section:nth-child(odd) { background-color: var(--header-bg); }
-        .section-header { display: flex; align-items: center; margin-bottom: 40px; gap: 20px; }
-        .section-icon { font-size: 3.5rem; color: var(--accent-color); }
-        .section-title { font-size: 2.2rem; font-weight: 800; margin: 0; text-align: left; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 5px; background-color: var(--accent-color); margin-top: 10px; }
-        .plan-text-block { font-size: 1.15rem; color: var(--text-color); margin-bottom: 30px; max-width: 900px; }
-        .action-checklist { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-top: 30px; }
-        .action-checklist li { background: var(--card-bg); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; align-items: start; gap: 15px; transition: transform 0.2s ease; }
-        .action-checklist li:hover { transform: translateX(5px); border-color: var(--accent-color); }
-        .action-checklist li i { color: #11caa0; font-size: 1.3rem; margin-top: 3px; }
-        .action-text h4 { font-weight: 700; margin-bottom: 5px; color: var(--text-color); }
-        .action-text p { font-size: 1rem; color: var(--text-muted); margin: 0; }
-
-        .funding-link {
-            text-decoration: none;
-            background: rgba(255,255,255,0.08);
-            padding: 35px 20px;
-            border-radius: 8px;
-            display: block;
-            border: 1px solid rgba(255,255,255,0.15);
-            transition: all 0.25s ease;
-        }
-        .funding-link:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-4px);
-            border-color: #ffffff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        .funding-link i { font-size: 2.2rem; color: #ffffff; margin-bottom: 15px; display: inline-block; }
-        .funding-link h4 { color: #ffffff !important; font-size: 1.2rem; font-weight: 700; margin: 0; }
-        .funding-link span { display: block; font-size: 0.8rem; color: #38bdf8; margin-top: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-    </style>
+    
 
     
 
     
+
 <style>
-        /* =========================================
-           ΜΑΖΕΜΑ & ΟΜΟΡΦΙΑ - ΛΑΠΤΟΠ & ΚΙΝΗΤΟ 
-           ========================================= */
-        
-        /* 1. ΣΥΜΜΑΖΕΜΑ ΤΕΡΑΣΤΙΟΥ ΜΠΛΕ SECTION ΣΤΟ ΛΑΠΤΟΠ */
-        @media (min-width: 769px) {
-            /* Στοχεύουμε το τελευταίο section (Χρηματοδοτικά Εργαλεία) */
-            section:last-of-type {
-                padding: 60px 0 !important; /* Κόβουμε το υπερβολικό κενό πάνω-κάτω */
-                min-height: auto !important;
-            }
-            section:last-of-type .grid, section:last-of-type .plan-grid {
-                max-width: 900px !important; /* Κεντράρει και περιορίζει το άπλωμα */
-                margin: 0 auto !important;
-                gap: 25px !important;
-            }
-            /* Ομορφιά στα κουμπιά/κάρτες */
-            section:last-of-type .card {
-                padding: 30px 20px !important; /* Πιο μαζεμένες διαστάσεις */
-                border-radius: 12px !important;
-                background: rgba(255, 255, 255, 0.05) !important; /* Μοντέρνο διακριτικό γυάλινο εφέ */
-                border: 1px solid rgba(255, 255, 255, 0.15) !important;
-                box-shadow: none !important;
-                transition: transform 0.3s ease, background 0.3s ease !important;
-            }
-            section:last-of-type .card:hover {
-                transform: translateY(-5px) !important;
-                background: rgba(255, 255, 255, 0.15) !important;
-            }
-            section:last-of-type .card i {
-                font-size: 2.5rem !important; /* Μικραίνουμε τα γιγάντια εικονίδια */
-                margin-bottom: 15px !important;
-            }
-            section:last-of-type h2 { margin-bottom: 10px !important; }
-            section:last-of-type p { margin-bottom: 30px !important; }
-        }
+    /* =========================================
+       ΓΕΝΙΚΟ ΚΛΕΙΔΩΜΑ ΟΡΙΖΟΝΤΙΑΣ ΚΥΛΙΣΗΣ
+       ========================================= */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-        /* 2. ΚΑΘΑΡΟ ΛΕΥΚΟ ΦΟΝΤΟ & ANTI-SCROLL ΣΤΟ ΚΙΝΗΤΟ */
-        html, body {
-            overflow-x: hidden !important; /* Απαγορεύει το κούνημα δεξιά-αριστερά */
+    /* =========================================
+       ΚΙΝΗΤΟ: ΚΑΘΑΡΟ ΛΕΥΚΟ & ΤΕΛΕΙΑ ΣΤΟΙΧΙΣΗ
+       ========================================= */
+    @media (max-width: 768px) {
+        body, .plan-section, section { 
+            background-color: #ffffff !important; 
         }
-        @media (max-width: 768px) {
-            body, section, .plan-section {
-                background-color: #ffffff !important;
-                background: #ffffff !important;
-            }
-            .container {
-                max-width: 100% !important;
-                overflow-x: hidden !important;
-                padding-left: 15px !important;
-                padding-right: 15px !important;
-                box-sizing: border-box !important;
-            }
-            /* Τα κουτιά με τα πράσινα τσεκ - Συμμάζεμα για να μην βγαίνουν από την οθόνη */
-            ul {
-                padding-left: 0 !important;
-                margin: 0 !important;
-                width: 100% !important;
-                box-sizing: border-box !important;
-            }
-            li {
-                width: 100% !important;
-                box-sizing: border-box !important;
-                margin-bottom: 15px !important;
-                background: #ffffff !important;
-                /* Επαναφορά σωστών περιγραμμάτων ώστε να μην δείχνουν γκρι */
-                border: 1px solid #e2e8f0 !important; 
-                box-shadow: 0 2px 5px rgba(0,0,0,0.02) !important;
-            }
-            /* Σπάει τα μεγάλα links/λέξεις */
-            p, h1, h2, h3, a, span, li {
-                overflow-wrap: break-word !important;
-                word-wrap: break-word !important;
-            }
-            /* Μαζεύουμε και το μπλε section στο κινητό */
-            section:last-of-type {
-                padding: 40px 15px !important;
-            }
-            section:last-of-type .card {
-                padding: 20px !important;
-                margin-bottom: 15px !important;
-            }
+        .container { 
+            max-width: 100vw !important; 
+            overflow-x: hidden !important; 
+            padding: 0 15px !important; 
+            box-sizing: border-box !important; 
         }
-    </style>
+        /* Κόβει λέξεις που προκαλούν ξεχείλωμα */
+        p, h1, h2, h3, a, span, li { 
+            word-wrap: break-word !important; 
+            overflow-wrap: anywhere !important; 
+        }
+        /* Μαζεύει τις λίστες για να μην βγαίνουν τα τσεκ εκτός οθόνης */
+        ul { 
+            padding-left: 20px !important; 
+            margin-right: 5px !important; 
+            box-sizing: border-box !important; 
+            width: 100% !important; 
+        }
+        li { 
+            margin-bottom: 15px !important; 
+            line-height: 1.5 !important; 
+        }
+        /* Επαναφορά των καρτών στο κανονικό τους (λευκές, κομψές) */
+        .card, .plan-card { 
+            width: 100% !important; 
+            box-sizing: border-box !important; 
+            padding: 20px !important; 
+            margin-bottom: 20px !important; 
+            background: #ffffff !important; 
+            border: 1px solid #e2e8f0 !important; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important; 
+        }
+        /* Μαζεύουμε και το τελευταίο μπλε section στο κινητό */
+        section:last-of-type {
+            padding: 40px 15px !important;
+        }
+    }
+
+    /* =========================================
+       ΛΑΠΤΟΠ: ΣΥΜΜΑΖΕΜΑ ΤΟΥ ΜΠΛΕ SECTION
+       ========================================= */
+    @media (min-width: 769px) {
+        /* Στοχεύουμε το τελευταίο section (Χρηματοδοτικά Εργαλεία) */
+        section:last-of-type { 
+            padding: 50px 0 !important; /* Μειώνουμε το πάνω-κάτω κενό */
+            min-height: auto !important; 
+        }
+        /* Περιορίζουμε το πλάτος για να μην απλώνει σε όλη την 15άρα οθόνη */
+        section:last-of-type .container,
+        section:last-of-type .grid, 
+        section:last-of-type .plan-grid { 
+            max-width: 1000px !important; 
+            margin: 0 auto !important; 
+            gap: 25px !important; 
+        }
+        /* Μικραίνουμε τα κουτιά και τα εικονίδια */
+        section:last-of-type .card { 
+            padding: 30px 25px !important; 
+            border-radius: 12px !important; 
+        }
+        section:last-of-type .card i { 
+            font-size: 2.2rem !important; /* Πιο λογικό μέγεθος εικονιδίων */
+            margin-bottom: 15px !important; 
+        }
+    }
+</style>
 </head>
 <body>
 
