@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Αφαίρεση υπογράμμισης από το logo στο header */
+        header .logo {
+            text-decoration: none !important;
+            border-bottom: none !important;
+        }
+        
         /* Επιπλέον μικρές διορθώσεις μόνο για τη στοίχιση των καρτών του σχεδίου */
         .plan-custom-grid {
             display: grid;
@@ -59,14 +65,60 @@
             font-weight: bold;
             font-size: 1.1rem;
         }
-        /* Συμμάζεμα funding section */
+
+        /* ΚΑΘΑΡΟ ΜΑΥΡΟ SECTION ΓΙΑ ΤΑ ΧΡΗΜΑΤΟΔΟΤΙΚΑ ΕΡΓΑΛΕΙΑ */
+        .funding-black-section {
+            background-color: #111111 !important; /* Καθαρό μαύρο φόντο */
+            color: #ffffff !important;
+            padding: 50px 0;
+        }
+        .funding-black-section h2 {
+            text-align: center;
+            color: #ffffff !important;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
         .funding-custom-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             max-width: 1000px;
-            margin: 30px auto 0 auto;
+            margin: 0 auto;
         }
+        .funding-black-card {
+            background: #1a1a1a !important; /* Ελαφρώς πιο ανοιχτό μαύρο για αντίθεση */
+            border: 1px solid #2d2d2d !important;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .funding-black-card i {
+            color: #38bdf8 !important;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+        .funding-black-card h3 {
+            color: #ffffff !important;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .funding-black-card p {
+            color: #cccccc !important;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .funding-black-card a {
+            color: #38bdf8 !important;
+            font-weight: 600;
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
         /* Κλείδωμα οριζόντιου scroll στο κινητό */
         @media (max-width: 768px) {
             html, body { overflow-x: hidden !important; }
@@ -128,37 +180,37 @@
         </div>
     </main>
 
-    <section style="background-color: #0f172a; color: #ffffff; padding: 50px 0;">
+    <section class="funding-black-section">
         <div class="container">
-            <h2 style="text-align: center; color: #ffffff; font-size: 1.6rem; margin-bottom: 10px; font-weight: 700;">Χρηματοδοτικά Εργαλεία & Υλοποίηση</h2>
+            <h2>Χρηματοδοτικά Εργαλεία & Υλοποίηση</h2>
             
             <div class="funding-custom-grid">
                 
-                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="funding-black-card">
                     <div>
-                        <i class="fas fa-euro-sign" style="color: #38bdf8; font-size: 1.8rem; margin-bottom: 10px;"></i>
-                        <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 8px;">ΕΣΠΑ 2021-2027</h3>
-                        <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.4; margin-bottom: 15px;">Άντληση ευρωπαϊκών πόρων για την περιφερειακή ανάπτυξη, την ενίσχυση της επιχειρηματικότητας και τη δίκαιη αναπτυξιακή μετάβαση.</p>
+                        <i class="fas fa-euro-sign"></i>
+                        <h3>ΕΣΠΑ 2021-2027</h3>
+                        <p>Άντληση ευρωπαϊκών πόρων για την περιφερειακή ανάπτυξη, την ενίσχυση της επιχειρηματικότητας και τη δίκαιη αναπτυξιακή μετάβαση.</p>
                     </div>
-                    <a href="https://www.espa.gr" target="_blank" style="color: #38bdf8; font-weight: 600; text-decoration: underline; font-size: 0.9rem;">Επίσημη Πύλη ΕΣΠΑ</a>
+                    <a href="https://www.espa.gr" target="_blank">Επίσημη Πύλη ΕΣΠΑ</a>
                 </div>
 
-                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="funding-black-card">
                     <div>
-                        <i class="fas fa-leaf" style="color: #38bdf8; font-size: 1.8rem; margin-bottom: 10px;"></i>
-                        <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 8px;">Πράσινο Ταμείο</h3>
-                        <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.4; margin-bottom: 15px;">Χρηματοδότηση προγραμμάτων για την περιβαλλοντική αναβάθμιση των πόλεων, την ενεργειακή απόδοση και την κυκλική οικονομία.</p>
+                        <i class="fas fa-leaf"></i>
+                        <h3>Πράσινο Ταμείο</h3>
+                        <p>Χρηματοδότηση προγραμμάτων για την περιβαλλοντική αναβάθμιση των πόλεων, την ενεργειακή απόδοση και την κυκλική οικονομία.</p>
                     </div>
-                    <a href="https://www.prasinotameio.gr" target="_blank" style="color: #38bdf8; font-weight: 600; text-decoration: underline; font-size: 0.9rem;">Πράσινο Ταμείο</a>
+                    <a href="https://www.prasinotameio.gr" target="_blank">Πράσινο Ταμείο</a>
                 </div>
 
-                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="funding-black-card">
                     <div>
-                        <i class="fas fa-laptop-code" style="color: #38bdf8; font-size: 1.8rem; margin-bottom: 10px;"></i>
-                        <h3 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 8px;">Κοινωνία της Πληροφορίας</h3>
-                        <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.4; margin-bottom: 15px;">Αξιοποίηση κρατικών και κοινοτικών κονδυλίων για τον ψηφιακό μετασχηματισμό των ΟΤΑ και την ψηφιακή ετοιμότητα.</p>
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Κοινωνία της Πληροφορίας</h3>
+                        <p>Αξιοποίηση κρατικών και κοινοτικών κονδυλίων για τον ψηφιακό μετασχηματισμό των ΟΤΑ και την ψηφιακή ετοιμότητα.</p>
                     </div>
-                    <a href="https://www.ktp.gr" target="_blank" style="color: #38bdf8; font-weight: 600; text-decoration: underline; font-size: 0.9rem;">Ψηφιακά Προγράμματα ΚτΠ</a>
+                    <a href="https://www.ktp.gr" target="_blank">Ψηφιακά Προγράμματα ΚτΠ</a>
                 </div>
 
             </div>
