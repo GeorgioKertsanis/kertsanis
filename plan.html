@@ -12,87 +12,102 @@
 
     
 
+
 <style>
     /* =========================================
-       ΓΕΝΙΚΟ ΚΛΕΙΔΩΜΑ ΟΡΙΖΟΝΤΙΑΣ ΚΥΛΙΣΗΣ
+       1. ΓΕΝΙΚΗ ΔΙΟΡΘΩΣΗ (ΚΕΝΑ & ΤΕΛΙΤΣΕΣ)
        ========================================= */
-    html, body {
-        overflow-x: hidden !important;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+    html, body { overflow-x: hidden !important; width: 100%; margin: 0; padding: 0; }
+    
+    /* Σκοτώνουμε τις τελίτσες δίπλα στα τικ μια και καλή! */
+    ul, .plan-card ul { 
+        list-style: none !important; 
+        padding-left: 0 !important; 
+        margin-top: 15px !important;
+    }
+    li { 
+        margin-bottom: 12px !important; 
+        position: relative !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Μαζεύουμε τα τεράστια κενά ανάμεσα στα sections */
+    section { padding: 50px 0 !important; }
+    
+    /* =========================================
+       2. ΛΑΠΤΟΠ - ΔΙΟΡΘΩΣΗ ΧΡΩΜΑΤΩΝ ΣΤΟ ΜΠΛΕ SECTION
+       ========================================= */
+    @media (min-width: 769px) {
+        /* Στοχεύουμε το section με το μπλε φόντο (Χρηματοδοτικά Εργαλεία) */
+        section:last-of-type { 
+            background-color: #0f172a !important; /* Βαθύ σοβαρό μπλε */
+            color: #ffffff !important; /* Υποχρεωτικά ΛΕΥΚΑ γράμματα */
+            padding: 60px 0 !important;
+        }
+        /* Αναγκάζουμε όλους τους τίτλους και τα κείμενα εκεί μέσα να είναι λευκά */
+        section:last-of-type h2, 
+        section:last-of-type h3, 
+        section:last-of-type p, 
+        section:last-of-type li {
+            color: #f8fafc !important; 
+        }
+        /* Κομψές κάρτες με διακριτικό περίγραμμα, όχι τεράστια κουτιά */
+        section:last-of-type .card, 
+        section:last-of-type .plan-card { 
+            background: rgba(255, 255, 255, 0.03) !important; 
+            border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+            box-shadow: none !important;
+            padding: 30px !important;
+            border-radius: 8px !important;
+        }
+        /* Τα εικονίδια (icons) να είναι φωτεινά γαλάζια για να κάνουν αντίθεση */
+        section:last-of-type .card i,
+        section:last-of-type i { 
+            color: #38bdf8 !important; 
+            font-size: 2rem !important; 
+            margin-bottom: 15px !important;
+        }
+        /* Τα Links να είναι φωτεινά και έντονα, όχι αμυδρά! */
+        section:last-of-type a {
+            color: #38bdf8 !important;
+            font-weight: 600 !important;
+            text-decoration: underline !important;
+        }
     }
 
     /* =========================================
-       ΚΙΝΗΤΟ: ΚΑΘΑΡΟ ΛΕΥΚΟ & ΤΕΛΕΙΑ ΣΤΟΙΧΙΣΗ
+       3. ΚΙΝΗΤΟ - ΟΜΟΙΟΜΟΡΦΙΑ & ΚΑΘΑΡΟ ΛΕΥΚΟ
        ========================================= */
     @media (max-width: 768px) {
-        body, .plan-section, section { 
+        body, section, .plan-section { 
             background-color: #ffffff !important; 
+            color: #334155 !important;
         }
         .container { 
             max-width: 100vw !important; 
             overflow-x: hidden !important; 
             padding: 0 15px !important; 
-            box-sizing: border-box !important; 
         }
-        /* Κόβει λέξεις που προκαλούν ξεχείλωμα */
+        /* Κόβουμε λέξεις που τεντώνουν την οθόνη */
         p, h1, h2, h3, a, span, li { 
             word-wrap: break-word !important; 
             overflow-wrap: anywhere !important; 
         }
-        /* Μαζεύει τις λίστες για να μην βγαίνουν τα τσεκ εκτός οθόνης */
-        ul { 
-            padding-left: 20px !important; 
-            margin-right: 5px !important; 
-            box-sizing: border-box !important; 
-            width: 100% !important; 
-        }
-        li { 
-            margin-bottom: 15px !important; 
-            line-height: 1.5 !important; 
-        }
-        /* Επαναφορά των καρτών στο κανονικό τους (λευκές, κομψές) */
+        /* Μαζεύουμε τις κάρτες στο κινητό, χωρίς υπερβολικά κενά */
         .card, .plan-card { 
             width: 100% !important; 
-            box-sizing: border-box !important; 
             padding: 20px !important; 
             margin-bottom: 20px !important; 
             background: #ffffff !important; 
             border: 1px solid #e2e8f0 !important; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important; 
+            border-radius: 8px !important;
         }
-        /* Μαζεύουμε και το τελευταίο μπλε section στο κινητό */
         section:last-of-type {
             padding: 40px 15px !important;
         }
-    }
-
-    /* =========================================
-       ΛΑΠΤΟΠ: ΣΥΜΜΑΖΕΜΑ ΤΟΥ ΜΠΛΕ SECTION
-       ========================================= */
-    @media (min-width: 769px) {
-        /* Στοχεύουμε το τελευταίο section (Χρηματοδοτικά Εργαλεία) */
-        section:last-of-type { 
-            padding: 50px 0 !important; /* Μειώνουμε το πάνω-κάτω κενό */
-            min-height: auto !important; 
-        }
-        /* Περιορίζουμε το πλάτος για να μην απλώνει σε όλη την 15άρα οθόνη */
-        section:last-of-type .container,
-        section:last-of-type .grid, 
-        section:last-of-type .plan-grid { 
-            max-width: 1000px !important; 
-            margin: 0 auto !important; 
-            gap: 25px !important; 
-        }
-        /* Μικραίνουμε τα κουτιά και τα εικονίδια */
-        section:last-of-type .card { 
-            padding: 30px 25px !important; 
-            border-radius: 12px !important; 
-        }
-        section:last-of-type .card i { 
-            font-size: 2.2rem !important; /* Πιο λογικό μέγεθος εικονιδίων */
-            margin-bottom: 15px !important; 
+        section:last-of-type .card i {
+            color: #0ea5e9 !important; /* Στο κινητό (σε λευκό φόντο) το εικονίδιο να είναι σκούρο μπλε */
         }
     }
 </style>
