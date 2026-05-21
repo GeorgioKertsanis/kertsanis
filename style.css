@@ -788,3 +788,40 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+
+/* =========================================
+   ΑΠΟΛΥΤΟ ΚΛΕΙΔΩΜΑ ΟΡΙΖΟΝΤΙΑΣ ΚΥΛΙΣΗΣ (ANTI-SCROLL)
+   ========================================= */
+
+/* Υποχρεώνει τα περιθώρια να μετράνε ΕΣΩΤΕΡΙΚΑ στο πλάτος, ώστε τίποτα να μην ξεχειλώνει */
+* {
+    box-sizing: border-box !important;
+}
+
+/* Κλειδώνει το σώμα της σελίδας ακριβώς στο 100% της οθόνης */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ειδικός Κόφτης για το κινητό */
+@media (max-width: 768px) {
+    /* Τιθασεύει κάρτες, κουτάκια (τσεκ) και grids για να μην ανοίγουν δεξιά */
+    .container, .card, .grid, .plan-card, ul, li {
+        max-width: 100% !important;
+    }
+    
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Σπάει με το ζόρι λέξεις ή links που μπορεί να τεντώνουν την οθόνη */
+    p, h1, h2, h3, a, span, li {
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+    }
+}
