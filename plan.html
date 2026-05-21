@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* =========================================
-           ΑΠΟΛΥΤΟ FIX ΓΙΑ HEADER & ΔΙΚΟ ΜΑΣ FOOTER
+           ΑΠΟΛΥΤΟ FIX ΓΙΑ ΟΜΟΙΟΜΟΡΦΙΑ (PLAN.HTML)
            ========================================= */
         
         html, body {
@@ -20,7 +20,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
-        /* Ευθυγράμμιση Header */
+        /* Σωστή δομή στο Header: Όνομα αριστερά, μενού δεξιά */
         header {
             background-color: #ffffff !important;
             border-bottom: 1px solid #e2e8f0 !important;
@@ -29,7 +29,7 @@
 
         header .container {
             display: flex !important;
-            justify-content: space-between !important; /* Όνομα αριστερά, μενού δεξιά */
+            justify-content: space-between !important;
             align-items: center !important;
             max-width: 1200px !important;
             margin: 0 auto !important;
@@ -44,6 +44,7 @@
             color: #1e3a8a !important;
             text-decoration: none !important;
             border: none !important;
+            display: inline-block !important;
         }
         .logo-fix:hover {
             text-decoration: none !important;
@@ -58,9 +59,7 @@
             padding: 0 !important;
         }
 
-        /* =========================================
-           ΔΟΜΗ ΚΑΡΤΩΝ ΣΧΕΔΙΟΥ (ΑΛΦΑΔΙ)
-           ========================================= */
+        /* Στοίχιση καρτών σχεδίου */
         .plan-custom-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -113,7 +112,7 @@
             font-size: 1.1rem;
         }
 
-        /* Συμμάζεμα funding section */
+        /* Χρηματοδοτικά εργαλεία */
         .funding-custom-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -123,14 +122,14 @@
         }
 
         /* =========================================
-           ΤΟ ΔΙΚΟ ΜΑΣ FOOTER (ΟΛΟΙΔΙΟ ΜΕ INDEX)
+           ΤΟ ΣΩΣΤΟ, ΜΠΛΕ FOOTER (ΟΛΟΙΔΙΟ ΜΕ ΤΟ INDEX)
            ========================================= */
         footer {
-            background-color: #ffffff !important; /* Λευκό φόντο όπως το δικό μας */
-            color: #64748b !important;
+            background-color: #0f172a !important; /* Το βαθύ μπλε φόντο του site μας */
+            color: #ffffff !important;
             padding: 25px 0 !important;
             margin-top: 50px;
-            border-top: 1px solid #e2e8f0 !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
         }
         footer .container {
             display: flex !important;
@@ -144,6 +143,7 @@
         footer p {
             margin: 0 !important;
             font-size: 0.95rem !important;
+            color: #cbd5e1 !important;
         }
         footer .social-links {
             display: flex !important;
@@ -151,14 +151,14 @@
             margin: 0 !important;
         }
         footer .social-links a {
-            color: #64748b !important;
+            color: #ffffff !important;
             font-size: 1.2rem !important;
-            transition: transform 0.2s, color 0.2s !important;
+            transition: transform 0.2s !important;
             text-decoration: none !important;
         }
         footer .social-links a:hover {
             transform: scale(1.1) !important;
-            color: #1e3a8a !important; /* Σκούρο μπλε στο hover */
+            color: #38bdf8 !important; /* Φωτεινό γαλάζιο στο hover */
         }
 
         /* Responsive για κινητά */
