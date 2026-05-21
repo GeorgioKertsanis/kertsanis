@@ -7,7 +7,60 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Επιπλέον μικρές διορθώσεις μόνο για τη στοίχιση των καρτών του σχεδίου */
+        /* =========================================
+           ΑΠΟΛΥΤΟ FIX ΓΙΑ HEADER & ΔΙΚΟ ΜΑΣ FOOTER
+           ========================================= */
+        
+        html, body {
+            overflow-x: hidden !important;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        /* Ευθυγράμμιση Header */
+        header {
+            background-color: #ffffff !important;
+            border-bottom: 1px solid #e2e8f0 !important;
+            padding: 15px 0 !important;
+        }
+
+        header .container {
+            display: flex !important;
+            justify-content: space-between !important; /* Όνομα αριστερά, μενού δεξιά */
+            align-items: center !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 20px !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Το όνομα αριστερά - ΚΑΘΑΡΟ ΧΩΡΙΣ ΥΠΟΓΡΑΜΜΙΣΗ */
+        .logo-fix {
+            font-size: 1.4rem !important;
+            font-weight: 700 !important;
+            color: #1e3a8a !important;
+            text-decoration: none !important;
+            border: none !important;
+        }
+        .logo-fix:hover {
+            text-decoration: none !important;
+            color: #3b82f6 !important;
+        }
+
+        /* Το μενού δεξιά */
+        #nav-menu {
+            display: flex !important;
+            gap: 20px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* =========================================
+           ΔΟΜΗ ΚΑΡΤΩΝ ΣΧΕΔΙΟΥ (ΑΛΦΑΔΙ)
+           ========================================= */
         .plan-custom-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -36,7 +89,7 @@
         }
         .plan-custom-card h3 i {
             font-size: 1.4rem;
-            color: #3b82f6; /* Σοβαρό μπλε/γαλάζιο για τα εικονίδια των τίτλων */
+            color: #3b82f6;
         }
         .plan-custom-card ul {
             list-style: none !important;
@@ -59,6 +112,7 @@
             font-weight: bold;
             font-size: 1.1rem;
         }
+
         /* Συμμάζεμα funding section */
         .funding-custom-grid {
             display: grid;
@@ -67,10 +121,64 @@
             max-width: 1000px;
             margin: 30px auto 0 auto;
         }
-        /* Κλείδωμα οριζόντιου scroll στο κινητό */
+
+        /* =========================================
+           ΤΟ ΔΙΚΟ ΜΑΣ FOOTER (ΟΛΟΙΔΙΟ ΜΕ INDEX)
+           ========================================= */
+        footer {
+            background-color: #ffffff !important; /* Λευκό φόντο όπως το δικό μας */
+            color: #64748b !important;
+            padding: 25px 0 !important;
+            margin-top: 50px;
+            border-top: 1px solid #e2e8f0 !important;
+        }
+        footer .container {
+            display: flex !important;
+            justify-content: space-between !important; /* Κείμενο αριστερά, εικονίδια δεξιά */
+            align-items: center !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 20px !important;
+            box-sizing: border-box !important;
+        }
+        footer p {
+            margin: 0 !important;
+            font-size: 0.95rem !important;
+        }
+        footer .social-links {
+            display: flex !important;
+            gap: 15px !important;
+            margin: 0 !important;
+        }
+        footer .social-links a {
+            color: #64748b !important;
+            font-size: 1.2rem !important;
+            transition: transform 0.2s, color 0.2s !important;
+            text-decoration: none !important;
+        }
+        footer .social-links a:hover {
+            transform: scale(1.1) !important;
+            color: #1e3a8a !important; /* Σκούρο μπλε στο hover */
+        }
+
+        /* Responsive για κινητά */
         @media (max-width: 768px) {
-            html, body { overflow-x: hidden !important; }
-            .plan-custom-grid, .funding-custom-grid { grid-template-columns: 1fr !important; }
+            header .container {
+                flex-direction: column !important;
+                gap: 12px !important;
+                text-align: center !important;
+            }
+            #nav-menu {
+                justify-content: center !important;
+            }
+            footer .container {
+                flex-direction: column !important;
+                gap: 15px !important;
+                text-align: center !important;
+            }
+            .plan-custom-grid, .funding-custom-grid { 
+                grid-template-columns: 1fr !important; 
+            }
         }
     </style>
 </head>
@@ -78,7 +186,7 @@
 
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Γεώργιος Κερτσάνης</a>
+            <a href="index.html" class="logo-fix">Γεώργιος Κερτσάνης</a>
             <nav id="nav-menu">
                 <a href="index.html">Αρχική</a>
                 <a href="plan.html" class="active">Το Σχέδιο</a>
@@ -89,13 +197,13 @@
     </header>
 
     <main style="padding: 40px 0; background-color: #ffffff;">
-        <div class="container">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <h1 style="text-align: center; color: #0f172a; font-size: 2rem; margin-bottom: 30px; font-weight: 800;">Το Αναπτυξιακό Σχέδιο για τη Φλώρινα</h1>
             
             <div class="plan-custom-grid">
                 
                 <div class="plan-custom-card">
-                    <h3><i class="fas fa-laptop-code"></i> 1. Ψηφιακή Ανάπτυξη & Θέσεις Εργασίας</h3>
+                    <h3><i class="fas fa-laptop-code"></i> Ψηφιακή Ανάπτυξη & Θέσεις Εργασίας</h3>
                     <ul>
                         <li>Ίδρυση Κέντρων Ψηφιακής Εργασίας (Digital Hubs) για νέους επαγγελματίες.</li>
                         <li>Δημιουργία τοπικού δικτύου υποστήριξης και startup επιχειρηματικότητας.</li>
@@ -104,7 +212,7 @@
                 </div>
 
                 <div class="plan-custom-card">
-                    <h3><i class="fas fa-city"></i> 2. Υποδομές & Καθημερινότητα</h3>
+                    <h3><i class="fas fa-city"></i> Υποδομές & Καθημερινότητα</h3>
                     <ul>
                         <li>Αναβάθμιση του δικτύου οπτικών ινών για υψηλές ταχύτητες ίντερνετ σε όλο τον Δήμο.</li>
                         <li>Βελτίωση της προσβασιμότητας και έξυπνα συστήματα διαχείρισης της πόλης.</li>
@@ -113,7 +221,7 @@
                 </div>
 
                 <div class="plan-custom-card">
-                    <h3><i class="fas fa-map-marked-alt"></i> 3. Τουρισμός & Τοπική Ταυτότητα</h3>
+                    <h3><i class="fas fa-map-marked-alt"></i> Τουρισμός & Τοπική Ταυτότητα</h3>
                     <ul>
                         <li>Ψηφιακή προβολή των αξιοθέατων και της πολιτιστικής κληρονομιάς της Φλώρινας.</li>
                         <li>Διασύνδεση του πρωτογενούς τομέα (τοπικά προϊόντα) με τον εναλλακτικό τουρισμό.</li>
@@ -126,7 +234,7 @@
     </main>
 
     <section style="background-color: #0f172a; color: #ffffff; padding: 50px 0;">
-        <div class="container">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <h2 style="text-align: center; color: #ffffff; font-size: 1.6rem; margin-bottom: 10px; font-weight: 700;">Χρηματοδοτικά Εργαλεία & Υλοποίηση</h2>
             
             <div class="funding-custom-grid">
