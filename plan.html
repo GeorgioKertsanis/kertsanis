@@ -2,214 +2,262 @@
 <html lang="el">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Το Στρατηγικό Σχέδιο για τη Φλώρινα | Γεώργιος Κερτσάνης</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Το Σχέδιο μου | Γεώργιος Κερτσάνης</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* =========================================
+           ΚΑΘΑΡΟ, ΕΠΑΓΓΕΛΜΑΤΙΚΟ LAYOUT (PLAN.HTML)
+           ========================================= */
+        
+        /* Κλείδωμα οριζόντιας κίνησης */
+        html, body {
+            overflow-x: hidden !important;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
 
-    
+        /* Container για σωστά περιθώρια */
+        .plan-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
 
-    
+        /* Επικεφαλίδες */
+        .plan-title {
+            text-align: center;
+            color: #0f172a;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 800;
+        }
 
+        /* Δομή Λίστας & Καρτών */
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
 
-<style>
-    /* =========================================
-       1. ΓΕΝΙΚΗ ΔΙΟΡΘΩΣΗ (ΚΕΝΑ & ΤΕΛΙΤΣΕΣ)
-       ========================================= */
-    html, body { overflow-x: hidden !important; width: 100%; margin: 0; padding: 0; }
-    
-    /* Σκοτώνουμε τις τελίτσες δίπλα στα τικ μια και καλή! */
-    ul, .plan-card ul { 
-        list-style: none !important; 
-        padding-left: 0 !important; 
-        margin-top: 15px !important;
-    }
-    li { 
-        margin-bottom: 12px !important; 
-        position: relative !important;
-        line-height: 1.6 !important;
-    }
+        .plan-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
 
-    /* Μαζεύουμε τα τεράστια κενά ανάμεσα στα sections */
-    section { padding: 50px 0 !important; }
-    
-    /* =========================================
-       2. ΛΑΠΤΟΠ - ΔΙΟΡΘΩΣΗ ΧΡΩΜΑΤΩΝ ΣΤΟ ΜΠΛΕ SECTION
-       ========================================= */
-    @media (min-width: 769px) {
-        /* Στοχεύουμε το section με το μπλε φόντο (Χρηματοδοτικά Εργαλεία) */
-        section:last-of-type { 
+        .plan-card h3 {
+            color: #1e3a8a;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+
+        /* Εξαφάνιση τεκμηρίων/τελίτσας από τα πράσινα τσεκ */
+        .plan-card ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .plan-card li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #334155;
+            list-style-type: none !important;
+        }
+
+        /* Τοποθέτηση του τσεκ χειροκίνητα για να είναι αλφάδι */
+        .plan-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #10b981; /* Πράσινο */
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* =========================================
+           ΜΠΛΕ SECTION (ΧΡΗΜΑΤΟΔΟΤΙΚΑ ΕΡΓΑΛΕΙΑ)
+           ========================================= */
+        .funding-section {
             background-color: #0f172a !important; /* Βαθύ σοβαρό μπλε */
-            color: #ffffff !important; /* Υποχρεωτικά ΛΕΥΚΑ γράμματα */
-            padding: 60px 0 !important;
+            color: #ffffff !important;
+            padding: 60px 20px !important;
+            margin-top: 40px;
         }
-        /* Αναγκάζουμε όλους τους τίτλους και τα κείμενα εκεί μέσα να είναι λευκά */
-        section:last-of-type h2, 
-        section:last-of-type h3, 
-        section:last-of-type p, 
-        section:last-of-type li {
-            color: #f8fafc !important; 
-        }
-        /* Κομψές κάρτες με διακριτικό περίγραμμα, όχι τεράστια κουτιά */
-        section:last-of-type .card, 
-        section:last-of-type .plan-card { 
-            background: rgba(255, 255, 255, 0.03) !important; 
-            border: 1px solid rgba(255, 255, 255, 0.1) !important; 
-            box-shadow: none !important;
-            padding: 30px !important;
-            border-radius: 8px !important;
-        }
-        /* Τα εικονίδια (icons) να είναι φωτεινά γαλάζια για να κάνουν αντίθεση */
-        section:last-of-type .card i,
-        section:last-of-type i { 
-            color: #38bdf8 !important; 
-            font-size: 2rem !important; 
-            margin-bottom: 15px !important;
-        }
-        /* Τα Links να είναι φωτεινά και έντονα, όχι αμυδρά! */
-        section:last-of-type a {
-            color: #38bdf8 !important;
-            font-weight: 600 !important;
-            text-decoration: underline !important;
-        }
-    }
 
-    /* =========================================
-       3. ΚΙΝΗΤΟ - ΟΜΟΙΟΜΟΡΦΙΑ & ΚΑΘΑΡΟ ΛΕΥΚΟ
-       ========================================= */
-    @media (max-width: 768px) {
-        body, section, .plan-section { 
-            background-color: #ffffff !important; 
-            color: #334155 !important;
+        .funding-section h2 {
+            text-align: center;
+            color: #ffffff !important;
+            font-size: 2rem;
+            margin-bottom: 30px;
         }
-        .container { 
-            max-width: 100vw !important; 
-            overflow-x: hidden !important; 
-            padding: 0 15px !important; 
+
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        /* Κόβουμε λέξεις που τεντώνουν την οθόνη */
-        p, h1, h2, h3, a, span, li { 
-            word-wrap: break-word !important; 
-            overflow-wrap: anywhere !important; 
+
+        .funding-card {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
         }
-        /* Μαζεύουμε τις κάρτες στο κινητό, χωρίς υπερβολικά κενά */
-        .card, .plan-card { 
-            width: 100% !important; 
-            padding: 20px !important; 
-            margin-bottom: 20px !important; 
-            background: #ffffff !important; 
-            border: 1px solid #e2e8f0 !important; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important; 
-            border-radius: 8px !important;
+
+        .funding-card i {
+            color: #38bdf8 !important; /* Φωτεινό γαλάζιο εικονίδιο */
+            font-size: 2.2rem !important;
+            margin-bottom: 15px;
         }
-        section:last-of-type {
-            padding: 40px 15px !important;
+
+        .funding-card h3 {
+            color: #ffffff !important;
+            margin-bottom: 10px;
         }
-        section:last-of-type .card i {
-            color: #0ea5e9 !important; /* Στο κινητό (σε λευκό φόντο) το εικονίδιο να είναι σκούρο μπλε */
+
+        .funding-card p {
+            color: #cbd5e1 !important;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
-    }
-</style>
+
+        .funding-card a {
+            color: #38bdf8 !important; /* Καθαρό Link */
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           RESPONSIVE ΡΥΘΜΙΣΕΙΣ ΓΙΑ ΚΙΝΗΤΑ
+           ========================================= */
+        @media (max-width: 768px) {
+            .plan-title { font-size: 1.8rem; margin-bottom: 25px; }
+            
+            .plan-grid, .funding-grid {
+                grid-template-columns: 1fr !important; /* Όλα κάθετα στο κινητό */
+                gap: 20px;
+            }
+
+            .plan-container { padding: 20px 15px; }
+            .plan-card { padding: 20px; }
+            
+            /* Προστασία υπερχείλισης κειμένου */
+            p, h1, h2, h3, a, span, li {
+                overflow-wrap: break-word !important;
+                word-wrap: break-word !important;
+            }
+
+            /* Καθαρό λευκό φόντο για το πάνω μέρος στο κινητό */
+            .plan-main-section {
+                background-color: #ffffff !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <div class="container header-container-box">
-            <a href="index.html" class="logo-link">
-                <div class="logo">Γεώργιος Κερτσάνης</div>
-            </a>
+        <div class="container">
             <nav id="nav-menu">
                 <a href="index.html">Αρχική</a>
-                <a href="plan.html" style="color: var(--accent-color); font-weight: 700;">Το Σχέδιο</a>
-                <a href="index.html#proposals">Προτάσεις</a>
+                <a href="plan.html" class="active">Το Σχέδιο</a>
+                <a href="index.html#news">Νέα</a>
                 <a href="index.html#contact">Επικοινωνία</a>
             </nav>
         </div>
     </header>
 
-    <section class="plan-hero">
-        <div class="container">
-            <h1 class="plan-main-title">ΨΗΦΙΑΚΗ ΦΛΩΡΙΝΑ | ΟΡΑΜΑ & ΠΡΟΤΑΣΕΙΣ</h1>
-            <p class="hero-lead" style="margin: 20px auto; max-width: 700px;">Ένα ολοκληρωμένο, τεχνοκρατικό σχέδιο για την οικονομική, κοινωνική και ψηφιακή αναγέννηση του τόπου μας, με μηδενική επιβάρυνση του δημότη.</p>
-        </div>
-    </section>
-
-    <section class="plan-section">
-        <div class="container">
-            <div class="section-header">
-                <i class="fa-solid fa-building-shield section-icon"></i>
-                <h2 class="section-title">Κέντρα Ψηφιακής Εργασίας & Καινοτομίας</h2>
-            </div>
-            <p class="plan-text-block">Αξιοποιούμε το άδειο κτιριακό απόθεμα του Δήμου και τις υποδομές της ΒΙΠΕ. Δημιουργούμε σύγχρονους Κόμβους (Hubs) ψηφιακής εργασίας, προσφέροντας σε νέους επιστήμονες και επαγγελματίες τη δυνατότητα να εργάζονται για παγκόσμιες εταιρείες από τη Φλώρινα.</p>
-            <ul class="action-checklist">
-                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Αξιοποίηση ΕΣΠΑ</h4><p>Xρηματοδότηση για την ανακαίνιση και τον εξοπλισμό των κτιρίων.</p></div></li>
-                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>High-Speed Fiber Networking</h4><p>Εγκατάσταση δικτύων οπτικών ινών υπερ-υψηλών ταχυτήτων στους κόμβους.</p></div></li>
-                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Πλατφόρμα Προσέλκυσης Digital Nomads</h4><p>Στρατηγική προβολή της Φλώρινας ως ιδανικού προορισμού για απομακρυσμένη εργασία.</p></div></li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="plan-section">
-        <div class="container">
-            <div class="section-header">
-                <i class="fa-solid fa-microchip section-icon"></i>
-                <h2 class="section-title">Smart City: Η Φλώρινα του Μέλλοντος</h2>
-            </div>
-            <p class="plan-text-block">Μετατρέπουμε τη Φλώρινα σε μια «Έξυπνη Πόλη». Εφαρμόζουμε τεχνολογίες που βελτιώνουν την καθημερινότητα, μειώνουν το λειτουργικό κόστος του Δήμου και προστατεύουν το περιβάλλον.</p>
-            <ul class="action-checklist">
-                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Πράσινη Αστική Κινητικότητα</h4><p>Εγκατάσταση συστήματος 35 ηλεκτρικών ποδηλάτων (E-Bicycles) με σταθμούς φόρτισης.</p></div></li>
-                <li><i class="fa-solid fa-circle-check"></i><div class="action-text"><h4>Έξυπνος Φωτισμός (Smart Lighting)</h4><p>Μείωση κατανάλωσης ενέργειας έως 60% μέσω αισθητήρων και κεντρικής διαχείρισης.</p></div></li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="plan-section" style="background-color: var(--accent-color); color: #fff;">
-        <div class="container" style="text-align: center;">
-            <h2 style="color: #fff;">Xρηματοδοτικά Εργαλεία</h2>
-            <p style="margin: -20px auto 40px auto; color: rgba(255,255,255,0.9); max-width: 600px;">Κάντε κλικ παρακάτω για να μεταβείτε στους επίσημους ιστοτόπους των προγραμμάτων:</p>
+    <main class="plan-main-section">
+        <div class="plan-container">
+            <h1 class="plan-title">Το Αναπτυξιακό Σχέδιο για τη Φλώρινα</h1>
             
-            <div class="grid" style="gap: 30px;">
-                <a href="https://www.espa.gr" target="_blank" rel="noopener noreferrer" class="funding-link">
-                    <i class="fa-solid fa-building-columns"></i>
-                    <h4>ΕΣΠΑ</h4>
-                    <span>Επίσημη Πύλη &rarr;</span>
-                </a>
-                <a href="https://www.eydam.gr" target="_blank" rel="noopener noreferrer" class="funding-link">
-                    <i class="fa-solid fa-leaf"></i>
-                    <h4>Ταμείο Δίκαιης Μετάβασης</h4>
-                    <span>Επίσημη Πύλη &rarr;</span>
-                </a>
-                <a href="https://prasinotameio.gr" target="_blank" rel="noopener noreferrer" class="funding-link">
-                    <i class="fa-solid fa-euro-sign"></i>
-                    <h4>Πράσινο Ταμείο</h4>
-                    <span>Επίσημη Πύλη &rarr;</span>
-                </a>
+            <div class="plan-grid">
+                
+                <div class="plan-card">
+                    <h3>1. Ψηφιακή Ανάπτυξη & Θέσεις Εργασίας</h3>
+                    <ul>
+                        <li>Ίδρυση Κέντρων Ψηφιακής Εργασίας (Digital Hubs) για νέους επαγγελματίες.</li>
+                        <li>Δημιουργία τοπικού δικτύου υποστήριξης και startup επιχειρηματικότητας.</li>
+                        <li>Σεμινάρια ψηφιακών δεξιοτήτων και κυβερνοασφάλειας για την ενίσχυση των τοπικών επιχειρήσεων.</li>
+                    </ul>
+                </div>
+
+                <div class="plan-card">
+                    <h3>2. Υποδομές & Καθημερινότητα</h3>
+                    <ul>
+                        <li>Αναβάθμιση του δικτύου οπτικών ινών για υψηλές ταχύτητες ίντερνετ σε όλο τον Δήμο.</li>
+                        <li>Βελτίωση της προσβασιμότητας και έξυπνα συστήματα διαχείρισης της πόλης.</li>
+                        <li>Προώθηση πράσινων μορφών ενέργειας και μείωση του ενεργειακού κόστους.</li>
+                    </ul>
+                </div>
+
+                <div class="plan-card">
+                    <h3>3. Τουρισμός & Τοπική Ταυτότητα</h3>
+                    <ul>
+                        <li>Ψηφιακή προβολή των αξιοθέατων και της πολιτιστικής κληρονομιάς της Φλώρινας.</li>
+                        <li>Διασύνδεση του πρωτογενούς τομέα (τοπικά προϊόντα) με τον εναλλακτικό τουρισμό.</li>
+                        <li>Δημιουργία θεματικών διαδρομών για την προσέλκυση επισκεπτών όλο τον χρόνο.</li>
+                    </ul>
+                </div>
+
             </div>
+        </div>
+    </main>
+
+    <section class="funding-section">
+        <h2>Χρηματοδοτικά Εργαλεία & Υλοποίηση</h2>
+        <div class="funding-grid">
+            
+            <div class="funding-card">
+                <i class="fas fa-euro-sign"></i>
+                <h3>ΕΣΠΑ & Πράσινο Ταμείο</h3>
+                <p>Αξιοποίηση των ευρωπαϊκών κονδυλίων για τη δίκαιη μετάβαση και την πράσινη ανάπτυξη της περιοχής μας.</p>
+            </div>
+
+            <div class="funding-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Ψηφιακός Μετασχηματισμός</h3>
+                <p>Προγράμματα χρηματοδότησης για την εισαγωγή νέων τεχνολογιών και την κυβερνοασφάλεια των δομών μας.</p>
+            </div>
+
+            <div class="funding-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Συμπράξεις & Επενδύσεις</h3>
+                <p>Συνεργασία με τον ιδιωτικό τομέα για τη δημιουργία βιώσιμων θέσεων εργασίας. <a href="index.html#contact">Μάθετε περισσότερα</a></p>
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <div class="container footer-container">
-            <div class="footer-left"><p>&copy; <span id="year-plan"></span> kertsanis.gr</p></div>
-            <div class="footer-center">
-                <span class="footer-label">Follow us on:</span>
-                <div class="footer-icons">
-                    <a href="https://www.facebook.com/share/18hzpAoS5K/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/george_kertsanis" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/306947985322" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="viber://chat?number=%2B306947985322" title="Viber"><i class="fa-brands fa-viber"></i></a>
-                </div>
-            </div>
-            <div class="footer-right">
-                <p>Σχεδιασμός χαμηλής απόκρισης (Low Latency).</p>
-                <p class="footer-privacy">🔒 100% Privacy-First | Μηδέν Cookies</p>
+        <div class="container" style="text-align: center; padding: 20px 0;">
+            <p>&copy; 2026 Γεώργιος Κερτσάνης. Με επιφύλαξη παντός δικαιώματος.</p>
+            <div class="social-links" style="margin-top: 10px;">
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.getElementById("year-plan").textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
