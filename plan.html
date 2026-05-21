@@ -7,13 +7,28 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Αφαίρεση υπογράμμισης από το logo στο header */
-        header .logo {
-            text-decoration: none !important;
-            border-bottom: none !important;
-        }
+        /* CSS για απόλυτη ευθυγράμμιση και διορθώσεις λαθών */
         
-        /* Επιπλέον μικρές διορθώσεις μόνο για τη στοίχιση των καρτών του σχεδίου */
+        /* Header Fix: Όνομα αριστερά, Μενού δεξιά, χωρίς υπογραμμίσεις */
+        header .container {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 15px 20px !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+        }
+        header .logo {
+            text-decoration: none !important; /* Αφαίρεση υπογράμμισης */
+            font-weight: 700 !important;
+        }
+        #nav-menu {
+            display: flex !important;
+            gap: 20px !important;
+            margin-left: auto !important; /* Σπρώξιμο τέρμα δεξιά */
+        }
+
+        /* Σώμα Σελίδας & Κάρτες Σχεδίου */
         .plan-custom-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -66,63 +81,76 @@
             font-size: 1.1rem;
         }
 
-        /* ΚΑΘΑΡΟ ΜΑΥΡΟ SECTION ΓΙΑ ΤΑ ΧΡΗΜΑΤΟΔΟΤΙΚΑ ΕΡΓΑΛΕΙΑ */
-        .funding-black-section {
-            background-color: #111111 !important; /* Καθαρό μαύρο φόντο */
-            color: #ffffff !important;
-            padding: 50px 0;
+        /* SECTION ΧΡΗΜΑΤΟΔΟΤΙΚΩΝ ΕΡΓΑΛΕΙΩΝ: ΑΣΠΡΟ BACKGROUND */
+        .funding-white-section {
+            background-color: #ffffff !important; 
+            color: #0f172a !important;
+            padding: 60px 0 !important;
+            border-top: 1px solid #e2e8f0;
         }
-        .funding-black-section h2 {
-            text-align: center;
-            color: #ffffff !important;
-            font-size: 1.6rem;
-            margin-bottom: 30px;
-            font-weight: 700;
+        .funding-white-section h2 {
+            text-align: center !important;
+            color: #0f172a !important;
+            font-size: 1.6rem !important;
+            margin-bottom: 35px !important;
+            font-weight: 700 !important;
         }
         .funding-custom-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
+            gap: 25px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        .funding-black-card {
-            background: #1a1a1a !important; /* Ελαφρώς πιο ανοιχτό μαύρο για αντίθεση */
-            border: 1px solid #2d2d2d !important;
-            border-radius: 8px;
-            padding: 25px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        .funding-white-card {
+            background: #f8fafc !important; /* Ελαφρύ γκρι/άσπρο για τις κάρτες */
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 12px !important;
+            padding: 25px !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02) !important;
         }
-        .funding-black-card i {
-            color: #38bdf8 !important;
-            font-size: 1.8rem;
-            margin-bottom: 12px;
+        .funding-white-card i {
+            color: #1e3a8a !important; /* Σκούρο επαγγελματικό μπλε */
+            font-size: 2rem !important;
+            margin-bottom: 15px !important;
         }
-        .funding-black-card h3 {
-            color: #ffffff !important;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+        .funding-white-card h3 {
+            color: #1e3a8a !important;
+            font-size: 1.2rem !important;
+            margin-bottom: 10px !important;
+            font-weight: 600 !important;
         }
-        .funding-black-card p {
-            color: #cccccc !important;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
+        .funding-white-card p {
+            color: #475569 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.5 !important;
+            margin-bottom: 15px !important;
         }
-        .funding-black-card a {
-            color: #38bdf8 !important;
-            font-weight: 600;
-            text-decoration: underline;
-            font-size: 0.9rem;
+        .funding-white-card a {
+            color: #3b82f6 !important;
+            font-weight: 600 !important;
+            text-decoration: underline !important;
+            font-size: 0.95rem !important;
         }
 
-        /* Κλείδωμα οριζόντιου scroll στο κινητό */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            html, body { overflow-x: hidden !important; }
-            .plan-custom-grid, .funding-custom-grid { grid-template-columns: 1fr !important; }
+            header .container {
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+            #nav-menu {
+                margin-left: 0 !important;
+                justify-content: center !important;
+                width: 100% !important;
+            }
+            .plan-custom-grid, .funding-custom-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -134,7 +162,7 @@
             <nav id="nav-menu">
                 <a href="index.html">Αρχική</a>
                 <a href="plan.html" class="active">Το Σχέδιο</a>
-                <a href="index.html#news">Νέα</a>
+                <a href="index.html#news">Παρεμβάσεις</a>
                 <a href="index.html#contact">Επικοινωνία</a>
             </nav>
         </div>
@@ -180,13 +208,13 @@
         </div>
     </main>
 
-    <section class="funding-black-section">
+    <section class="funding-white-section">
         <div class="container">
             <h2>Χρηματοδοτικά Εργαλεία & Υλοποίηση</h2>
             
             <div class="funding-custom-grid">
                 
-                <div class="funding-black-card">
+                <div class="funding-white-card">
                     <div>
                         <i class="fas fa-euro-sign"></i>
                         <h3>ΕΣΠΑ 2021-2027</h3>
@@ -195,7 +223,7 @@
                     <a href="https://www.espa.gr" target="_blank">Επίσημη Πύλη ΕΣΠΑ</a>
                 </div>
 
-                <div class="funding-black-card">
+                <div class="funding-white-card">
                     <div>
                         <i class="fas fa-leaf"></i>
                         <h3>Πράσινο Ταμείο</h3>
@@ -204,7 +232,7 @@
                     <a href="https://www.prasinotameio.gr" target="_blank">Πράσινο Ταμείο</a>
                 </div>
 
-                <div class="funding-black-card">
+                <div class="funding-white-card">
                     <div>
                         <i class="fas fa-laptop-code"></i>
                         <h3>Κοινωνία της Πληροφορίας</h3>
