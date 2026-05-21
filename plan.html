@@ -7,251 +7,174 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CSS για απόλυτη ευθυγράμμιση και διορθώσεις λαθών */
+        html, body { overflow-x: hidden !important; background-color: #ffffff !important; }
         
-        /* Header Fix: Όνομα αριστερά, Μενού δεξιά, χωρίς υπογραμμίσεις */
-        header .container {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            padding: 15px 20px !important;
-            max-width: 1200px !important;
-            margin: 0 auto !important;
-        }
-        header .logo {
-            text-decoration: none !important; /* Αφαίρεση υπογράμμισης */
-            font-weight: 700 !important;
-        }
-        #nav-menu {
-            display: flex !important;
-            gap: 20px !important;
-            margin-left: auto !important; /* Σπρώξιμο τέρμα δεξιά */
-        }
-
-        /* Σώμα Σελίδας & Κάρτες Σχεδίου */
-        .plan-custom-grid {
+        .plan-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 20px 0;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .plan-custom-card {
+        .plan-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 25px;
+            padding: 30px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
         }
-        .plan-custom-card h3 {
+        .plan-card h3 {
             color: #1e3a8a;
             font-size: 1.3rem;
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 12px;
             border-bottom: 2px solid #3b82f6;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
         }
-        .plan-custom-card h3 i {
-            font-size: 1.4rem;
-            color: #3b82f6;
-        }
-        .plan-custom-card ul {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-        .plan-custom-card li {
+        .plan-card h3 i { color: #3b82f6; font-size: 1.5rem; }
+        .plan-card ul { list-style: none; padding: 0; margin: 0; }
+        .plan-card li {
             position: relative;
             padding-left: 25px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             line-height: 1.6;
-            color: #334155;
+            color: #333333;
         }
-        .plan-custom-card li::before {
+        .plan-card li::before {
             content: "✓";
             position: absolute;
             left: 0;
             top: 0;
             color: #10b981;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
-
-        /* SECTION ΧΡΗΜΑΤΟΔΟΤΙΚΩΝ ΕΡΓΑΛΕΩΝ: ΑΣΠΡΟ BACKGROUND */
-        .funding-white-section {
-            background-color: #ffffff !important; 
-            color: #0f172a !important;
-            padding: 60px 0 !important;
+        
+        /* ΤΟ ΚΑΤΩ SECTION: ΠΕΝΤΑΚΑΘΑΡΟ ΑΣΠΡΟ (#ffffff) */
+        .funding-section {
+            background-color: #ffffff !important;
+            padding: 50px 15px;
             border-top: 1px solid #e2e8f0;
         }
-        .funding-white-section h2 {
-            text-align: center !important;
-            color: #0f172a !important;
-            font-size: 1.6rem !important;
-            margin-bottom: 35px !important;
-            font-weight: 700 !important;
+        .funding-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
-        .funding-custom-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .funding-white-card {
-            background: #f8fafc !important; /* Ελαφρύ γκρι/άσπρο για τις κάρτες */
-            border: 1px solid #e2e8f0 !important;
-            border-radius: 12px !important;
-            padding: 25px !important;
-            text-align: center !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02) !important;
-        }
-        .funding-white-card i {
-            color: #1e3a8a !important; /* Σκούρο μπλε */
-            font-size: 2rem !important;
-            margin-bottom: 15px !important;
-        }
-        .funding-white-card h3 {
-            color: #1e3a8a !important;
-            font-size: 1.2rem !important;
-            margin-bottom: 10px !important;
-            font-weight: 600 !important;
-        }
-        .funding-white-card p {
-            color: #475569 !important;
-            font-size: 0.95rem !important;
-            line-height: 1.5 !important;
-            margin-bottom: 15px !important;
-        }
-        .funding-white-card a {
-            color: #3b82f6 !important;
-            font-weight: 600 !important;
-            text-decoration: underline !important;
-            font-size: 0.95rem !important;
-        }
-
-        /* Mobile Responsive */
+        .funding-card h3 { color: #1e3a8a; margin-bottom: 10px; font-weight: bold; }
+        .funding-card p { color: #444444; line-height: 1.5; margin-bottom: 15px; }
+        .funding-card a { color: #3b82f6; font-weight: bold; text-decoration: underline; }
+        .funding-card i { color: #1e3a8a; font-size: 2rem; margin-bottom: 15px; }
+        
         @media (max-width: 768px) {
-            header .container {
-                flex-direction: column !important;
-                gap: 15px !important;
-            }
-            #nav-menu {
-                margin-left: 0 !important;
-                justify-content: center !important;
-                width: 100% !important;
-            }
-            .plan-custom-grid, .funding-custom-grid {
-                grid-template-columns: 1fr !important;
-            }
+            .plan-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-<body>
+<body style="background-color: #ffffff; margin: 0; padding: 0;">
 
     <header>
-        <div class="container">
-            <a href="index.html" class="logo">Γεώργιος Κερτσάνης</a>
+        <div class="container header-container-box">
+            <a href="#hero" class="logo-link"><div class="logo">Γεώργιος Κερτσάνης</div></a>
             <nav id="nav-menu">
-                <a href="index.html">Αρχική</a>
-                <a href="plan.html" class="active">Το Σχέδιο</a>
-                <a href="index.html#news">Παρεμβάσεις</a>
-                <a href="index.html#contact">Επικοινωνία</a>
+                <a href="#hero">Αρχική</a>
+                <a href="#about">Πορεία</a>
+                <a href="plan.html" class="active">Σχέδιο</a>
+                <a href="#news">Παρεμβάσεις</a>
+                <a href="#contact">Επικοινωνία</a>
             </nav>
         </div>
     </header>
 
-    <main style="padding: 40px 0; background-color: #ffffff;">
-        <div class="container">
-            <h1 style="text-align: center; color: #0f172a; font-size: 2rem; margin-bottom: 30px; font-weight: 800;">Το Αναπτυξιακό Σχέδιο για τη Φλώρινα</h1>
+    <main style="background-color: #ffffff; padding: 40px 15px;">
+        <h1 style="text-align: center; color: #1e3a8a; font-size: 2.2rem; margin-bottom: 40px;">Το Αναπτυξιακό Σχέδιο για τη Φλώρινα</h1>
+        
+        <div class="plan-grid">
+            <div class="plan-card">
+                <h3><i class="fas fa-laptop-code"></i> 1. Ψηφιακή Ανάπτυξη & Θέσεις Εργασίας</h3>
+                <ul>
+                    <li>Ίδρυση Σύγχρονων Κέντρων Ψηφιακής Εργασίας (Digital Hubs) για την απορρόφηση των νέων επιστημόνων.</li>
+                    <li>Δημιουργία τοπικού δικτύου υποστήριξης και startup επιχειρηματικότητας με έμφαση στην αγροτεχνολογία.</li>
+                    <li>Σεμινάρια ψηφιακών δεξιοτήτων, ηλεκτρονικού εμπορίου (E-commerce) και κυβερνοασφάλειας για τοπικούς εμπόρους.</li>
+                    <li>Ανάπτυξη υποδομών τηλεεργασίας για την προσέλκυση "Ψηφιακών Νομάδων" που θα τονώσουν την τοπική οικονομία.</li>
+                </ul>
+            </div>
             
-            <div class="plan-custom-grid">
-                
-                <div class="plan-custom-card">
-                    <h3><i class="fas fa-laptop-code"></i> 1. Ψηφιακή Ανάπτυξη & Θέσεις Εργασίας</h3>
-                    <ul>
-                        <li>Ίδρυση Σύγχρονων Κέντρων Ψηφιακής Εργασίας (Digital Hubs) για την απορρόφηση των νέων επιστημόνων.</li>
-                        <li>Δημιουργία τοπικού δικτύου υποστήριξης και startup επιχειρηματικότητας με έμφαση στην αγροτεχνολογία.</li>
-                        <li>Σεμινάρια ψηφιακών δεξιοτήτων, ηλεκτρονικού εμπορίου (E-commerce) και κυβερνοασφάλειας για τοπικούς εμπόρους.</li>
-                        <li>Ανάπτυξη υποδομών τηλεεργασίας για την προσέλκυση "Ψηφιακών Νομάδων" (Digital Nomads) που θα τονώσουν την τοπική οικονομία.</li>
-                    </ul>
-                </div>
-
-                <div class="plan-custom-card">
-                    <h3><i class="fas fa-city"></i> 2. Υποδομές & Καθημερινότητα</h3>
-                    <ul>
-                        <li>Στρατηγική αναβάθμιση του δικτύου οπτικών ινών (FTTH) για εγγυημένες υπερ-υψηλές ταχύτητες ίντερνετ σε κάθε γωνιά του Δήμου.</li>
-                        <li>Προώθηση Ενεργειακών Κοινοτήτων και αξιοποίηση ΑΠΕ για τη δραστική μείωση του κόστους ρεύματος και θέρμανσης στα νοικοκυριά.</li>
-                        <li>Έξυπνα συστήματα διαχείρισης αστικού φωτισμού, στάθμευσης και βελτίωση της προσβασιμότητας για ΑμεΑ.</li>
-                        <li>Ολοκληρωμένη διαχείριση υδάτινων πόρων και εκσυγχρονισμός των εγκαταστάσεων βιολογικού καθαρισμού.</li>
-                    </ul>
-                </div>
-
-                <div class="plan-custom-card">
-                    <h3><i class="fas fa-map-marked-alt"></i> 3. Τουρισμός & Topική Ταυτότητα</h3>
-                    <ul>
-                        <li>Ψηφιακή πλατφόρμα προβολής των μοναδικών σημείων ενδιαφέροντος, των λιμνών και της πολιτιστικής κληρονομιάς μας.</li>
-                        <li>Διασύνδεση του πρωτογενούς τομέα (πιπεριές Φλωρίνης, τοπικοί οίνοι) με τον γαστρονομικό και οινικό τουρισμό.</li>
-                        <li>Ανάπτυξη εναλλακτικών μορφών τουρισμού (ορειβασία, χιονοδρομικός, θρησκευτικός) για 12μηνη επισκεψιμότητα.</li>
-                        <li>Διοργάνωση ετήσιων πολιτιστικών και τεχνολογικών φεστιβάλ που θα καθιερώσουν τη Φλώρινα ως περιφερειακό πόλο έλξης.</li>
-                    </ul>
-                </div>
-
+            <div class="plan-card">
+                <h3><i class="fas fa-city"></i> 2. Υποδομές & Καθημερινότητα</h3>
+                <ul>
+                    <li>Στρατηγική αναβάθμιση του δικτύου οπτικών ινών (FTTH) για εγγυημένες υπερ-υψηλές ταχύτητες ίντερνετ σε όλο τον Δήμο.</li>
+                    <li>Προώθηση Ενεργειακών Κοινοτήτων και αξιοποίηση ΑΠΕ για τη δραστική μείωση του κόστους ρεύματος.</li>
+                    <li>Έξυπνα συστήματα διαχείρισης αστικού φωτισμού, στάθμευσης και βελτίωση της προσβασιμότητας για ΑμεΑ.</li>
+                    <li>Ολοκληρωμένη διαχείριση υδάτινων πόρων και εκσυγχρονισμός των εγκαταστάσεων βιολογικού καθαρισμού.</li>
+                </ul>
+            </div>
+            
+            <div class="plan-card">
+                <h3><i class="fas fa-map-marked-alt"></i> 3. Τουρισμός & Τοπική Ταυτότητα</h3>
+                <ul>
+                    <li>Ψηφιακή πλατφόρμα προβολής των σημείων ενδιαφέροντος, των λιμνών και της πολιτιστικής κληρονομιάς μας.</li>
+                    <li>Διασύνδεση του πρωτογενούς τομέα (πιπεριές, οίνοι) με τον γαστρονομικό τουρισμό.</li>
+                    <li>Ανάπτυξη εναλλακτικών μορφών τουρισμού για 12μηνη επισκεψιμότητα (ορειβασία, χιονοδρομικός).</li>
+                    <li>Διοργάνωση ετήσιων φεστιβάλ που θα καθιερώσουν τη Φλώρινα ως περιφερειακό πόλο έλξης.</li>
+                </ul>
             </div>
         </div>
     </main>
 
-    <section class="funding-white-section">
-        <div class="container">
-            <h2>Χρηματοδοτικά Εργαλεία & Υλοποίηση</h2>
-            
-            <div class="funding-custom-grid">
-                
-                <div class="funding-white-card">
-                    <div>
-                        <i class="fas fa-euro-sign"></i>
-                        <h3>ΕΣΠΑ 2021-2027</h3>
-                        <p>Άντληση ευρωπαϊκών πόρων για την περιφερειακή ανάπτυξη, την ενίσχυση της επιχειρηματικότητας και τη δίκαιη αναπτυξιακή μετάβαση.</p>
-                    </div>
-                    <a href="https://www.espa.gr" target="_blank">Επίσημη Πύλη ΕΣΠΑ</a>
-                </div>
+    <section class="funding-section">
+        <h2 style="text-align: center; color: #1e3a8a; font-size: 1.8rem; margin-bottom: 30px;">Χρηματοδοτικά Εργαλεία & Υλοποίηση</h2>
+        
+        <div class="plan-grid" style="padding-top: 0; max-width: 1000px;">
+            <div class="funding-card">
+                <i class="fas fa-euro-sign"></i>
+                <h3>ΕΣΠΑ 2021-2027</h3>
+                <p>Άντληση ευρωπαϊκών πόρων για την περιφερειακή ανάπτυξη και την ενίσχυση της τοπικής επιχειρηματικότητας.</p>
+                <a href="https://www.espa.gr" target="_blank">Επίσημη Πύλη ΕΣΠΑ</a>
+            </div>
 
-                <div class="funding-white-card">
-                    <div>
-                        <i class="fas fa-leaf"></i>
-                        <h3>Πράσινο Ταμείο</h3>
-                        <p>Χρηματοδότηση προγραμμάτων για την περιβαλλοντική αναβάθμιση των πόλεων, την ενεργειακή απόδοση και την κυκλική οικονομία.</p>
-                    </div>
-                    <a href="https://www.prasinotameio.gr" target="_blank">Πράσινο Ταμείο</a>
-                </div>
+            <div class="funding-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Πράσινο Ταμείο</h3>
+                <p>Χρηματοδότηση προγραμμάτων για την περιβαλλοντική αναβάθμιση και την ενεργειακή απόδοση.</p>
+                <a href="https://www.prasinotameio.gr" target="_blank">Πράσινο Ταμείο</a>
+            </div>
 
-                <div class="funding-white-card">
-                    <div>
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Κοινωνία της Πληροφορίας</h3>
-                        <p>Αξιοποίηση κρατικών και κοινοτικών κονδυλίων για τον ψηφιακό μετασχηματισμό των ΟΤΑ και την ψηφιακή ετοιμότητα.</p>
-                    </div>
-                    <a href="https://www.ktp.gr" target="_blank">Ψηφιακά Προγράμματα ΚτΠ</a>
-                </div>
-
+            <div class="funding-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Ελλάδα 2.0</h3>
+                <p>Εθνικό Σχέδιο Ανάκαμψης και Ανθεκτικότητας για την ψηφιακή μετάβαση και τον εκσυγχρονισμό.</p>
+                <a href="https://greece20.gov.gr" target="_blank">Ταμείο Ανάκαμψης</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Γεώργιος Κερτσάνης. Με επιφύλαξη παντός δικαιώματος.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+        <div class="container footer-container">
+            <div class="footer-left">
+                <p>&copy; <span id="year-index"></span> kertsanis.gr</p>
+            </div>
+            
+            <div class="footer-center">
+                <span class="footer-label">Follow us on:</span>
+                <div class="footer-icons">
+                    <a href="https://www.facebook.com/share/18hzpAoS5K/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/george_kertsanis" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/306947985322" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="viber://chat?number=%2B306947985322" title="Viber"><i class="fa-brands fa-viber"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <p>Σχεδιασμός χαμηλής απόκρισης (Low Latency).</p>
+                <p class="footer-privacy">🔒 100% Privacy-First | Μηδέν Cookies & Καταγραφή</p>
             </div>
         </div>
     </footer>
