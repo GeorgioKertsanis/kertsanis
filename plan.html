@@ -7,24 +7,65 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Σωστή δομή header όπως το index */
-        header { background: #fff; padding: 20px 0; border-bottom: 1px solid #eee; }
-        header .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #1a1a1a; text-decoration: none; }
-        nav a { margin-left: 20px; color: #333; text-decoration: none; font-weight: 500; }
-        
-        /* Layout για το Σχέδιο */
-        .plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-        .card { background: #f9f9f9; padding: 30px; border-radius: 12px; border-top: 4px solid #0066cc; }
-        .card h3 { color: #0066cc; margin-top: 0; display: flex; align-items: center; gap: 10px; }
-        .card ul { list-style: none; padding: 0; }
-        .card li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-        .card li::before { content: "✓"; position: absolute; left: 0; color: #00cc66; font-weight: bold; }
-        
-        /* Footer (Όπως το index) */
-        footer { background: #0f172a; color: #fff; padding: 40px 0; margin-top: 50px; }
-        footer .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-        .social-links a { color: #fff; margin-left: 15px; font-size: 1.2rem; }
+        /* CSS ειδικά για τη στοίχιση των καρτών του σχεδίου, χωρίς να επηρεάζει το header/footer */
+        .plan-custom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        .plan-custom-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .plan-custom-card h3 {
+            color: #1e3a8a;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        .plan-custom-card h3 i {
+            font-size: 1.4rem;
+            color: #3b82f6;
+        }
+        .plan-custom-card ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .plan-custom-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            color: #334155;
+        }
+        .plan-custom-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .funding-custom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -32,56 +73,106 @@
     <header>
         <div class="container">
             <a href="index.html" class="logo">Γεώργιος Κερτσάνης</a>
-            <nav>
+            <nav id="nav-menu">
                 <a href="index.html">Αρχική</a>
-                <a href="plan.html">Το Σχέδιο</a>
+                <a href="plan.html" class="active">Το Σχέδιο</a>
                 <a href="index.html#news">Παρεμβάσεις</a>
                 <a href="index.html#contact">Επικοινωνία</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <h1 style="text-align: center; margin-top: 40px;">Το Αναπτυξιακό Σχέδιο</h1>
-        <div class="plan-grid">
-            <div class="card">
-                <h3><i class="fas fa-laptop-code"></i> Ψηφιακή Ανάπτυξη</h3>
-                <ul>
-                    <li>Ίδρυση Κέντρων Ψηφιακή Εργασίας.</li>
-                    <li>Startup υποστήριξη.</li>
-                    <li>Σεμινάρια κυβερνοασφάλειας.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3><i class="fas fa-city"></i> Υποδομές</h3>
-                <ul>
-                    <li>Αναβάθμιση οπτικών ινών.</li>
-                    <li>Έξυπνη διαχείριση πόλης.</li>
-                    <li>Πράσινη ενέργεια.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3><i class="fas fa-map-marked-alt"></i> Τουρισμός</h3>
-                <ul>
-                    <li>Ψηφιακή προβολή αξιοθέατων.</li>
-                    <li>Τοπικά προϊόντα.</li>
-                    <li>Θεματικές διαδρομές.</li>
-                </ul>
+    <main style="padding: 40px 0; background-color: #ffffff;">
+        <div class="container">
+            <h1 style="text-align: center; color: #0f172a; font-size: 2.2rem; margin-bottom: 10px; font-weight: 800;">Το Αναπτυξιακό Σχέδιο για τη Φλώρινα</h1>
+            <p style="text-align: center; color: #64748b; max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem;">Οι βασικοί πυλώνες και οι στρατηγικές δεσμεύσεις για το μέλλον του τόπου μας.</p>
+            
+            <div class="plan-custom-grid">
+                
+                <div class="plan-custom-card">
+                    <h3><i class="fas fa-laptop-code"></i> 1. Ψηφιακή Ανάπτυξη & Θέσεις Εργασίας</h3>
+                    <ul>
+                        <li>Ίδρυση Κέντρων Ψηφιακής Εργασίας (Digital Hubs) για νέους επαγγελματίες.</li>
+                        <li>Δημιουργία τοπικού δικτύου υποστήριξης και startup επιχειρηματικότητας.</li>
+                        <li>Σεμινάρια ψηφιακών δεξιοτήτων και κυβερνοασφάλειας για την ενίσχυση των τοπικών επιχειρήσεων.</li>
+                    </ul>
+                </div>
+
+                <div class="plan-custom-card">
+                    <h3><i class="fas fa-city"></i> 2. Υποδομές & Καθημερινότητα</h3>
+                    <ul>
+                        <li>Αναβάθμιση του δικτύου οπτικών ινών για υψηλές ταχύτητες ίντερνετ σε όλο τον Δήμο.</li>
+                        <li>Βελτίωση της προσβασιμότητας και έξυπνα συστήματα διαχείρισης της πόλης.</li>
+                        <li>Προώθηση πράσινων μορφών ενέργειας και μείωση του ενεργειακού κόστους.</li>
+                    </ul>
+                </div>
+
+                <div class="plan-custom-card">
+                    <h3><i class="fas fa-map-marked-alt"></i> 3. Τουρισμός & Τοπική Ταυτότητα</h3>
+                    <ul>
+                        <li>Ψηφιακή προβολή των αξιοθέατων και της πολιτιστικής κληρονομιάς της Φλώρινας.</li>
+                        <li>Διασύνδεση του πρωτογενούς τομέα (τοπικά προϊόντα) με τον εναλλακτικό τουρισμό.</li>
+                        <li>Δημιουργία θεματικών διαδρομών για την προσέλκυση επισκεπτών όλο τον χρόνο.</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </main>
 
-    <footer>
+    <section style="background-color: #0f172a; color: #ffffff; padding: 60px 0;">
         <div class="container">
-            <p>&copy; <span id="year-index"></span> Γεώργιος Κερτσάνης</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+            <h2 style="text-align: center; color: #ffffff; font-size: 1.8rem; margin-bottom: 10px; font-weight: 700;">Χρηματοδοτικά Εργαλεία & Υλοποίηση</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 40px auto;">Πώς θα χρηματοδοτηθούν και θα γίνουν πράξη οι δεσμεύσεις μας.</p>
+            
+            <div class="funding-custom-grid">
+                
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 25px; text-align: center;">
+                    <i class="fas fa-euro-sign" style="color: #38bdf8; font-size: 2rem; margin-bottom: 15px;"></i>
+                    <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 10px;">ΕΣΠΑ & Πράσινο Ταμείο</h3>
+                    <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; margin: 0;">Αξιοποίηση των ευρωπαϊκών κονδυλίων για τη δίκαιη μετάβαση και την πράσινη ανάπτυξη της περιοχής μας.</p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 25px; text-align: center;">
+                    <i class="fas fa-laptop-code" style="color: #38bdf8; font-size: 2rem; margin-bottom: 15px;"></i>
+                    <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 10px;">Ψηφιακός Μετασχηματισμός</h3>
+                    <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; margin: 0;">Προγράμματα χρηματοδότησης για την εισαγωγή νέων τεχνολογιών και την κυβερνοασφάλεια των δομών μας.</p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 25px; text-align: center;">
+                    <i class="fas fa-handshake" style="color: #38bdf8; font-size: 2rem; margin-bottom: 15px;"></i>
+                    <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 10px;">Συμπράξεις & Επενδύσεις</h3>
+                    <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px;">Συνεργασία με τον ιδιωτικό τομέα για τη δημιουργία βιώσιμων θέσεων εργασίας.</p>
+                    <a href="index.html#contact" style="color: #38bdf8; font-weight: 600; text-decoration: none; font-size: 0.95rem;">Μάθετε περισσότερα <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Γεώργιος Κερτσάνης</h3>
+                <p>Τεχνολογία & Καινοτομία για τη Φλώρινα.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>&copy; <span id="year-index"></span> Γεώργιος Κερτσάνης. Κατασκευή & Σχεδιασμός χαμηλής απόκρισης (Low Latency).</p>
+                <p class="footer-privacy">🔒 100% Privacy-First | Μηδέν Cookies & Καταγραφή</p>
             </div>
         </div>
     </footer>
 
-    <script>document.getElementById("year-index").textContent = new Date().getFullYear();</script>
+    <script>
+        document.getElementById("year-index").textContent = new Date().getFullYear();
+        // Προστασία κειμένου όπως στο index σου
+        document.addEventListener("contextmenu", event => event.preventDefault());
+    </script>
+
 </body>
 </html>
