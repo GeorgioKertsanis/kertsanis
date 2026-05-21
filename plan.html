@@ -73,6 +73,54 @@
             padding-right: 15px !important;
         }
     </style>
+
+    <style>
+        /* ΤΟ ΑΠΟΛΥΤΟ ΚΛΕΙΔΩΜΑ ΓΙΑ ΤΟ PLAN.HTML ΣΤΟ ΚΙΝΗΤΟ */
+        @media (max-width: 768px) {
+            /* Κλειδώνει το σώμα */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100vw !important;
+                position: relative !important;
+            }
+            /* Αναγκάζει τα πάντα να σέβονται το πλάτος της οθόνης */
+            * {
+                box-sizing: border-box !important;
+                max-width: 100vw !important;
+                word-wrap: break-word !important; /* Κόβει τις μεγάλες λέξεις/links */
+                overflow-wrap: anywhere !important;
+            }
+            /* Κεντράρει το container και δεν το αφήνει να βγει έξω */
+            .container {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                margin: 0 auto !important;
+            }
+            /* Αν υπάρχουν κάρτες ή grids, τα κάνει να στοιβάζονται κάθετα */
+            .grid, .plan-grid, .row, .plan-card {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            /* Μαζεύει τις λίστες (τα πράσινα τσεκ) για να μην σπρώχνουν δεξιά */
+            ul, li {
+                width: 100% !important;
+                padding-left: 0 !important;
+                margin-left: 10px !important;
+                white-space: normal !important;
+                display: block !important;
+            }
+            /* Εικόνες να μην ξεχειλώνουν */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
