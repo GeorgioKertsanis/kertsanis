@@ -11,7 +11,6 @@
            ΚΑΘΑΡΟ, ΕΠΑΓΓΕΛΜΑΤΙΚΟ LAYOUT (PLAN.HTML)
            ========================================= */
         
-        /* Κλείδωμα οριζόντιας κίνησης */
         html, body {
             overflow-x: hidden !important;
             width: 100%;
@@ -21,7 +20,26 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
-        /* Container για σωστά περιθώρια */
+        /* Ευθυγράμμιση Header με το σωστό στυλ του index */
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        /* Container για σωστά περιθώρια σώματος */
         .plan-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -29,41 +47,40 @@
             box-sizing: border-box;
         }
 
-        /* Επικεφαλίδες */
+        /* Μαζεμένοι τίτλοι για να μην φωνάζουν */
         .plan-title {
             text-align: center;
             color: #0f172a;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+            font-size: 2rem; /* Πιο μαζεμένο και κομψό */
+            margin-bottom: 35px;
             font-weight: 800;
         }
 
         /* Δομή Λίστας & Καρτών */
         .plan-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
 
         .plan-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 30px;
+            padding: 25px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .plan-card h3 {
             color: #1e3a8a;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border-bottom: 2px solid #3b82f6;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
-        /* Εξαφάνιση τεκμηρίων/τελίτσας από τα πράσινα τσεκ */
         .plan-card ul {
             list-style: none !important;
             padding: 0 !important;
@@ -72,76 +89,78 @@
 
         .plan-card li {
             position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-            line-height: 1.6;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            line-height: 1.5;
             color: #334155;
             list-style-type: none !important;
         }
 
-        /* Τοποθέτηση του τσεκ χειροκίνητα για να είναι αλφάδι */
         .plan-card li::before {
             content: "✓";
             position: absolute;
             left: 0;
             top: 0;
-            color: #10b981; /* Πράσινο */
+            color: #10b981;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         /* =========================================
-           ΜΠΛΕ SECTION (ΧΡΗΜΑΤΟΔΟΤΙΚΑ ΕΡΓΑΛΕΙΑ)
+           ΜΠΛΕ SECTION - ΜΑΖΕΜΕΝΟ & ΣΟΒΑΡΟ
            ========================================= */
         .funding-section {
-            background-color: #0f172a !important; /* Βαθύ σοβαρό μπλε */
+            background-color: #0f172a !important; 
             color: #ffffff !important;
-            padding: 60px 20px !important;
-            margin-top: 40px;
+            padding: 45px 20px !important; /* Μαζέψαμε τα κενά */
+            margin-top: 30px;
         }
 
         .funding-section h2 {
             text-align: center;
             color: #ffffff !important;
-            font-size: 2rem;
-            margin-bottom: 30px;
+            font-size: 1.6rem; /* Μικρότερο μέγεθος, όχι πια φωνές */
+            margin-bottom: 25px;
+            font-weight: 700;
         }
 
         .funding-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px; /* Πιο μαζεμένα */
+            max-width: 950px;
             margin: 0 auto;
         }
 
         .funding-card {
             background: rgba(255, 255, 255, 0.04) !important;
-            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
             border-radius: 8px;
-            padding: 25px;
+            padding: 20px; /* Πιο μαζεμένο */
             text-align: center;
         }
 
         .funding-card i {
-            color: #38bdf8 !important; /* Φωτεινό γαλάζιο εικονίδιο */
-            font-size: 2.2rem !important;
-            margin-bottom: 15px;
+            color: #38bdf8 !important; 
+            font-size: 1.8rem !important; /* Πιο διακριτικά εικονίδια */
+            margin-bottom: 12px;
         }
 
         .funding-card h3 {
             color: #ffffff !important;
-            margin-bottom: 10px;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
         }
 
         .funding-card p {
             color: #cbd5e1 !important;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 10px;
         }
 
         .funding-card a {
-            color: #38bdf8 !important; /* Καθαρό Link */
+            color: #38bdf8 !important; 
             font-weight: 600;
             text-decoration: underline;
         }
@@ -150,23 +169,27 @@
            RESPONSIVE ΡΥΘΜΙΣΕΙΣ ΓΙΑ ΚΙΝΗΤΑ
            ========================================= */
         @media (max-width: 768px) {
-            .plan-title { font-size: 1.8rem; margin-bottom: 25px; }
+            header .container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .plan-title { font-size: 1.6rem; margin-bottom: 20px; }
+            .funding-section h2 { font-size: 1.4rem; }
             
             .plan-grid, .funding-grid {
-                grid-template-columns: 1fr !important; /* Όλα κάθετα στο κινητό */
-                gap: 20px;
+                grid-template-columns: 1fr !important;
+                gap: 15px;
             }
 
             .plan-container { padding: 20px 15px; }
-            .plan-card { padding: 20px; }
             
-            /* Προστασία υπερχείλισης κειμένου */
             p, h1, h2, h3, a, span, li {
                 overflow-wrap: break-word !important;
                 word-wrap: break-word !important;
             }
 
-            /* Καθαρό λευκό φόντο για το πάνω μέρος στο κινητό */
             .plan-main-section {
                 background-color: #ffffff !important;
             }
@@ -177,6 +200,7 @@
 
     <header>
         <div class="container">
+            <a href="index.html" class="logo">Γεώργιος Κερτσάνης</a>
             <nav id="nav-menu">
                 <a href="index.html">Αρχική</a>
                 <a href="plan.html" class="active">Το Σχέδιο</a>
@@ -249,12 +273,12 @@
     </section>
 
     <footer>
-        <div class="container" style="text-align: center; padding: 20px 0;">
+        <div class="container">
             <p>&copy; 2026 Γεώργιος Κερτσάνης. Με επιφύλαξη παντός δικαιώματος.</p>
-            <div class="social-links" style="margin-top: 10px;">
-                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
-                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-                <a href="#" style="color: #cbd5e1; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
