@@ -46,7 +46,6 @@
     <title>Το Σχέδιο μου | Γεώργιος Κερτσάνης</title>
     
     <style>
-        /* Απομονωμένο CSS αποκλειστικά για το περιεχόμενο του Σχεδίου */
         .plan-isolated-section {
             padding: 60px 0;
             background-color: #ffffff !important;
@@ -121,22 +120,22 @@
             font-size: 1.1rem !important;
         }
 
-        /* Χρηματοδοτικά Εργαλεία Section */
+        /* --- Χρηματοδοτικά Εργαλεία Section (ΑΛΛΑΓΜΕΝΟ ΣΕ ΛΕΥΚΟ & ΜΑΥΡΟ) --- */
         .funding-isolated-section {
-            background-color: #0f172a !important;
-            color: #ffffff !important;
+            background-color: #ffffff !important; /* Αφαιρέθηκε το μπλε φόντο */
+            color: #334155 !important;
             padding: 70px 0;
         }
         .funding-isolated-section h2 {
             text-align: center;
-            color: #ffffff !important;
+            color: #000000 !important; /* Μαύρα γράμματα όπως ζήτησες */
             font-size: 1.8rem;
             margin-bottom: 10px;
             font-weight: 700;
         }
         .funding-isolated-section .funding-subtitle {
             text-align: center;
-            color: #94a3b8;
+            color: #64748b;
             max-width: 600px;
             margin: 0 auto 40px auto;
         }
@@ -150,31 +149,32 @@
             box-sizing: border-box;
         }
         .funding-isolated-card {
-            background: rgba(255, 255, 255, 0.03) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            background: #ffffff !important; /* Λευκές κάρτες */
+            border: 1px solid #e2e8f0 !important; /* Διακριτικό γκρι περίγραμμα */
             border-radius: 12px;
             padding: 25px;
             text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
         .funding-isolated-card i {
-            color: #38bdf8 !important;
+            color: #3b82f6 !important; /* Μπλε εικονίδιο */
             font-size: 2rem;
             margin-bottom: 15px;
         }
         .funding-isolated-card h3 {
-            color: #ffffff !important;
+            color: #1e3a8a !important; /* Σκούρο μπλε/μαύρο για τον τίτλο της κάρτας */
             font-size: 1.2rem;
             margin-bottom: 10px;
             font-weight: 600;
         }
         .funding-isolated-card p {
-            color: #cbd5e1 !important;
+            color: #475569 !important; /* Σκούρο γκρι/μαύρο για το κείμενο να διαβάζεται */
             font-size: 0.95rem;
             line-height: 1.5;
             margin: 0 0 15px 0;
         }
         .funding-isolated-card a {
-            color: #38bdf8 !important;
+            color: #3b82f6 !important;
             font-weight: 600;
             text-decoration: none;
             font-size: 0.95rem;
@@ -186,7 +186,6 @@
             text-decoration: underline;
         }
 
-        /* Responsive κλείδωμα */
         @media (max-width: 768px) {
             html, body { overflow-x: hidden !important; }
             .plan-isolated-grid, .funding-isolated-grid {
