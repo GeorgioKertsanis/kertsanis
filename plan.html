@@ -2,10 +2,20 @@
 <html lang="el">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
     <title>Το Σχέδιο μου | Γεώργιος Κερτσάνης</title>
+    <meta name="description" content="Το Αναπτυξιακό Σχέδιο του Γεώργιου Κερτσάνη για τη Φλώρινα. Ψηφιακή ανάπτυξη, υποδομές και τουρισμός.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Γεώργιος Κερτσάνης">
+    
+    <meta name="keywords" content="Το Σχέδιο μου, Αναπτυξιακό Σχέδιο Φλώρινα, Γεώργιος Κερτσάνης, Γεωργιος Κερτσανης, Georgios Kertsanis, Georgio Kertsanis, Κερτσάνης Φλώρινα, Κερτσανης Φλωρινα, Φλώρινα, Φλωρινα, florina, δυτική μακεδονία, δυτικι μακεδονια, ditiki makedonia, ΕΣΠΑ Φλώρινα, Δίκαιη Μετάβαση, Ψηφιακή Ανάπτυξη">
+    
+    <link rel="canonical" href="https://kertsanis.gr/plan.html">
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         html, body { overflow-x: hidden !important; background-color: #ffffff !important; }
         
@@ -80,6 +90,12 @@
 </head>
 <body style="background-color: #ffffff; margin: 0; padding: 0;">
 
+    <div class="privacy-notice-bar">
+        <div class="container" style="padding: 10px 20px; max-width: 100%; text-align: center;">
+            <p style="margin: 0; font-size: 0.95rem; color: #1e3a8a;"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> <strong>Δήλωση Ασφάλειας & Ιδιωτικότητας:</strong> Η ιστοσελίδα kertsanis.gr είναι 100% ασφαλής. <strong>Μηδέν Cookies</strong>, μηδέν ιχνηλάτες.</p>
+        </div>
+    </div>
+
     <header>
         <div class="container header-container-box">
             <a href="index.html#hero" class="logo-link"><div class="logo">Γεώργιος Κερτσάνης</div></a>
@@ -87,6 +103,7 @@
                 <a href="index.html#hero">Αρχική</a>
                 <a href="index.html#about">Πορεία</a>
                 <a href="plan.html" class="active">Σχέδιο</a>
+				<a href="arthra.html">Άρθρα</a>
                 <a href="index.html#news">Παρεμβάσεις</a>
                 <a href="index.html#contact">Επικοινωνία</a>
             </nav>
@@ -174,10 +191,27 @@
 
             <div class="footer-right">
                 <p>Σχεδιασμός χαμηλής απόκρισης (Low Latency).</p>
-                <p class="footer-privacy">🔒 100% Privacy-First | Μηδέν Cookies & Καταγραφή</p>
+                <p class="footer-privacy">🔒 100% Privacy-First</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        document.getElementById("year-index").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+        document.addEventListener("contextmenu", event => event.preventDefault());
+        document.addEventListener("keydown", function(e) {
+            if (e.ctrlKey && (e.key === "c" || e.key === "a" || e.key === "u" || e.key === "s")) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.key === "F12") {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>
